@@ -1,0 +1,33 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Hello HomeController!{% endblock %}
+
+{% block body %}
+<style>
+    .example-wrapper { margin: 1em auto; max-width: 800px; width: 95%; font: 18px/1.5 sans-serif; }
+    .example-wrapper code { background: #F5F5F5; padding: 2px 6px; }
+</style>
+
+<div class="row text-center">
+
+    <h1>Hello ! ✅</h1>
+
+
+<ul class="nav nav-pills">
+
+  <li class="nav-item"><a href="{{ 'app_home'}}" class="nav-link">Acceuil</a></li>
+
+      <li class="nav-item"><a href="{{ path('app_home') }}" class="nav-link">Decouvrir</a></li>
+
+
+       <li class="nav-item"><a href="{{ path('app_home') }}" class="nav-link">Informations</a></li>
+
+      <li class="nav-item"><a href="{{ path('app_home') }}" class="nav-link">Contact</a></li>
+
+    </ul>
+
+
+
+
+   {% endblock %}
+
