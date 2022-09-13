@@ -15,7 +15,52 @@
 
         <button type="submit" class="btn">Register</button>
     {{ form_end(registrationForm) }}
+
+
+
+<table class="table">
+        <thead>
+            <tr>
+                <th>Image</th>
+                <th>Name</th>
+            </tr>
+        </thead>
+
+<tbody>
+{% for  avatar in avatars %}
+
+            <tr>
+                <td><img class="avatar"src ="{{avatar.image}}" data-id="{{avatar.id}}" ></td>
+                <td>{{ avatar.name }}</td>
+              
+                
+    
+            </tr>
+        {% else %}
+            <tr>
+                <td colspan="3"></td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+
 {% endblock %}
 
 
+{% block  javascripts %}
+<script>
+
+
+ let avatar = document.querySelectorAll(".avatar")
+ console.log(avatar);
+ avatar.forEach(function(element){
+ element.addEventListener("click", (e)=>{
+
+    console.log(e.currentTarget.dataset.id)
+ })
+ })
+
+
+</script>
+{% endblock %}
 
