@@ -36,8 +36,13 @@ class RegistrationController extends AbstractController
             return $this->redirectToRoute('app_home');
         }
 
+        //aller chercher les avatars grace au repository
+
+        
+
         return $this->render('registration/register.html.twig', [
             'registrationForm' => $form->createView(),
+            
         ]);
     }
 }
