@@ -3,12 +3,21 @@
 
 {% block title %}Log in!{% endblock %}
 
+{% block stylesheets %}
+<style>
+.hide{
+    display:none;
+}
+</style>
+<link rel="stylesheet" href="/css/connexion.css">
+{% endblock %}
+
 {% block header %}
     <header>
         <nav class="navbar navbar-expand-lg">
             <div class="container-fluid">
     
-              <a class="navbar-brand" href="#"> <img class="img-fluid" src="/public/img/logo/nav-logo.png" alt="logo"></a>
+              <a class="navbar-brand" href="#"> <img class="img-fluid" src="/img/logo/nav-logo.png" alt="logo"></a>
     
               <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
@@ -29,15 +38,9 @@
         </div>
     {% endif %}
 
-    <h1 class="h3 mb-3 font-weight-normal">Please sign in</h1>
-    <label for="inputEmail">Email</label>
-    <input type="email" value="{{ last_username }}" name="email" id="inputEmail" class="form-control" autocomplete="email" required autofocus>
-    <label for="inputPassword">Password</label>
-    <input type="password" name="password" id="inputPassword" class="form-control" autocomplete="current-password" required>
-
-    <input type="hidden" name="_csrf_token"
-           value="{{ csrf_token('authenticate') }}"
-    >
+ 
+    <input type="hidden" name="_csrf_token" value="{{ csrf_token('authenticate') }}">
+    
 
     {#
         Uncomment this section and add a remember_me option below your firewall to activate remember me functionality.
@@ -50,17 +53,13 @@
         </div>
     #}
 
-    <button class="btn btn-lg btn-primary" type="submit">
-        Sign in
-    </button>   
-   
 
     <main>
         <div class="container-fluid">
             <div class="row align-items-center">
                 
                 <div class="col-4 offset-1">
-                    <img class="img-fluid" src="/public/img/connexion/digital.jpg" alt="">
+                    <img class="img-fluid" src="/img/connexion/digital.jpg" alt="">
                 </div>
 
                 <div class="form col-3 offset-2 text-center">
@@ -79,7 +78,7 @@
                     <div class="input password">
                             <i class="corner corner-top-left"></i>
                             <i class="corner corner-top-right"></i>
-                            <input type="text" id="user_password" placeholder="Mot de passe">
+                            <input type="text" name="password" id="user_password" autocomplete="current-password" required placeholder="Mot de passe">
                             <i class="corner corner-bottom-left"></i>
                             <i class="corner corner-bottom-right"></i>
                     </div>
@@ -90,23 +89,24 @@
 
 
                     <div class="button">
-                            <button class="btn btn-primary" type='submit'>Se connecter</button>
+                            <button class="btn btn-primary" a href="{{ path('app_home') }}" type='submit'> Se connecter </button>
                     </div>
 
                 </form>
 
                 <div class="separation  "></div>
 
-                <a class="inscription" href="/inscription.html">Je n'ai pas encore de compte</a>
+                <a class="inscription" href="{{ path('app_register') }}"> Je n'ai pas encore de compte </a>
             
             </div>
 
         </div>
    
     </main>
+
      {% block javascripts %}
-                  <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js" integrity="sha384-oBqDVmMz9ATKxIep9tiCxS/Z9fNfEXiDAYTujMAeBAsjFuCZSmKbSSUnQlmh/jp3" crossorigin="anonymous"></script>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/js/bootstrap.min.js" integrity="sha384-7VPbUDkoPSGFnVtYi0QogXtr74QeVeeIs99Qfg5YCF+TidwNdjvaKZX19NZ/e6oz" crossorigin="anonymous"></script>
+        <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js" integrity="sha384-oBqDVmMz9ATKxIep9tiCxS/Z9fNfEXiDAYTujMAeBAsjFuCZSmKbSSUnQlmh/jp3" crossorigin="anonymous"></script>
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/js/bootstrap.min.js" integrity="sha384-7VPbUDkoPSGFnVtYi0QogXtr74QeVeeIs99Qfg5YCF+TidwNdjvaKZX19NZ/e6oz" crossorigin="anonymous"></script>
     {% endblock %}
 
 {% endblock %}
