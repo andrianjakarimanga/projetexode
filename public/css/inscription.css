@@ -96,13 +96,14 @@ p {
     border-radius: 50px;
 }
 
-[type=radio] + img {
+.av + img {
     cursor: pointer;
 }
-[type=radio] + label {
+.av + label {
     position: relative;
 }
-[type=radio] + label::before {
+
+.av + label::before {
     content: '';
     display: block;
     position: absolute;
@@ -114,10 +115,11 @@ p {
    background: none;
 } 
 
-[type=radio] + label:hover::before {
+
+.av + label:hover::before {
     background: radial-gradient( rgba(182, 158, 210, 0.6) 0%, rgba(135, 98, 176, 0.0) 70%);
 }
 
-[type=radio]:checked + label::before {
+.av:checked + label::before {
     background: radial-gradient( rgba(255,255,255,0.6) 0%, rgba(255,255,255,0) 70%);
-} 
+}
