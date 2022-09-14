@@ -1,0 +1,123 @@
+/****************************** BODY **********************/
+
+body {
+    background-image: linear-gradient(72.44deg, rgba(16, 22, 28, 0.92) 0%, rgba(16, 22, 28, 0.76) 100%), url(../img/inscription/inscription-bg.jpg);
+    height: 100%;
+    width: 100%;
+    overflow: hidden;
+    background-position: center center;
+
+}
+
+/****************************** MAIN **********************/
+
+h2 {
+    font-family: 'Batman', sans-serif;
+    font-size: 6.4rem;
+}
+
+p {
+    font-family: 'Orbitron', sans-serif;
+    font-size: 2.6rem;
+}
+
+
+
+
+
+
+/****************************** FORMULAIRE**********************/
+
+
+            /******************************CHAMP DE SAISIE **************************/
+.input {
+    position: relative;
+    margin: 6rem 0;
+}
+
+.input input {
+    width: 100%;
+    background-color: rgba(0,0,0,.3);
+    border: 1px solid white;
+    height: 80px;
+    font-family: 'Orbitron', Tahoma, sans-serif;
+    font-size: 2.4rem;
+    padding-left: 3rem;
+    padding-right: 3rem;    
+    color: var(--text-color);
+    z-index: 10;
+}
+
+.corner {
+    display: block;
+    position: absolute;
+    width: 35px;
+    height: 35px;
+    z-index: -1;
+    /* background-color: white; */
+}
+
+.corner-top-left {
+    top: -7px;
+    left: -7px;
+    border-top: 7px solid white;
+    border-left: 7px solid white;
+}
+.corner-top-right {
+    top: -7px;
+    right: -7px;
+    border-top: 7px solid white;
+    border-right: 7px solid white;    
+}
+.corner-bottom-left {
+    bottom: -7px;
+    left: -7px;
+    border-bottom: 7px solid white;
+    border-left: 7px solid white;    
+}
+.corner-bottom-right {
+    bottom: -7px;
+    right: -7px;
+    border-bottom: 7px solid white;
+    border-right: 7px solid white;    
+}
+
+            /****************************** SELECTION DES AVATARS **************************/
+
+
+.avatar input { 
+    visibility: hidden;
+    position: absolute;
+    width: 0;
+    height: 0;
+}
+
+.avatar img {
+    border-radius: 50px;
+}
+
+[type=radio] + img {
+    cursor: pointer;
+}
+[type=radio] + label {
+    position: relative;
+}
+[type=radio] + label::before {
+    content: '';
+    display: block;
+    position: absolute;
+    width: 124%;
+    height: 124%;
+    top:-12%;
+    left: -12%;
+    z-index: -1;
+   background: none;
+} 
+
+[type=radio] + label:hover::before {
+    background: radial-gradient( rgba(182, 158, 210, 0.6) 0%, rgba(135, 98, 176, 0.0) 70%);
+}
+
+[type=radio]:checked + label::before {
+    background: radial-gradient( rgba(255,255,255,0.6) 0%, rgba(255,255,255,0) 70%);
+} 

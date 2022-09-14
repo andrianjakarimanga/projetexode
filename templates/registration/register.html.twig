@@ -2,47 +2,105 @@
 
 {% block title %}Register{% endblock %}
 
-{% block body %}
-    <h1>Register</h1>
+{% block stylesheets %}
+<style>
+.hide{
+    display:none;
+}
+</style>
+<link rel="stylesheet" href="/css/inscription.css">
+{% endblock %}
 
-    {{ form_start(registrationForm) }}
-        {{ form_row(registrationForm.email) }}
-        {{ form_row(registrationForm.plainPassword, {
+{% block body %}
+<!--DEBUT DU HEADER-->
+    <header>
+        <nav class="navbar navbar-expand-lg">
+            <div class="container-fluid">
+    
+              <a class="navbar-brand" href="#"> <img class="img-fluid" src="/public/img/logo/nav-logo.png" alt="logo"></a>
+    
+              <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+              </button>
+            </div>
+    </header>
+    <!--FIN DU HEADER-->
+
+    <!--DEBUT DU MAIN-->
+    <main>
+
+      <div class="container-fluid">
+        {{ form_start(registrationForm) }}
+          <div class="row">
+                    
+              <div class="row col-11 offset-1">
+                <h2>Inscription</h2>
+              </div>
+
+              <div class="row py-5">
+                <p class="col-4 offset-1">Veuillez remplir les informations suivantes</p>
+                <p class="col-4 offset-2">Choississez votre avatar</p>
+              </div>
+
+              <div class="col-3 offset-2">
+                
+              
+                  <div class="input">
+                    <i class="corner corner-top-left"></i>
+                    <i class="corner corner-top-right"></i>
+                    {{ form_row(registrationForm.email) }}
+                    <i class="corner corner-bottom-left"></i>
+                    <i class="corner corner-bottom-right"></i>
+                  </div>
+      
+                  <div class="input">
+                    <i class="corner corner-top-left"></i>
+                    <i class="corner corner-top-right"></i>
+                    {{ form_row(registrationForm.pseudo) }}
+                    <i class="corner corner-bottom-left"></i>
+                    <i class="corner corner-bottom-right"></i>
+                  </div>
+              
+                  <div class="input">
+                    <i class="corner corner-top-left"></i>
+                    <i class="corner corner-top-right"></i>
+                    {{ form_row(registrationForm.plainPassword, {
             label: 'Password'
         }) }}
-        {{ form_row(registrationForm.agreeTerms) }}
-        {{ form_row(registrationForm.avatar) }}
-
-        <button type="submit" class="btn">Register</button>
-    {{ form_end(registrationForm) }}
-
-
-
-<table class="table">
-        <thead>
-            <tr>
-                <th>Image</th>
-                <th>Name</th>
-            </tr>
-        </thead>
-
-<tbody>
-{% for  avatar in avatars %}
-
-            <tr>
-                <td><img class="avatar"src ="img/{{avatar.image}}" data-id="{{avatar.id}}" ></td>
-                <td>{{ avatar.name }}</td>
+                    <i class="corner corner-bottom-left"></i>
+                    <i class="corner corner-bottom-right"></i>
+                  </div>
+       {{ form_row(registrationForm.agreeTerms) }}
+       {{ form_widget(registrationForm.avatar) }}
+              </div>
               
-                
-    
-            </tr>
-        {% else %}
-            <tr>
-                <td colspan="3"></td>
-            </tr>
+            <div class="col-4 offset-2">
+              
+  
+              <div class="avatar py-6"> 
+                  
+                  {% for  avatar in avatars %}
+<label for="man">
+            <img class="avatar"src ="img/{{avatar.image}}" data-id="{{avatar.id}}" ></td>
+       </label>
         {% endfor %}
-        </tbody>
-    </table>
+              </div>
+  
+              <div class="button text-center py-6">
+                  <button class="btn btn-success" type="submit">S'inscrire</button>
+              </div>
+            </div>
+            
+          </div>
+
+        </div>
+        
+       {{ form_end(registrationForm) }}
+      </div>
+   
+    </main>
+    <!--FIN DU MAIN-->
+
 
 {% endblock %}
 
@@ -57,6 +115,7 @@
  element.addEventListener("click", (e)=>{
 
     console.log(e.currentTarget.dataset.id)
+    document.getElementById('registration_form_avatar').value = e.currentTarget.dataset.id;
  })
  })
 

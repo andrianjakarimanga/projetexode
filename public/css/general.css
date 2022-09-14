@@ -1,0 +1,285 @@
+/**********************IMPORT DE POLICES**************************/
+@import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@400;500;600;700;800;900&display=swap');
+
+/*font-family: 'Orbitron', sans-serif;*/
+
+@import url('https://fonts.googleapis.com/css2?family=Russo+One&display=swap');
+
+/* font-family: 'Russo One', sans-serif;*/
+
+@import url('https://fonts.googleapis.com/css2?family=Jura:wght@300;400;500;600;700&display=swap');
+
+/*font-family: 'Jura', sans-serif;*/
+
+@font-face {
+    font-family: "Batman";
+    src: url('../font/batman.ttf') format("truetype");
+}
+
+/********************** VARIABLES **************************/
+
+:root {
+    
+    --main-bg-color: #10161C; 
+    --dark: #10161C; 
+    --text-color: #FFFDFB;
+    
+}
+
+@keyframes stack {
+    0% {
+      opacity: 0;
+      transform: translateX(-50%);
+      text-shadow: -2px 3px 0 red, 2px -3px 0 blue;
+    };
+    60% {
+      opacity: 0.5;
+      transform: translateX(50%);
+    }
+    80% {
+      transform: none;
+      opacity: 1;
+      text-shadow: 2px -3px 0 red, -2px 3px 0 blue;
+    }
+    100% {
+      text-shadow: none;
+    }
+  }
+  
+  @keyframes glitch {
+    0% {
+      text-shadow: -2px 3px 0 red, 2px -3px 0 blue;
+      transform: translate(var(--glitch-translate));
+    }
+    2% {
+      text-shadow: 2px -3px 0 red, -2px 3px 0 blue;
+    }
+    4%, 100% {  text-shadow: none; transform: none; }
+  }
+
+/***********INSTRUCTIONS GÉNÉRALES**********************************/
+
+html{
+    font-size: 62.5%;   /* DONC 1rem = 10px (=62,5%)*/
+}
+
+/****************** GRID *****************************************/
+.p-6 {
+    padding: 5rem !important;
+}
+
+.py-6 {
+    padding-top: 5rem !important;
+    padding-bottom: 5rem !important;
+}
+
+.pb-6 {
+    padding-bottom: 5rem !important;
+}
+
+.pt-6 {
+    padding-top: 5rem !important;
+}
+
+.p-7 {
+    padding: 10rem;
+}
+
+.pt-7{
+    padding-top: 10rem !important;
+}
+.pb-7 {
+    padding-bottom: 10rem !important;
+}
+
+.py-7 {
+    padding-top: 10rem !important;
+    padding-bottom: 10rem !important;
+}
+
+.p-8 {
+    padding: 15rem;
+}
+
+.pt-8{
+    padding-top: 15rem !important;
+}
+.pb-8 {
+    padding-bottom: 15rem !important;
+}
+
+.py-8 {
+    padding-top: 15rem !important;
+    padding-bottom: 15rem !important;
+}
+
+
+/*********************** TITRES & TEXTES & LIENS *********************************/
+
+h1, 
+h2, 
+h3, 
+h4, 
+h5, 
+p {
+    color: var(--text-color);
+}
+
+.navbar-nav .nav-link,
+.navbar-nav .nav-link.active {
+    color: var(--text-color) ;
+    font-family: 'Orbitron', sans-serif;
+    font-size: 2.4rem;
+}
+
+.navbar-nav .nav-link:hover,
+.navbar-nav .nav-link.active:hover {
+    color: orange;
+}
+
+h1 {
+    font-family: 'Orbitron', sans-serif;
+    font-size: 4rem;
+}
+
+h2 {
+    font-family: 'Russo One', sans-serif;
+    font-size: 5rem;
+}
+
+h3 {
+    font-family: 'Russo One', sans-serif;
+    font-size: 3.6rem;
+}
+
+p {
+    font-family: 'Jura', sans-serif;
+    font-size: 2.5rem;
+}
+
+h4 {
+    font-family: 'Russo One', sans-serif;
+    font-size: 2.4rem;
+}
+
+h4 + p {
+    font-family: 'Jura', sans-serif;
+    font-size: 2rem;
+}
+
+a {
+    font-family: 'Russo One', sans-serif;
+    font-size: 1.6rem;
+    text-decoration: none;
+    color: var(--text-color);
+}
+
+
+
+
+/****************************** BOUTONS ********************************/
+
+.btn {
+    font-family: 'Orbitron', sans-serif;
+    font-size: 2.4rem;
+    margin-left: 2rem;
+    margin-right: 2rem;
+    padding: 2rem 4rem;
+    border: none !important;
+}
+
+.btn-primary {
+    background: no-repeat center  url(../svg/button/button_primary.svg) !important;
+}
+
+.btn-primary:hover{
+    background: no-repeat center  url(../svg/button/button_primary-hover.svg) !important;
+}
+
+.btn-success {
+   background: no-repeat center  url(../svg/button/button_success.svg) !important;
+   color: var(--dark);
+}
+
+.btn-success:hover {
+    background: no-repeat center  url(../svg/button/button_success-hover.svg) !important;
+    color: var(--dark);
+ }
+
+
+.btn-secondary a {
+    text-decoration: none;
+}
+
+/************* EFFET CSS POUR LES BOUTONS JOUER ************/
+
+.btn-secondary .stack{
+   
+    background-repeat: no-repeat;
+    font-family: 'Orbitron', sans-serif;
+    color: white;
+    display: grid;
+    grid-template-columns: 1fr;
+   
+}
+
+.card1 .btn-secondary .stack:hover{    
+    color: orange;  /*changer les variables couleurs */ 
+}
+.card2 .btn-secondary .stack:hover{    
+    color: blue;  /*changer les variables couleurs */ 
+}
+.card3 .btn-secondary .stack:hover{    
+    color: cyan;  /*changer les variables couleurs */ 
+}
+
+
+  
+.stack span {
+    background-image: url(../svg/button/button-secondary.svg);
+    background-repeat: no-repeat;
+    background-position: center;
+    grid-row-start: 1;
+    grid-column-start: 1;
+    font-size: 3rem;
+    --stack-height: calc(100% / var(--stacks) - 1px);
+    --inverse-index: calc(calc(var(--stacks) - 1) - var(--index));
+    --clip-top: calc(var(--stack-height) * var(--index));
+    --clip-bottom: calc(var(--stack-height) * var(--inverse-index));
+    clip-path: inset(var(--clip-top) 0 var(--clip-bottom) 0);
+    animation: stack 340ms cubic-bezier(.46,.29,0,1.24) 1 backwards calc(var(--index) * 120ms), glitch 2s ease infinite 2s alternate-reverse;
+  }
+  
+  .stack span:nth-child(odd) { --glitch-translate: 8px; }
+  .stack span:nth-child(even) { --glitch-translate: -8px; }
+  
+  
+
+/***************************** FORMULAIRES *********************************/
+
+
+
+
+
+
+/************************ ICONOGRAPHIE ********************************/
+
+
+
+/********************** HEADER *********************************/
+
+
+
+/************************** NAVIGATION **********************/
+
+
+
+/****************************** MAIN ******************************/
+
+
+
+/*******************************************FOOTER*********************************/
+footer{
+    background-image: linear-gradient(180deg, #000000 1.56%, rgba(64, 64, 64, 0) 100%), url(../img/homepage/bg-header.jpg);
+    background-position: center;
+}

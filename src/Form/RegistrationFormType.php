@@ -2,9 +2,12 @@
 
 namespace App\Form;
 
+use App\Entity\Avatar;
 use App\Entity\User;
+use Symfony\Bridge\Doctrine\Form\Type\EntityType;
 use Symfony\Component\Form\AbstractType;
 use Symfony\Component\Form\Extension\Core\Type\CheckboxType;
+use Symfony\Component\Form\Extension\Core\Type\ChoiceType;
 use Symfony\Component\Form\Extension\Core\Type\HiddenType;
 use Symfony\Component\Form\Extension\Core\Type\PasswordType;
 use Symfony\Component\Form\FormBuilderInterface;
@@ -18,6 +21,7 @@ class RegistrationFormType extends AbstractType
     public function buildForm(FormBuilderInterface $builder, array $options): void
     {
         $builder
+            ->add('pseudo')
             ->add('email')
             ->add('agreeTerms', CheckboxType::class, [
                 'mapped' => false,
@@ -44,7 +48,13 @@ class RegistrationFormType extends AbstractType
                     ]),
                 ],
             ])
-            ->add('avatar', HiddenType::class)
+            ->add('avatar', EntityType::class, [
+                'attr' => [
+                    'class' => 'hide'
+                ],
+                'class' => Avatar::class,
+                'choice_label' => 'name',
+            ])
         ;
     }
 
