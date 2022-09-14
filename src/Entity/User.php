@@ -46,8 +46,8 @@ class User implements UserInterface, PasswordAuthenticatedUserInterface
     #[ORM\ManyToMany(targetEntity: Badge::class, inversedBy: 'users')]
     private Collection $Badge;
 
-    #[ORM\ManyToMany(targetEntity: Avatar::class, inversedBy: 'users')]
-    private Collection $Avatar;
+    #[ORM\ManyToOne(inversedBy: 'user')]
+    private ?Avatar $avatar = null;
 
     public function __construct()
     {
@@ -216,34 +216,22 @@ class User implements UserInterface, PasswordAuthenticatedUserInterface
         return $this;
     }
 
-    /**
-     * @return Collection<int, Avatar>
-     */
-    public function getAvatar(): Collection
-    {
-        return $this->Avatar;
-    }
-
-    public function addAvatar(Avatar $avatar): self
-    {
-        if (!$this->Avatar->contains($avatar)) {
-            $this->Avatar->add($avatar);
-        }
-
-        return $this;
-    }
-
-    public function removeAvatar(Avatar $avatar): self
-    {
-        $this->Avatar->removeElement($avatar);
-
-        return $this;
-    }
-
     public function __toString()
     {
     return $this->email.' '.$this->password.' '.$this->pseudo.' '.$this->rang.' '.$this->score;
  
 }
+
+    public function getAvatar(): ?Avatar
+    {
+        return $this->avatar;
+    }
+
+    public function setAvatar(?Avatar $avatar): self
+    {
+        $this->avatar = $avatar;
+
+        return $this;
+    }
 
 }

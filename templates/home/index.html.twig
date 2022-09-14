@@ -10,7 +10,7 @@
 
 <div class="row text-center">
 
-    <h1>Hello ! ✅</h1>
+ <h1>EXCODE</h1>
 
 
     <ul class="nav nav-pills">
@@ -24,6 +24,36 @@
         <li class="nav-item"><a href="{{ path('app_home') }}" class="nav-link">Contact</a></li>
 
     </ul>
+
+<table class="table">
+        <thead>
+            <tr>
+                <th>Image</th>
+                <th>Name</th>
+                <th>description</th>
+            </tr>
+        </thead>
+
+<tbody>
+{% for  name in names %}
+
+            <tr>
+                <td><img src ="img/{{name.image}}" ></td>
+                <td>{{ name.name }}</td>
+                <td>{{ name.description}}</td>
+                
+    
+            </tr>
+        {% else %}
+            <tr>
+                <td colspan="3"></td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+
+
+     
 
 
 </div>

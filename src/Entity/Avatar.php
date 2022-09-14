@@ -21,12 +21,14 @@ class Avatar
     #[ORM\Column(length: 255)]
     private ?string $Image = null;
 
-    #[ORM\ManyToMany(targetEntity: User::class, mappedBy: 'Avatar')]
-    private Collection $users;
+    #[ORM\OneToMany(mappedBy: 'avatar', targetEntity: User::class)]
+    private Collection $user;
+
 
     public function __construct()
     {
         $this->users = new ArrayCollection();
+        $this->user = new ArrayCollection();
     }
 
     public function getId(): ?int
@@ -61,16 +63,16 @@ class Avatar
     /**
      * @return Collection<int, User>
      */
-    public function getUsers(): Collection
+    public function getUser(): Collection
     {
-        return $this->users;
+        return $this->user;
     }
 
     public function addUser(User $user): self
     {
-        if (!$this->users->contains($user)) {
-            $this->users->add($user);
-            $user->addAvatar($this);
+        if (!$this->user->contains($user)) {
+            $this->user->add($user);
+            $user->setAvatar($this);
         }
 
         return $this;
@@ -78,10 +80,14 @@ class Avatar
 
     public function removeUser(User $user): self
     {
-        if ($this->users->removeElement($user)) {
-            $user->removeAvatar($this);
+        if ($this->user->removeElement($user)) {
+            // set the owning side to null (unless already changed)
+            if ($user->getAvatar() === $this) {
+                $user->setAvatar(null);
+            }
         }
 
         return $this;
     }
+
 }

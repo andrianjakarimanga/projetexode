@@ -10,11 +10,13 @@ use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\PasswordHasher\Hasher\UserPasswordHasherInterface;
 use Symfony\Component\Routing\Annotation\Route;
+use App\Repository\AvatarRepository;
+
 
 class RegistrationController extends AbstractController
 {
     #[Route('/register', name: 'app_register')]
-    public function register(Request $request, UserPasswordHasherInterface $userPasswordHasher, EntityManagerInterface $entityManager): Response
+    public function register(Request $request, UserPasswordHasherInterface $userPasswordHasher, EntityManagerInterface $entityManager ,AvatarRepository $AvatarRepository ): Response
     {
         $user = new User();
         $form = $this->createForm(RegistrationFormType::class, $user);
@@ -36,8 +38,13 @@ class RegistrationController extends AbstractController
             return $this->redirectToRoute('app_home');
         }
 
+        //aller chercher les avatars grace au repository
+
+        
+
         return $this->render('registration/register.html.twig', [
             'registrationForm' => $form->createView(),
+             'avatars' =>$AvatarRepository->findAll()
         ]);
     }
 }
