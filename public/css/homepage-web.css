@@ -1,0 +1,139 @@
+main{
+    background-color: var(--main-bg-color);  
+}
+
+/************************ HERO SHOT *****************************/
+header {
+    background-image:  linear-gradient(180deg, #000000 1.56%, rgba(64, 64, 64, 0) 100%), url(../img/homepage/bg-header.jpg);
+    background-position: center;
+    background-size: cover;
+    
+    
+}
+
+/************************ SECTION GAME-CARD *****************************/
+#game-cards {
+    background-image: url(../svg/graphism/carbon-left.svg);
+    background-repeat: no-repeat;
+    
+}
+
+#game-cards .card {
+    border: none;
+    color: var(--text-color);
+    border-radius: 6rem;
+}
+
+#game-cards .img-fluid {
+    border-radius: 6rem;
+}
+
+#game-cards .card-title {
+    font-family: 'Orbitron', sans-serif;
+    font-size: 3.2rem;
+}
+
+#game-cards .card-text {
+    font-family: 'Jura', sans-serif;
+    font-size: 1.7rem;
+}
+
+#game-cards .card ul strong {
+    font-family: 'Russo One', sans-serif;
+    font-size: 2rem;
+    font-style: none;
+}
+
+#game-cards .card ul > li {
+    list-style: none;
+    font-family: 'Orbitron', sans-serif;
+    font-size: 2rem;
+}
+
+#game-cards .card1 {
+    background: linear-gradient(26.79deg, #10161C 0%, #FFB13C 100%);
+}
+
+#game-cards .card2 {
+    background: linear-gradient(204.27deg, #409BFF 6.42%, rgba(217, 217, 217, 0) 101.22%);
+}
+
+#game-cards .card3 {
+    background: linear-gradient(90deg, rgba(39, 39, 39, 0.99) -4.2%, rgba(80, 165, 174, 0.99) 102.57%);
+}
+
+
+
+/************************ SECTION ARGUMENT *****************************/
+#argument{
+    background-image: linear-gradient(93.01deg, #000000 -2.89%, rgba(64, 64, 64, 0) 132.56%), url(../img/homepage/bg-keybord.jpg);
+    background-size: cover;
+}
+
+#argument .argument-icon{
+    margin: 3rem 0;
+    height: 5vw;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+#argument .argument-icon img {
+    max-height:100%;
+}
+
+
+/************************ SECTION GAME-PLAY *****************************/
+#game-play {
+    background-image: url(../img/homepage/bg-gamepley.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+}
+
+/************************ SECTION GAME-DATA *****************************/
+
+#game-data .row {
+    height: 40vw;
+}
+
+#game-data .molecule { 
+    background-image: url(../svg/graphism/number-molecule.svg);
+    background-size:contain;
+    background-repeat: no-repeat;
+    background-position: center;
+}
+
+#game-data .molecule img {
+    height: 8vw;
+}
+
+#game-data p {
+    font-family: 'Russo One', sans-serif;
+    font-size: 4rem;
+}
+/************************ SECTION PARTNERS *****************************/
+
+#partners{
+    background: radial-gradient(48.33% 86.16% at 50% 50%, #292929 0%, rgba(58, 56, 56, 0) 100%) ;
+}
+
+/************************ SECTION FOOTER *****************************/
+.error-button{
+    border-radius: 5rem;
+    padding: 5px;
+    width: 5cm;
+    font-family: 'Orbitron', sans-serif;
+    font-size: 1.2rem;  
+}
+
+h4 {
+    font-family: 'Russo One', sans-serif;
+    font-size: 2.4rem;
+
+}
+
+#footer p {
+    font-family: 'Russo One', sans-serif;
+    font-size: 1.6rem;
+}

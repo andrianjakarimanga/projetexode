@@ -1,0 +1,20 @@
+/*********************** BODY *********************************/
+body {
+    background-image : linear-gradient(180deg, rgba(16, 22, 28, 0.6) 20.28%, rgba(16, 22, 28, 0.3) 76.32%),url(../img/win/win-bg.jpg );
+    overflow: hidden;
+    background-position: top;
+}
+
+
+/*********************** TITRES & TEXTES *********************************/
+h2{
+    font-family: 'Batman' ,sans-serif;
+    font-size: 10rem;
+}
+
+p{
+    font-family: 'Orbitron', sans-serif;
+     
+}
+
+/********************** MAIN *********************************/

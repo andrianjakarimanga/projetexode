@@ -1,0 +1,107 @@
+/******************************* BODY ************************/
+body {
+    background-image: linear-gradient(72.44deg, rgba(16, 22, 28, 0.92) 0%, rgba(16, 22, 28, 0.76) 100%), url(../img/connexion/connexion-bg.jpg);   
+    height: 100%;
+    width: 100%;
+    overflow: hidden;
+    background-position: center center; 
+}
+/******************************* MAIN ************************/
+
+h2 {
+    font-family: 'Batman', sans-serif;
+    font-size: 6.4rem;
+}
+
+.img-fluid {
+    border-radius: 5rem;
+}
+
+/******************************* FORMULAIRE ************************/
+
+    /******************************* INPUT ************************/
+.pseudo {
+    position: relative;
+    margin: 10rem 0;
+}
+
+.password {
+    position: relative;
+    margin: 2rem 0;
+}
+
+.input input {
+    width: 100%;
+    background-color: rgba(0,0,0,.3);
+    border: 1px solid white;
+    height: 80px;
+    font-family: 'Orbitron', Tahoma, Geneva, Verdana, sans-serif;
+    font-size: 2.4rem;
+    padding-left: 3rem;
+    padding-right: 3rem;    
+    color: var(--text-color);
+    z-index: 10;
+}
+
+.corner {
+    display: block;
+    position: absolute;
+    width: 35px;
+    height: 35px;
+    z-index: -1;
+    /* background-color: white; */
+}
+
+.corner-top-left {
+    top: -7px;
+    left: -7px;
+    border-top: 7px solid white;
+    border-left: 7px solid white;
+}
+.corner-top-right {
+    top: -7px;
+    right: -7px;
+    border-top: 7px solid white;
+    border-right: 7px solid white;    
+}
+.corner-bottom-left {
+    bottom: -7px;
+    left: -7px;
+    border-bottom: 7px solid white;
+    border-left: 7px solid white;    
+}
+.corner-bottom-right {
+    bottom: -7px;
+    right: -7px;
+    border-bottom: 7px solid white;
+    border-right: 7px solid white;    
+}
+
+.forgot_password a {
+    text-decoration: none;
+    color: var(--text-color);
+}
+
+.forgot_password a:hover {
+    color: orange;
+    text-decoration: underline;
+}
+
+    /******************************* BOUTONS & STYLES ************************/
+
+.separation {
+    border-bottom:5px solid white ;
+    margin: 5rem;
+}
+
+.inscription {
+    font-family: 'Orbitron', sans-serif;
+    font-size: 2rem;
+    text-decoration: none;
+    color: var(--text-color);
+}
+
+.inscription:hover {
+    color: orange;
+    text-decoration: underline;
+}
