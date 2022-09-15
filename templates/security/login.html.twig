@@ -27,7 +27,6 @@
 {% endblock %}
 
 {% block body %}
-<form method="post">
     {% if error %}
         <div class="alert alert-danger">{{ error.messageKey|trans(error.messageData, 'security') }}</div>
     {% endif %}
@@ -39,7 +38,7 @@
     {% endif %}
 
  
-    <input type="hidden" name="_csrf_token" value="{{ csrf_token('authenticate') }}">
+
     
 
     {#
@@ -65,12 +64,16 @@
                 <div class="form col-3 offset-2 text-center">
                 <h2>Connexion</h2>
 
-                <form action="">
+                <form method="post" action="">
+
+                        <input type="hidden" name="_csrf_token"
+                        value="{{ csrf_token('authenticate') }}"
+                        >
                 
                     <div class="input pseudo">
                             <i class="corner corner-top-left"></i>
                             <i class="corner corner-top-right"></i>
-                            <input type="text" id="user_pseudo" placeholder="Pseudo">
+                            <input type="text" id="email" name="email" placeholder="Pseudo">
                             <i class="corner corner-bottom-left"></i>
                             <i class="corner corner-bottom-right"></i>
                         </div>

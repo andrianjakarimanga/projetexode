@@ -22,7 +22,11 @@
     
     --main-bg-color: #10161C; 
     --dark: #10161C; 
-    --text-color: #FFFDFB;
+    --text-color-defaut: #FFFDFB;
+    --text-color-dark:#10161C;
+    --color-primary:#FF9900;
+    --color-success:#00FFC8;
+    --color-tertiary : #409BFF;
     
 }
 
@@ -68,6 +72,13 @@ html{
     padding: 5rem !important;
 }
 
+.ps-6 {
+    padding-left: 5rem;
+}
+
+.pe-6 {
+    padding-right: 5rem;
+}
 .py-6 {
     padding-top: 5rem !important;
     padding-bottom: 5rem !important;
@@ -85,6 +96,13 @@ html{
     padding: 10rem;
 }
 
+.ps-7 {
+    padding-left: 10rem;
+}
+
+.pe-7 {
+    padding-right: 10rem;
+}
 .pt-7{
     padding-top: 10rem !important;
 }
@@ -122,19 +140,19 @@ h3,
 h4, 
 h5, 
 p {
-    color: var(--text-color);
+    color: var(--text-color-defaut);
 }
 
 .navbar-nav .nav-link,
 .navbar-nav .nav-link.active {
-    color: var(--text-color) ;
+    color: var(--text-color-defaut) ;
     font-family: 'Orbitron', sans-serif;
     font-size: 2.4rem;
 }
 
 .navbar-nav .nav-link:hover,
 .navbar-nav .nav-link.active:hover {
-    color: orange;
+    color: var(--color-primary);
 }
 
 h1 {
@@ -171,7 +189,7 @@ a {
     font-family: 'Russo One', sans-serif;
     font-size: 1.6rem;
     text-decoration: none;
-    color: var(--text-color);
+    color: var(--text-color-defaut);
 }
 
 
@@ -186,59 +204,125 @@ a {
     margin-right: 2rem;
     padding: 2rem 4rem;
     border: none !important;
+    background: none;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: 268px;
+}
+.btn:hover {
+    background: none !important;
+    background-position: center !important;
+    background-repeat: no-repeat !important;
+    background-size: 268px !important;    
 }
 
 .btn-primary {
-    background: no-repeat center  url(../svg/button/button_primary.svg) !important;
+    background-image: url(../svg/button/button_primary.svg) !important;
 }
 
-.btn-primary:hover{
-    background: no-repeat center  url(../svg/button/button_primary-hover.svg) !important;
+.btn-primary:hover
+{
+    background-image: url(../svg/button/button_primary-hover.svg) !important;
 }
 
 .btn-success {
-   background: no-repeat center  url(../svg/button/button_success.svg) !important;
-   color: var(--dark);
-}
+    background-image:  url(../svg/button/button_success.svg) !important;
+ }
 
-.btn-success:hover {
-    background: no-repeat center  url(../svg/button/button_success-hover.svg) !important;
-    color: var(--dark);
+ .btn-success:hover
+ {
+    background-image:  url(../svg/button/button_success-hover.svg) !important;
  }
 
 
-.btn-secondary a {
+.btn-secondary {
+    background-image: url(../svg/button/button_secondary.svg) !important;
+} 
+
+.btn-secondary:hover{
+    background-image: url(../svg/button/button-secondary-hover.svg) !important;
+}
+
+
+
+.btn-primary a,
+.btn-secondary a,
+.btn-success a 
+ {
     text-decoration: none;
 }
 
+/* .btn-success:hover {
+    background: no-repeat center  url(../svg/button/button_success-hover.svg) !important;
+    color: var(--dark);
+ } */
+
+
 /************* EFFET CSS POUR LES BOUTONS JOUER ************/
 
-.btn-secondary .stack{
+.btn-primary .stack,
+.btn-secondary .stack
+
+ {
    
     background-repeat: no-repeat;
     font-family: 'Orbitron', sans-serif;
-    color: white;
+    color: var(--text-color-defaut);
     display: grid;
     grid-template-columns: 1fr;
    
 }
 
-.card1 .btn-secondary .stack:hover{    
-    color: orange;  /*changer les variables couleurs */ 
+.btn-primary:hover .stack
+
+ {
+    background-repeat: no-repeat;
+    font-family: 'Orbitron', sans-serif;
+    color: var(--color-primary);
+    display: grid;
+    grid-template-columns: 1fr;
+   
 }
-.card2 .btn-secondary .stack:hover{    
-    color: blue;  /*changer les variables couleurs */ 
+
+.btn-success .stack,
+.btn-secondary .stack
+ {
+   
+    background-repeat: no-repeat;
+    font-family: 'Orbitron', sans-serif;
+    color: var(--text-color-dark);
+    display: grid;
+    grid-template-columns: 1fr;
+   
 }
-.card3 .btn-secondary .stack:hover{    
-    color: cyan;  /*changer les variables couleurs */ 
+
+.btn-success:hover .stack
+ {
+   
+    background-repeat: no-repeat;
+    font-family: 'Orbitron', sans-serif;
+    color: var(--color-tertiary);
+    display: grid;
+    grid-template-columns: 1fr;
+   
+}
+
+
+
+
+.card1 .btn-secondary:hover .stack{    
+    color: var(--color-primary);  
+}
+.card2 .btn-secondary:hover .stack{    
+    color: var(--color-tertiary);  
+}
+.card3 .btn-secondary:hover .stack{    
+    color: var(--color-success);  
 }
 
 
   
 .stack span {
-    background-image: url(../svg/button/button-secondary.svg);
-    background-repeat: no-repeat;
-    background-position: center;
     grid-row-start: 1;
     grid-column-start: 1;
     font-size: 3rem;
@@ -249,8 +333,8 @@ a {
     clip-path: inset(var(--clip-top) 0 var(--clip-bottom) 0);
     animation: stack 340ms cubic-bezier(.46,.29,0,1.24) 1 backwards calc(var(--index) * 120ms), glitch 2s ease infinite 2s alternate-reverse;
   }
-  
-  .stack span:nth-child(odd) { --glitch-translate: 8px; }
+   
+  .stack span:nth-child(odd) { --glitch-translate: 8px; }      
   .stack span:nth-child(even) { --glitch-translate: -8px; }
   
   

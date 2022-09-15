@@ -2,44 +2,97 @@
 
 {% block title %}Hello HomeController!{% endblock %}
 
-{% block body %}
+{% block stylesheets %}
+
 <style>
     .example-wrapper { margin: 1em auto; max-width: 800px; width: 95%; font: 18px/1.5 sans-serif; }
     .example-wrapper code { background: #F5F5F5; padding: 2px 6px; }
 </style>
 
-<div class="row text-center">
 
- <h1>EXCODE</h1>
+<link rel="stylesheet" href="/css/homepage-web.css">
+<link rel="stylesheet" href="/public/css/general.css">
+
+{% endblock %}
 
 
-    <ul class="nav nav-pills">
 
-        <li class="nav-item"><a href="{{ path('app_home')}}" class="nav-link">Acceuil</a></li>
 
-        <li class="nav-item"><a href="{{ path('app_home') }}" class="nav-link">Decouvrir</a></li>
+{% block header %}
+<header>
+    <nav class="navbar navbar-expand-lg">
+        <div class="container-fluid">
 
-        <li class="nav-item"><a href="{{ path('app_home') }}" class="nav-link">Informations</a></li>
+          <a class="navbar-brand" href="#"> <img class="img-fluid" src="/img/logo/nav-logo.png" alt="logo"></a>
 
-        <li class="nav-item"><a href="{{ path('app_home') }}" class="nav-link">Contact</a></li>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
 
-        <li class="nav-item"><a href="{{ path('app_login') }}" class="nav-link">Connexion</a></li>
+            <div class="collapse navbar-collapse d-lg-flex justify-content-between" id="navbarNav">
 
-        <li class="nav-item"><a href="{{ path('app_register') }}" class="nav-link">S'inscrire</a></li>
+                <ul class="navbar-nav">
+                <li class="nav-item px-5">
+                    <a class="nav-link" aria-current="page" href="#">Accueil</a>
+                </li>
+                <li class="nav-item px-5">
+                    <a class="nav-link" href="#">Découvrir</a>
+                </li>
+                <li class="nav-item px-5">
+                    <a class="nav-link" href="#">Informations</a>
+                </li>
+                <li class="nav-item px-5">
+                    <a class="nav-link" href="#">Contact</a>
+                </li>
+                </ul>
 
-    </ul>
+                <div class="d-flex">
+                    <div>
+                        <a href="{{ path('app_login') }}" class="btn btn-primary">
+                            <div class="stack mx-3" style="--stacks: 3;">
+                                <span style="--index: 0;">Se connecter</span>
+                                <span style="--index: 1;">Se connecter</span>
+                                <span style="--index: 2;">Se connecter</span>
+                            </div> 
+                        </a>
+                    </div>
 
-<table class="table">
+                    <div>
+                        <a href="{{ path('app_register') }}" class="btn btn-success">
+                           <div class="stack mx-4" style="--stacks: 3;">
+                                <span style="--index: 0;">S'inscrire</span>
+                                <span style="--index: 1;">S'inscrire</span> 
+                                <span style="--index: 2;">S'inscrire</span>
+                            </div> 
+                        </a>
+                    </div>
 
-    <thead>
-        <tr>
-            <th>Image</th>
-            <th>Name</th>
-            <th>description</th>
-        </tr>
-    </thead>
+                </div>
+            </div>
 
-    <tbody>
+        </div>
+    </nav>
+    <!--FIN DE NAVIGATION-->
+
+
+    <!--HEROSHOT-->
+    <div class="heroshot container"> <!--container fixe // container-fluid si fluide-->
+        <div class="row"> <!--nombre de row dans le container fixe-->
+            
+            <img class="img-fluid p-6" src="/img/logo/headshot-logo2.png" alt="EXCODE">
+            
+            <h1 class="text-center pb-6">
+                <span class="d-none">EXODE</span> Plateforme d'escape game en ligne et gratuit!
+            </h1>
+        </div>
+    </div>
+    <!--FIN DE HEROSHOT-->
+</header>
+
+{% endblock %}
+
+{% block body %}
+
         {% for  name in names %}
 
         <tr>
@@ -52,12 +105,353 @@
             <td colspan="3"></td>
         </tr>
         {% endfor %}
-    </tbody>
 
-</table>
+<main>
+
+<!--SECTION GAME CARD-->
+    <section id="game-cards" class="py-6">
+
+        <div class="container"> <!--.col-4.offset-1 EXEMPLE POUR UN DECALAGE AVEC OFFSET-->
+            <div class="row text-center pb-6">
+                <h2>EXcODE project</h2>
+                <p class="col-10 offset-1 pt-3">Découvrez nos escapes games, tous plus immersif les uns que les autres. Incarnez votre héros, découvrer les univers, fouillez les différentes salles, résolvez les énigmes, déjouez les pièges et dévérouillez les codes pour vous échapper.</p>
+            </div>
+        </div>
+
+        <div class="container pb-5">
+        
+            <div class="row">
+            <!--CARD 1-->
+            <div class="col-4 px-3">
+                <div class="card card1 ">
+                    <img src="/img/homepage/card1.jpg" class="card-img-top img-fluid p-5" alt="Virtual Escape">
+                    <div class="card-body pt-0 pb-5">
+                    <h5 class="card-title text-center">Virtual Escape</h5>
+                    <p class="card-text px-4 text-center">Vous êtes piégés dans un monde virtuel, allez-vous pouvoir trouver les indices qui vous permettront de revenir à la réalité ?</p>
+                    </div>
+
+                    <ul class="d-flex justify-content-around">
+                    <li><strong>Joueur</strong></li>
+                    <li><strong>Age</strong></li>
+                    <li><strong>Temps</strong></li>
+                    </ul>
+
+                    <ul class="d-flex justify-content-around">
+                        <li>Solo</li>
+                        <li>+12</li>
+                        <li>30min</li>
+                    </ul>
+
+                    <div class="card-body text-center btn btn-secondary">
+                        <a href="#">
+                            <div class="m-5">
+                                <div class="stack" style="--stacks: 3;">
+                                    <span style="--index: 0;">Jouer</span>
+                                    <span style="--index: 1;">Jouer</span>
+                                    <span style="--index: 2;">Jouer</span>
+                                </div>
+                  
+                            </div>
+                        </a>
+                        
+                    </div>
+                </div>
+            </div>
+            <!-- FIN DE CARD 1-->
+
+            <!--CARD 2-->
+            <div class="col-4 px-3">
+                <div class="card card2">
+                    <img src="/img/homepage/card2.jpg" class="card-img-top img-fluid p-5" alt="Virtual Escape">
+                    <div class="card-body pt-0 pb-5">
+                    <h5 class="card-title text-center">Virtual Escape</h5>
+                    <p class="card-text px-4 text-center">Vous êtes piégés dans un monde virtuel, allez-vous pouvoir trouver les indices qui vous permettront de revenir à la réalité ?</p>
+                    </div>
+
+                    <ul class="d-flex justify-content-around">
+                        <li><strong>Joueur</strong></li>
+                        <li><strong>Age</strong></li>
+                        <li><strong>Temps</strong></li>
+                    </ul>
+
+                    <ul class="d-flex justify-content-around">
+                        <li>Solo</li>
+                        <li>+12</li>
+                        <li>30min</li>
+                    </ul>
+
+                    <div class="card-body text-center btn btn-secondary">
+                        <a href="#">
+                            <div class="m-5">
+                                <div class="stack" style="--stacks: 3;">
+                                    <span style="--index: 0;">Jouer</span>
+                                    <span style="--index: 1;">Jouer</span>
+                                    <span style="--index: 2;">Jouer</span>
+                                </div>
+                  
+                            </div>
+                        </a>
+                        
+                    </div>
+                </div>
+            </div>
+            <!-- FIN DE CARD 2-->
+
+            <!--CARD 3-->
+            <div class="col-4 px-3">
+                <div class="card card3">
+                    <img src="/img/homepage/card3.jpg" class="card-img-top img-fluid p-5" alt="Virtual Escape">
+                    <div class="card-body pt-0 pb-5">
+                    <h5 class="card-title text-center">Virtual Escape</h5>
+                    <p class="card-text px-4 text-center">Vous êtes piégés dans un monde virtuel, allez-vous pouvoir trouver les indices qui vous permettront de revenir à la réalité ?</p>
+                    </div>
+
+                    <ul class="d-flex justify-content-around">
+                    <li><strong>Joueur</strong></li>
+                    <li><strong>Age</strong></li>
+                    <li><strong>Temps</strong></li>
+                    </ul>
+
+                    <ul class="d-flex justify-content-around">
+                        <li>Solo</li>
+                        <li>+12</li>
+                        <li>30min</li>
+                    </ul>
+
+                    <div class="card-body text-center btn btn-secondary">
+                        <a href="#">
+                            <div class="m-5">
+                                <div class="stack" style="--stacks: 3;">
+                                    <span style="--index: 0;">Jouer</span>
+                                    <span style="--index: 1;">Jouer</span>
+                                    <span style="--index: 2;">Jouer</span>
+                                </div>
+                  
+                            </div>
+                        </a>
+                        
+                    </div>
+                </div>
+            </div>
+            <!-- FIN DE CARD 3-->
+            
+        </div>
+
+    </section>
+    <!-- FIN DE SECTION GAME CARD-->
 
 
-</div>
+
+    <!--SECTION ARGUMENT-->
+    <section id="argument">
+        <div class="container">
+
+            <div class="row py-5">
+
+                <!-- ARGUMENT 1 -->
+                <div class="col-4 px-3 mb-4">
+                    <div class="text-center">
+                        <div class="argument-icon">
+                            <img class="img-fluid" src="/svg/icone/homepage/icone-fauteuil.svg" alt="fauteuil">
+                        </div>
+                        <h3 class="mb-5">De chez vous</h3>
+                        <p>Jouer depuis votre ordinateur. Accessible partout et tout le temps. Profitez du mode solo ou choisissez de jouer en équipe.</p>
+                    </div>
+                </div>
+                <!-- FIN DE ARGUMENT 1 -->
+
+                <!-- ARGUMENT 2 -->
+                <div class="col-4 px-3 mb-4">
+                    <div class="text-center">
+                        <div class="argument-icon">
+                            <img class="img-fluid" src="/svg/icone/homepage/icone-immersif.svg" alt="">
+                        </div>
+                        <h3 class="mb-5">Immersif</h3>
+                        <p>Différents univers s'offre à vous. Pour une meilleure expérience nous vous conseillons de vous munir d'un système audio.</p>
+                    </div>
+                </div>
+                <!-- FIN DE ARGUMENT 2 -->
+                
+                <!-- ARGUMENT 3 -->
+                <div class="col-4 px-3 mb-4">
+                    <div class="text-center">
+                        <div class="argument-icon">
+                            <img class="img-fluid" src="/svg/icone/homepage/icone-gratuit.svg" alt="">
+                        </div>
+                        <h3 class="mb-5">Gratuit</h3>
+                        <p>Profitez de toutes les fonctionnalités gratuitement et sans limitation</p>
+                    </div>
+                </div>
+                <!-- FIN DE ARGUMENT 3 -->
+            </div>
+        </div>
+    </section>
+    <!--FIN DE SECTION ARGUMENT-->
+
+    
+
+    <!--SECTION GAMEPLAY-->
+    <section id="game-play">
+        <div class="container pt-6 pb-8">
+            <div class="row">
+
+                    <div class="row text-center pb-6">
+                        <h2>Comment jouer ?</h2>
+                        <p class="col-8 offset-2 py-6">Basé sur le principe du point and click, ce jeu est très simple à prendre en main. Une fois connecté, vous avez la possibilité de lancer une partie directement en ligne. Il vous suffit ensuite de </p>
+                    </div>
+        
+                    <div class="row text-center">
+                        <div class="col-4">
+                            <img class="img-fluid" src="/svg/number/1.svg" alt="1">
+                            <h4 class="pt-5">Explorer</h4>
+                            <p>A l'aide de votre souris,<br> les différents univers.</p>
+                    </div>
+        
+                    <div class="col-4">
+                            <img class="img-fluid" src="/svg/number/2.svg" alt="2">
+                            <h4 class="pt-5">Trouver</h4>
+                            <p>des objets, des indices.</p>
+                    </div>
+        
+                    <div class="col-4">
+                            <img class="img-fluid" src="/svg/number/3.svg" alt="">
+                            <h4 class="pt-5">Résoudre</h4>
+                            <p>les énigmes pour avancer dans le jeu et débloquer de nouvelles étapes pour sortir !</p>
+                    </div>
+               
+
+            </div>
+           
+        </div>
+
+        </div>
+    </section>
+    <!--FIN DE SECTION GAMEPLAY-->
+
+    
+    
+    <!--SECTION GAME-DATA-->
+    <section id="game-data">
+        <div class="container-fluid py-6">
+
+            <div class="row text-center">
+
+                <div class=" col-4 molecule d-flex flex-column justify-content-center">
+                    <div class="pb-5">
+                        <img class="img-fluid" src="/svg/number/3.svg" alt="3">
+                        <img class="img-fluid" src="/svg/number/4.svg" alt="4">
+                    </div>
+                        <p>joueurs</p> 
+                </div>
+
+                <div class=" col-4 molecule d-flex flex-column justify-content-center">
+                    <div class="pb-5">
+                        <img class="img-fluid" src="/svg/number/1.svg" alt="1">
+                        <img class="img-fluid" src="/svg/number/2.svg" alt="2">
+                        <img class="img-fluid" src="/svg/number/9.svg" alt="9">
+                    </div>
+                        <p>parties lancées</p>
+                </div>
+
+                <div class=" col-4 molecule d-flex flex-column justify-content-center">
+                    <div class="pb-5">
+                        <img class="img-fluid" src="/svg/number/8.svg" alt="8">
+                        <img class="img-fluid" src="/svg/number/0.svg" alt="0">
+                        <img class="img-fluid" src="/svg/number/percent.svg" alt="%">
+                    </div>
+                        <p>de réussite</p>
+                </div>
+                
+            </div>
+        </div>
+    </section>
+
+    <!--FIN DE SECTION GAME-DATA-->
+
+
+    <!--SECTION PARTNERS-->
+    <section id="partners">
+        <div class="container-fluid">
+            <div class="row text-center pt-6">
+                <h2>Nos partenaires</h2>
+            </div>
+            <div class="row align-items-center">
+                <div class="col-2 offset-1 p-6 text-center">  <!--Règle de padding forcée, inscrite dans le css général-->
+                    <img src="/img/logo/logo-origin.png" alt="logoOrigin" class="img-fluid">
+                </div>
+                <div class="col-2 p-6 text-center">
+                    <img src="/img/logo/logo-twitch.png" alt="logoTwitch" class="img-fluid">
+                </div>
+                <div class="col-2 p-6 text-center">
+                    <img src="/img/logo/logo-epic-games.png" alt="logoEpic" class="img-fluid p-4">
+                </div>
+                <div class="col-2 p-6 text-center">
+                    <img src="/img/logo/logo-steam.png" alt="logoSteam" class="img-fluid"> 
+                </div>
+                <div class="col-2 p-6 text-center">
+                    <img src="/img/logo/logo-discord.png" alt="logoDiscord" class="img-fluid">
+                </div>
+            </div>
+        </div>
+
+    </section>
+    <!--FIN DE SECTION PARTNERS-->
+
+</main>
+
 
 {% endblock %}
 
+{% block footer %}
+    <!--FOOTER-->
+    <footer>
+        <div class="container" id="footer">
+            <div class="row py-5">
+                <div class="col-3 offset-1">
+
+                    <h4 class="mb-3">Nous découvrir</h4>
+                    <div class="row pt-3">
+                        <a class="py-1 mb-1" href="#" class="col-12">A propos</a>
+                        <a class="py-1 mb-1" href="#">Nous contacter</a>
+                        <a class="py-1 mb-1" href="{{ path('app_register') }}">Inscription</a>
+                        <a class="py-1 mb-1" href="{{ path('app_login') }}">Connexion</a>
+                        <a class="py-1 mb-1" href="#">Versions</a>
+                    </div>
+                </div>
+
+                <div class="row col-4 text-center">
+                    <div class="text-center pb-5">
+                        <button class="error-button">Signaler une erreur</button>
+
+                    </div>
+                    <div>
+                        <img src="/img/logo/footer-logo.svg" alt="LOGO">
+                    </div>
+                    <p class="mt-5" >EXcODE project 2022</p>
+                </div>
+
+                <div class="row col-3 offset-1">
+
+                    <h4>Nos réseaux</h4>
+                    <div>
+                        <a href="#"><img class="img-fluid me-4" src="/svg/icone/homepage/icone-facebook.svg" alt="logofacebook"></a>
+                        <a href="#"><img class="img-fluid me-4" src="/svg/icone/homepage/icone-instagram.svg" alt="logoinstagram"></a>
+                        <a href="#"><img class="img-fluid me-4" src="/svg/icone/homepage/icone-twitter.svg" alt="logotwitter"></a>
+                        <a href="#"><img class="img-fluid me-4" src="/svg/icone/homepage/icone-twitch.svg" alt="logotwitch"></a>
+                    </div>
+                    <div class="d-flex align-items-end">
+                        <a class="py-1 mb-1" href="#">S'abonner à la newsletter</a>
+                    </div>
+
+                </div>
+
+            </div>
+        </div>
+    </footer>
+
+{% endblock %}
+
+{% block javascripts %}
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js" integrity="sha384-oBqDVmMz9ATKxIep9tiCxS/Z9fNfEXiDAYTujMAeBAsjFuCZSmKbSSUnQlmh/jp3" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/js/bootstrap.min.js" integrity="sha384-7VPbUDkoPSGFnVtYi0QogXtr74QeVeeIs99Qfg5YCF+TidwNdjvaKZX19NZ/e6oz" crossorigin="anonymous"></script>
+{% endblock %}

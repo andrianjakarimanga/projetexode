@@ -5,7 +5,6 @@ body {
     width: 100%;
     overflow: hidden;
     background-position: center center; 
-    
 }
 /******************************* MAIN ************************/
 
@@ -24,6 +23,7 @@ h2 {
 .pseudo {
     position: relative;
     margin: 10rem 0;
+    
 }
 
 .password {
@@ -40,7 +40,7 @@ h2 {
     font-size: 2.4rem;
     padding-left: 3rem;
     padding-right: 3rem;    
-    color: var(--text-color);
+    color: var(--text-color-defaut);
     z-index: 10;
 }
 
@@ -80,11 +80,11 @@ h2 {
 
 .forgot_password a {
     text-decoration: none;
-    color: var(--text-color);
+    color: var(--text-color-defaut);
 }
 
 .forgot_password a:hover {
-    color: orange;
+    color: var(--color-primary);
     text-decoration: underline;
 }
 
@@ -99,10 +99,10 @@ h2 {
     font-family: 'Orbitron', sans-serif;
     font-size: 2rem;
     text-decoration: none;
-    color: var(--text-color);
+    color: var(--text-color-defaut);
 }
 
 .inscription:hover {
-    color: orange;
+    color: var(--color-primary);
     text-decoration: underline;
 }
