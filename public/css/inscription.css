@@ -96,13 +96,14 @@ p {
     border-radius: 50px;
 }
 
-[type=radio] + img {
+.av + img {
     cursor: pointer;
 }
-[type=radio] + label {
+label.av {
     position: relative;
 }
-[type=radio] + label::before {
+
+label.av::before {
     content: '';
     display: block;
     position: absolute;
@@ -114,10 +115,13 @@ p {
    background: none;
 } 
 
-[type=radio] + label:hover::before {
+label.av:hover::before {
     background: radial-gradient( rgba(182, 158, 210, 0.6) 0%, rgba(135, 98, 176, 0.0) 70%);
 }
 
-[type=radio]:checked + label::before {
+label.av.selected {
     background: radial-gradient( rgba(255,255,255,0.6) 0%, rgba(255,255,255,0) 70%);
-} 
+}
+/*#registration_form_agreeTerms{
+    display: none;
+}

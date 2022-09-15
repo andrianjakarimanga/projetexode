@@ -70,7 +70,7 @@
                     <i class="corner corner-bottom-left"></i>
                     <i class="corner corner-bottom-right"></i>
                   </div>
-     {{ form_row(  <!-- registrationForm.agreeTerms) }}
+   
        {{ form_widget(registrationForm.avatar) }}
               </div>
               
@@ -80,10 +80,10 @@
               <div class="avatar py-6"> 
                   
                   {% for  avatar in avatars %}
-                    <label for="man">
-                      <img class="avatar" src ="img/{{avatar.image}}" data-id="{{avatar.id}}" ></td>
-                    </label>
-                  {% endfor %}
+<label for="man">
+            <img class="avatar"src ="img/{{avatar.image}}" data-id="{{avatar.id}}" ></td>
+       </label>
+        {% endfor %}
               </div>
   
               <div class="button text-center py-6">
