@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Hôte : localhost:8889
--- Généré le : jeu. 15 sep. 2022 à 14:22
+-- Généré le : jeu. 15 sep. 2022 à 14:46
 -- Version du serveur :  5.7.34
 -- Version de PHP : 8.0.8
 
@@ -21,6 +21,18 @@ SET time_zone = "+00:00";
 -- Base de données : `exode`
 --
 
+-- --------------------------------------------------------
+
+--
+-- Structure de la table `avatar`
+--
+
+CREATE TABLE `avatar` (
+  `id` int(11) NOT NULL,
+  `name` varchar(100) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `image` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
 --
 -- Déchargement des données de la table `avatar`
 --
@@ -30,6 +42,19 @@ INSERT INTO `avatar` (`id`, `name`, `image`) VALUES
 (3, 'Man', 'avatar-man.png'),
 (5, 'Robot', 'avatar-robot.png'),
 (7, 'Woman', 'avatar-woman.png');
+
+-- --------------------------------------------------------
+
+--
+-- Structure de la table `badge`
+--
+
+CREATE TABLE `badge` (
+  `id` int(11) NOT NULL,
+  `name` varchar(100) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `description` longtext COLLATE utf8mb4_unicode_ci NOT NULL,
+  `image` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 --
 -- Déchargement des données de la table `badge`
@@ -41,6 +66,18 @@ INSERT INTO `badge` (`id`, `name`, `description`, `image`) VALUES
 (11, 'Commun\r\n\r\n', 'You managed to decode the second test\r\nyou win:\r\nDecoder badge (common)', ''),
 (13, 'Basic', 'You have completed the first test\r\nyou win :\r\nBasic avatar skin', '');
 
+-- --------------------------------------------------------
+
+--
+-- Structure de la table `doctrine_migration_versions`
+--
+
+CREATE TABLE `doctrine_migration_versions` (
+  `version` varchar(191) COLLATE utf8_unicode_ci NOT NULL,
+  `executed_at` datetime DEFAULT NULL,
+  `execution_time` int(11) DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
+
 --
 -- Déchargement des données de la table `doctrine_migration_versions`
 --
@@ -51,6 +88,33 @@ INSERT INTO `doctrine_migration_versions` (`version`, `executed_at`, `execution_
 ('DoctrineMigrations\\Version20220906142116', '2022-09-07 08:03:58', 379),
 ('DoctrineMigrations\\Version20220913085224', '2022-09-13 08:52:46', 255);
 
+-- --------------------------------------------------------
+
+--
+-- Structure de la table `enigmes`
+--
+
+CREATE TABLE `enigmes` (
+  `id` int(11) NOT NULL,
+  `name` varchar(100) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `indice` longtext COLLATE utf8mb4_unicode_ci NOT NULL,
+  `temps_enigme` time NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+-- --------------------------------------------------------
+
+--
+-- Structure de la table `escape_games`
+--
+
+CREATE TABLE `escape_games` (
+  `id` int(11) NOT NULL,
+  `name` varchar(100) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `image` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `description` longtext COLLATE utf8mb4_unicode_ci NOT NULL,
+  `durée` time NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
 --
 -- Déchargement des données de la table `escape_games`
 --
@@ -59,6 +123,50 @@ INSERT INTO `escape_games` (`id`, `name`, `image`, `description`, `durée`) VALU
 (1, 'Virtual Escape', 'card1.jpg', 'Vous êtes piégé dans un monde virtuel. Allez-vous pouvoir trouver les indices qui vous permettront de revenir à la réalité ? \r\n', '00:00:00'),
 (4, 'Virtual Escape', 'card2.jpg', 'Vous êtes piégé dans un monde virtuel. Allez-vous pouvoir trouver les indices qui vous permettront de revenir à la réalité ? \r\n', '00:00:00'),
 (6, 'Virtual Escape', 'card3.jpg', 'Vous êtes piégé dans un monde virtuel. Allez-vous pouvoir trouver les indices qui vous permettront de revenir à la réalité ? \r\n', '00:00:00');
+
+-- --------------------------------------------------------
+
+--
+-- Structure de la table `escape_games_enigmes`
+--
+
+CREATE TABLE `escape_games_enigmes` (
+  `escape_games_id` int(11) NOT NULL,
+  `enigmes_id` int(11) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+-- --------------------------------------------------------
+
+--
+-- Structure de la table `historique`
+--
+
+CREATE TABLE `historique` (
+  `id` int(11) NOT NULL,
+  `nombre_dindices` int(11) NOT NULL,
+  `temps_total` time NOT NULL,
+  `last_game` datetime NOT NULL,
+  `score` int(11) NOT NULL,
+  `enigmes_id` int(11) DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+-- --------------------------------------------------------
+
+--
+-- Structure de la table `user`
+--
+
+CREATE TABLE `user` (
+  `id` int(11) NOT NULL,
+  `email` varchar(180) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `roles` json NOT NULL,
+  `password` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `pseudo` varchar(100) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `rang` int(11) NOT NULL,
+  `score` int(11) NOT NULL,
+  `historique_id` int(11) DEFAULT NULL,
+  `avatar_id` int(11) DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 --
 -- Déchargement des données de la table `user`
@@ -99,6 +207,154 @@ INSERT INTO `user` (`id`, `email`, `roles`, `password`, `pseudo`, `rang`, `score
 (43, 'j@mail.fr', '[]', '$2y$13$vS1njPYqNer3ZTINsHW1y.1UCNVcLdTDqUdaaJAW02luPjvfqHY4e', 'julien', 0, 0, NULL, 1),
 (44, 'nono@gmail.fr', '[]', '$2y$13$kUIkKeRhLtvmsHn4FNupcuh0LRbHEyp.xXAyxt2HJUEwuGHJRei/O', 'nono', 0, 0, NULL, 7),
 (45, 'marco@mail.fr', '[]', '$2y$13$eEwfmLxUP8sgHrQnIheU8.BvvhMVELZpdM/KOhQXrRFDlelpkcdcy', 'marco', 0, 0, NULL, 7);
+
+-- --------------------------------------------------------
+
+--
+-- Structure de la table `user_badge`
+--
+
+CREATE TABLE `user_badge` (
+  `user_id` int(11) NOT NULL,
+  `badge_id` int(11) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+--
+-- Index pour les tables déchargées
+--
+
+--
+-- Index pour la table `avatar`
+--
+ALTER TABLE `avatar`
+  ADD PRIMARY KEY (`id`);
+
+--
+-- Index pour la table `badge`
+--
+ALTER TABLE `badge`
+  ADD PRIMARY KEY (`id`);
+
+--
+-- Index pour la table `doctrine_migration_versions`
+--
+ALTER TABLE `doctrine_migration_versions`
+  ADD PRIMARY KEY (`version`);
+
+--
+-- Index pour la table `enigmes`
+--
+ALTER TABLE `enigmes`
+  ADD PRIMARY KEY (`id`);
+
+--
+-- Index pour la table `escape_games`
+--
+ALTER TABLE `escape_games`
+  ADD PRIMARY KEY (`id`);
+
+--
+-- Index pour la table `escape_games_enigmes`
+--
+ALTER TABLE `escape_games_enigmes`
+  ADD PRIMARY KEY (`escape_games_id`,`enigmes_id`),
+  ADD KEY `IDX_9776E49CA670F29C` (`escape_games_id`),
+  ADD KEY `IDX_9776E49CC462C366` (`enigmes_id`);
+
+--
+-- Index pour la table `historique`
+--
+ALTER TABLE `historique`
+  ADD PRIMARY KEY (`id`),
+  ADD KEY `IDX_EDBFD5ECC462C366` (`enigmes_id`);
+
+--
+-- Index pour la table `user`
+--
+ALTER TABLE `user`
+  ADD PRIMARY KEY (`id`),
+  ADD UNIQUE KEY `UNIQ_8D93D649E7927C74` (`email`),
+  ADD KEY `IDX_8D93D6496128735E` (`historique_id`),
+  ADD KEY `IDX_8D93D64986383B10` (`avatar_id`);
+
+--
+-- Index pour la table `user_badge`
+--
+ALTER TABLE `user_badge`
+  ADD PRIMARY KEY (`user_id`,`badge_id`),
+  ADD KEY `IDX_1C32B345A76ED395` (`user_id`),
+  ADD KEY `IDX_1C32B345F7A2C2FC` (`badge_id`);
+
+--
+-- AUTO_INCREMENT pour les tables déchargées
+--
+
+--
+-- AUTO_INCREMENT pour la table `avatar`
+--
+ALTER TABLE `avatar`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
+
+--
+-- AUTO_INCREMENT pour la table `badge`
+--
+ALTER TABLE `badge`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=14;
+
+--
+-- AUTO_INCREMENT pour la table `enigmes`
+--
+ALTER TABLE `enigmes`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
+
+--
+-- AUTO_INCREMENT pour la table `escape_games`
+--
+ALTER TABLE `escape_games`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
+
+--
+-- AUTO_INCREMENT pour la table `historique`
+--
+ALTER TABLE `historique`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
+
+--
+-- AUTO_INCREMENT pour la table `user`
+--
+ALTER TABLE `user`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=46;
+
+--
+-- Contraintes pour les tables déchargées
+--
+
+--
+-- Contraintes pour la table `escape_games_enigmes`
+--
+ALTER TABLE `escape_games_enigmes`
+  ADD CONSTRAINT `FK_9776E49CA670F29C` FOREIGN KEY (`escape_games_id`) REFERENCES `escape_games` (`id`) ON DELETE CASCADE,
+  ADD CONSTRAINT `FK_9776E49CC462C366` FOREIGN KEY (`enigmes_id`) REFERENCES `enigmes` (`id`) ON DELETE CASCADE;
+
+--
+-- Contraintes pour la table `historique`
+--
+ALTER TABLE `historique`
+  ADD CONSTRAINT `FK_EDBFD5ECC462C366` FOREIGN KEY (`enigmes_id`) REFERENCES `enigmes` (`id`);
+
+--
+-- Contraintes pour la table `user`
+--
+ALTER TABLE `user`
+  ADD CONSTRAINT `FK_8D93D6496128735E` FOREIGN KEY (`historique_id`) REFERENCES `historique` (`id`),
+  ADD CONSTRAINT `FK_8D93D64986383B10` FOREIGN KEY (`avatar_id`) REFERENCES `avatar` (`id`);
+
+--
+-- Contraintes pour la table `user_badge`
+--
+ALTER TABLE `user_badge`
+  ADD CONSTRAINT `FK_1C32B345A76ED395` FOREIGN KEY (`user_id`) REFERENCES `user` (`id`) ON DELETE CASCADE,
+  ADD CONSTRAINT `FK_1C32B345F7A2C2FC` FOREIGN KEY (`badge_id`) REFERENCES `badge` (`id`) ON DELETE CASCADE;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
