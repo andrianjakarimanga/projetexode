@@ -99,11 +99,11 @@ p {
 .av + img {
     cursor: pointer;
 }
-.av + label {
+label.av {
     position: relative;
 }
 
-.av + label::before {
+label.av::before {
     content: '';
     display: block;
     position: absolute;
@@ -115,11 +115,13 @@ p {
    background: none;
 } 
 
-
-.av + label:hover::before {
+label.av:hover::before {
     background: radial-gradient( rgba(182, 158, 210, 0.6) 0%, rgba(135, 98, 176, 0.0) 70%);
 }
 
-.av:checked + label::before {
+label.av.selected {
     background: radial-gradient( rgba(255,255,255,0.6) 0%, rgba(255,255,255,0) 70%);
+}
+/*#registration_form_agreeTerms{
+    display: none;
 }
