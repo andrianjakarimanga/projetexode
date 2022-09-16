@@ -45,10 +45,10 @@
               <div class="col-3 offset-2">
                 
               
-                  <div class="input">
+                  <div  class="input">
                     <i class="corner corner-top-left"></i>
                     <i class="corner corner-top-right"></i>
-                    {{ form_row(registrationForm.email) }}
+                    {{ form_widget(registrationForm.email)}}
                     <i class="corner corner-bottom-left"></i>
                     <i class="corner corner-bottom-right"></i>
                   </div>
@@ -56,7 +56,7 @@
                   <div class="input">
                     <i class="corner corner-top-left"></i>
                     <i class="corner corner-top-right"></i>
-                    {{ form_row(registrationForm.pseudo) }}
+                    {{ form_widget(registrationForm.pseudo) }}
                     <i class="corner corner-bottom-left"></i>
                     <i class="corner corner-bottom-right"></i>
                   </div>
@@ -64,24 +64,28 @@
                   <div class="input">
                     <i class="corner corner-top-left"></i>
                     <i class="corner corner-top-right"></i>
-                    {{ form_row(registrationForm.plainPassword, {
+                    {{ form_widget(registrationForm.plainPassword, {
             label: 'Password'
         }) }}
                     <i class="corner corner-bottom-left"></i>
                     <i class="corner corner-bottom-right"></i>
                   </div>
-   
+      
+
+               <!-- registration_form_agreeTerms"-->
+
+
        {{ form_widget(registrationForm.avatar) }}
               </div>
               
-            <div class="col-4 offset-2">
+            <div class="col-6 text-center">
               
   
               <div class="avatar py-6"> 
                   
                   {% for  avatar in avatars %}
-<label for="man">
-            <img class="avatar"src ="img/{{avatar.image}}" data-id="{{avatar.id}}" ></td>
+<label class="av" for="man">
+            <img class="avatar21" src ="img/{{avatar.image}}" data-id="{{avatar.id}}" ></td>
        </label>
         {% endfor %}
               </div>
@@ -109,12 +113,27 @@
 <script>
 
 
- let avatar = document.querySelectorAll(".avatar")
+ let avatar = document.querySelectorAll(".avatar21")
+ var selectedAvatarLabel = null;
+
  console.log(avatar);
  avatar.forEach(function(element){
  element.addEventListener("click", (e)=>{
 
-    console.log(e.currentTarget.dataset.id)
+    // si on avait deja cliqué sur un avatar, on supprime la class selected
+    if (selectedAvatarLabel != null){
+        selectedAvatarLabel.classList.remove('selected');
+    }
+
+    // on ajoute la classe selected sur le nouveau
+    e.target.parentNode.classList.add('selected');
+
+    // on mémorise sur qui on a ajoute la classe, pour pouvoir la supprimer la prochaine fois
+    selectedAvatarLabel = e.target.parentNode;
+ 
+    //console.log(e.currentTarget.dataset.id)
+
+    // enregistre l'id de l'avater choisi
     document.getElementById('registration_form_avatar').value = e.currentTarget.dataset.id;
  })
  })
