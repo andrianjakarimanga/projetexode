@@ -1,10 +1,4 @@
 <svg width="618" height="231" viewBox="0 0 618 231" fill="none" xmlns="http://www.w3.org/2000/svg">
- <style type="text/css">
-    @font-face {
-        font-family: "Batman";
-        src: url('/font/batman.ttf') format("truetype");
-    }
-</style>
 <g id="recap-game">
 <g id="Frame" clip-path="url(#clip0_319_10495)">
 <g id="Group">
@@ -40,16 +34,16 @@
 <path id="Vector_21" d="M161.738 204L161.738 195L125.29 195L125.29 204L161.738 204Z" fill="#409BFF"/>
 <g id="Derniere partie : JJ/MM/AAAA">
 <text fill="#F9F9F9" xml:space="preserve" style="white-space: pre" font-family="Orbitron" font-size="25" letter-spacing="0em"><tspan x="387.457" y="75.1"> JJ/MM/AAAA</tspan></text>
-<text fill="#F9F9F9" xml:space="preserve" style="white-space: pre" font-family="Batman" font-size="25" letter-spacing="0em"><tspan x="94" y="75.1">Derniere partie :</tspan></text>
+<text fill="#F9F9F9" xml:space="preserve" style="white-space: pre" font-family="BatmanForeverAlternate" font-size="25" letter-spacing="0em"><tspan x="94" y="75.1">DErniere partie :</tspan></text>
 </g>
 <g id="Rang : 0000">
 <text fill="#F9F9F9" xml:space="preserve" style="white-space: pre" font-family="Orbitron" font-size="25" letter-spacing="0em"><tspan x="252.252" y="134.1"> 0000</tspan></text>
-<text fill="#F9F9F9" xml:space="preserve" style="white-space: pre" font-family="Batman" font-size="25" letter-spacing="0em"><tspan x="150.347" y="134.1">Rang</tspan><tspan x="246.685" y="134.1">:</tspan></text>
-<text fill="#F9F9F9" xml:space="preserve" style="white-space: pre" font-family="Batman" font-size="25" letter-spacing="0em"><tspan x="233.648" y="134.1"> </tspan></text>
+<text fill="#F9F9F9" xml:space="preserve" style="white-space: pre" font-family="BatmanForeverAlternate" font-size="25" letter-spacing="0em"><tspan x="150.347" y="134.1">Rang</tspan><tspan x="246.685" y="134.1">:</tspan></text>
+<text fill="#F9F9F9" xml:space="preserve" style="white-space: pre" font-family="BatmanForeverAlternate" font-size="25" letter-spacing="0em"><tspan x="233.648" y="134.1"> </tspan></text>
 </g>
 <g id="Score : 0000">
 <text fill="#F9F9F9" xml:space="preserve" style="white-space: pre" font-family="Orbitron" font-size="25" letter-spacing="0em"><tspan x="310.981" y="195.1"> 0000</tspan></text>
-<text fill="#F9F9F9" xml:space="preserve" style="white-space: pre" font-family="Batman" font-size="25" letter-spacing="0em"><tspan x="187.934" y="195.1">Score :</tspan></text>
+<text fill="#F9F9F9" xml:space="preserve" style="white-space: pre" font-family="BatmanForeverAlternate" font-size="25" letter-spacing="0em"><tspan x="187.934" y="195.1">Score :</tspan></text>
 </g>
 </g>
 <path id="Vector_22" d="M584.847 43.5859H80.3789V88.5859H584.847L618 66.0892L584.847 43.5925V43.5859ZM582.1 84.0734H87.0192V48.0919H582.1L608.612 66.0826L582.1 84.0734V84.0734Z" fill="#FFB13C"/>

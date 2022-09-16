@@ -1,9 +1,10 @@
-/******************************* BODY ************************/
+
 body {
-    background-image: linear-gradient(72.44deg, rgba(16, 22, 28, 0.92) 0%, rgba(16, 22, 28, 0.76) 100%), url(../img/connexion/connexion-bg.jpg);   
+       
+    background-image: linear-gradient(72.44deg, rgba(16, 22, 28, 0.92) 0%, rgba(16, 22, 28, 0.76) 100%), url(../img/connexion/connexion-bg.jpg);
     height: 1080px;
     overflow: hidden;
-    background-position: center center; 
+    background-position: top center; 
     background-repeat: no-repeat;
 }
 /******************************* MAIN ************************/
