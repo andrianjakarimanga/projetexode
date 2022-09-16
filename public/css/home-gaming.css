@@ -1,0 +1,86 @@
+/**************************** BODY ***************************/
+
+
+/************************** NAVIGATION **************************************/
+.bg-nav{
+    background-image: url(/svg/icone/game-nav/bg-nav.svg);
+    height: 180px;
+    background-repeat: no-repeat;
+}
+
+body {
+    background-image: url(../img/home-gaming/home-gaming-bg.jpg);
+}
+
+
+h3 {
+    font-family: 'Batman', sans-serif;
+    font-size: 5rem;
+    color: #FFB13C;
+}
+
+h4 {
+    font-family: 'Batman', sans-serif;
+    font-size: 3rem;
+    color: #FFB13C;
+}
+
+
+h5 {
+    font-family: 'Orbitron', sans-serif;
+    font-size: 2.5rem;
+    color: #FF5600;
+}
+
+h6 { 
+    font-family: 'Batman', sans-serif;
+    font-size: 3.2rem;
+    color: var(--text-color-defaut);
+    
+}
+
+p {
+    font-family: 'Orbitron', sans-serif;
+    font-size: 1.4rem;
+    color: #8EC4FF;
+}
+
+
+
+#home-bienvenue,
+#home-score,
+#home-profil,
+#home-jouer {
+    position: fixed;
+}
+
+#home-bienvenue {
+    top: 200px;
+    left: 100px;
+}
+#home-score {
+    bottom: 10px;
+    left: 100px;
+}
+
+#home-profil {
+    width: 30%;
+    right: 0;
+    top: 200px;
+}
+
+#home-jouer {
+    background-image: url(../svg/graphism/bouton-play-bg.svg);
+    background-size: cover;
+    height: 10vw;
+    width: 30%;
+    right: 0;
+    bottom: 10px;
+    padding-top: 6rem;
+}
+
+#home-jouer .play a {
+    font-family: 'Batman', sans-serif;
+    font-size: 5.5rem;
+   
+}
