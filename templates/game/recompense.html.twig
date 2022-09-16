@@ -1,0 +1,332 @@
+{% extends 'base.html.twig' %}
+
+{% block stylesheets %}
+   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-iYQeCzEYFbKjA/T2uDLTpkwGzCiq6soy8tYaI1GyVh/UjpbCx/TYkiZhlZB6+fzT" crossorigin="anonymous">
+    <link rel="stylesheet" href="/css/general.css">
+    <link rel="stylesheet" href="/css/recompense-win.css">
+{% endblock %}
+
+
+{% block head%}
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Récompense win</title>
+  
+</head>
+{% endblock %}
+
+{% block body%}
+<body>
+<!--HEADER-->
+
+<header>
+    <!--METTRE DES DIV CONTAINER POUR CHAQUE SECTION-->
+    
+    <!--NAVIGATION-->
+    <nav class="navbar navbar-expand-lg">
+        <div class="container-fluid justify-content-between">
+
+            <a class="navbar-brand col-1" href="#"> <img class="img-fluid" src="img/logo/nav-logo.png" alt="logo"></a>
+            <div class="bg-nav col-3">
+                <div class="pt-5">
+                    <a href="#" class="ps-7">
+                                <img class="img-fluid" src="/svg/icone/game-nav/icone-statistique.svg" alt="icone-statistique">
+                    </a>
+                    <a href="{{ path('app_game_recompense') }}"class="ps-6">
+                                <img class="img-fluid" src="/svg/icone/game-nav/icone-trophees.svg" alt="icone-trophees">
+                    </a>
+                            <a href="{{ path('app_logout') }}" class="ps-6">
+                                <img class="img-fluid" src="/svg/icone/game-nav/icone-exit.svg" alt="icone-exit">
+
+
+                    </a>
+                </div>
+            </div>
+        </div>
+    </nav>
+    <!--FIN DE NAVIGATION-->
+</header>
+<!-- FIN DU HEADER-->
+
+
+
+<!--MAIN-->
+<main>
+    <div class="container-fluid">
+        <div class="offset-1">
+            <h2>Récompenses</h2>
+        </div>
+        <div class="row my-5 py-5">
+            <div class="col-2 offset-1">
+                <h3>Votre partie</h3>
+            </div>
+            <div class="col-8">
+                <hr>
+            </div>
+
+        </div>
+    </div>
+    
+    <div class="container">
+        
+
+            <!--CARD BIG-->
+            <div class="row mt-5">
+                
+                <!--CARD 1-->
+                <div class="col-4 card-big">
+                    <div class="card-basique-big">
+                        <div class="d-flex justify-content-around align-items-center pt-7">
+                            <div>
+                                <h4>Basique</h4>   
+                            </div>
+                            <div>
+                                <img class="img-fluid" src="/svg/recompense/icone-basique-big.svg" alt="icone basique">
+                            </div>
+                        </div>
+                        <div class=" pt-6">
+                            <p class="text-center">Skin avatar</p>
+                        </div>
+                    </div>
+                </div>
+                <!--FIN CARD 1-->
+
+                <!--CARD 2-->
+                <div class="col-4 card-big">
+                    <div class="card-rare-big px">
+                        <div class="d-flex justify-content-around align-items-center pt-7">
+                            <div>
+                                <h4>Rare</h4>   
+                            </div>
+                            <div>
+                                <img class="img-fluid" src="/svg/recompense/icone-rare-big.svg" alt="icone rare">
+                            </div>
+                        </div>
+                        <div class=" pt-6">
+                            <p class="ps-6">25€ TWITCH</p>
+                        </div>
+                    </div>
+                </div>
+                <!--FIN CARD 2-->
+
+                <!--CARD 3-->
+                <div class="col-4 card-big">
+                    <div class="card-legendaire-big">
+                        <div class="d-flex justify-content-around align-items-center pt-7">
+                            <div>
+                                <h4>Légendaire</h4>   
+                            </div>
+                            <div>
+                                <img class="img-fluid" src="/svg/recompense/icone-legendaire-big.svg" alt="icone rare">
+                            </div>
+                        </div>
+
+                        <div class=" pt-6">
+                            <p class="ps-6">-30% STEAM</p>
+                        </div>
+                    </div>
+                </div>
+                <!--FIN CARD 3-->
+                
+            </div>
+            <!-------------------------------------------------FIN CARD------------------------------------------>
+
+    </div>
+    <div class="container-fluid mt-5">
+        
+        <div class="row my-5 py-5">
+           <div class="col-4 offset-1">
+                <h3>Historique récompenses</h3>
+            </div>
+            <div class=" col-6">
+                <hr>
+            </div>
+
+        </div>
+
+
+       <!-------------------------------------------------CARD SMAL --------------------------------------->
+       <div class="row mt-5">
+        
+        <!--CARD 1-->
+        <div class="col-2 offset-1 card-smal">
+            <div class="card-legendaire-smal">
+                <div class="d-flex justify-content-around align-items-center pt-6 px-3">
+                    <div>
+                        <h4>Légendaire</h4>   
+                    </div>
+                    <div>
+                        <img class="img-fluid" src="/svg/recompense/icone-legendaire-smal.svg" alt="icone rare">
+                    </div>
+                </div>
+                <div class="ps-5 pe-6 pt-6">
+                    <p class="">-30% sur le jeu de votre choix chez notre parternaire STEAM</p>
+                </div>
+            </div>
+        </div>
+        <!--FIN CARD 1-->
+        
+        <!--CARD 2-->
+        <div class="col-2 card-smal">
+            <div class="card-basique-smal">
+                <div class="d-flex justify-content-around align-items-center pt-6">
+                    <div>
+                        <h4>Basique</h4>   
+                    </div>
+                    <div>
+                        <img class="img-fluid" src="/svg/recompense/icone-basique-smal.svg" alt="icone basique">
+                    </div>
+                </div>
+                <div class="px-6 pt-6">
+                    <p class="">Skin basique avatar</p>
+                </div>
+            </div>
+        </div>
+        <!--FIN CARD 2-->
+
+        <!--CARD 3-->
+        <div class="col-2 card-smal">
+            <div class="card-rare-smal ">
+                <div class="d-flex justify-content-around align-items-center pt-6">
+                    <div>
+                        <h4>Rare</h4>   
+                    </div>
+                    <div>
+                        <img class="img-fluid" src="/svg/recompense/icone-rare-smal.svg" alt="icone rare">
+                    </div>
+                </div>
+                <div class="ps-5 pe-6 pt-6">
+                    <p>25€ offert de la part de notre partenaire TWITCH</p>
+                </div>
+            </div>
+        </div>
+        <!--FIN CARD 3-->
+
+        <!--CARD 4-->
+        <div class="col-2 card-smal">
+            <div class="card-legendaire-smal">
+                <div class="d-flex justify-content-around align-items-center pt-6 px-3">
+                    <div>
+                        <h4>Légendaire</h4>   
+                    </div>
+                    <div>
+                        <img class="img-fluid" src="/svg/recompense/icone-legendaire-smal.svg" alt="icone rare">
+                    </div>
+                </div>
+                <div class="ps-5 pe-6 pt-6">
+                    <p class="">-30% sur le jeu de votre choix chez notre parternaire STEAM</p>
+                </div>
+            </div>
+        </div>
+        <!--FIN CARD 4-->
+
+        <!--CARD 5-->
+        <div class="col-2 card-smal">
+            <div class="card-rare-smal ">
+                <div class="d-flex justify-content-around align-items-center pt-6">
+                    <div>
+                        <h4>Rare</h4>   
+                    </div>
+                    <div>
+                        <img class="img-fluid" src="/svg/recompense/icone-rare-smal.svg" alt="icone rare">
+                    </div>
+                </div>
+                <div class="ps-5 pe-6 pt-6">
+                    <p>25€ offert de la part de notre partenaire TWITCH</p>
+                </div>
+            </div>
+        </div>
+        <!--FIN CARD 5-->
+        
+    </div>
+    <div class="row py-5">
+        
+        <!--CARD 6-->
+        <div class="col-2 offset-1 card-smal">
+            <div class="card-basique-smal">
+                <div class="d-flex justify-content-around align-items-center pt-6">
+                    <div>
+                        <h4>Basique</h4>   
+                    </div>
+                    <div>
+                        <img class="img-fluid" src="/svg/recompense/icone-basique-smal.svg" alt="icone basique">
+                    </div>
+                </div>
+                <div class="px-6 pt-6">
+                    <p class="">Skin basique avatar</p>
+                </div>
+            </div>
+        </div>
+        <!--FIN CARD 6-->
+
+        <!--CARD 7-->
+        <div class="col-2 card-smal">
+            <div class="card-rare-smal ">
+                <div class="d-flex justify-content-around align-items-center pt-6">
+                    <div>
+                        <h4>Rare</h4>   
+                    </div>
+                    <div>
+                        <img class="img-fluid" src="/svg/recompense/icone-rare-smal.svg" alt="icone rare">
+                    </div>
+                </div>
+                <div class="ps-5 pe-6 pt-6">
+                    <p>25€ offert de la part de notre partenaire TWITCH</p>
+                </div>
+            </div>
+        </div>
+        <!--FIN CARD 7-->
+
+        <!--CARD 8-->
+        <div class="col-2 card-smal">
+            <div class="card-basique-smal">
+                <div class="d-flex justify-content-around align-items-center pt-6">
+                    <div>
+                        <h4>Basique</h4>   
+                    </div>
+                    <div>
+                        <img class="img-fluid" src="/svg/recompense/icone-basique-smal.svg" alt="icone basique">
+                    </div>
+                </div>
+                <div class="px-6 pt-6">
+                    <p class="">Skin basique avatar</p>
+                </div>
+            </div>
+        </div>
+        <!--FIN CARD 8-->
+
+        <!--CARD 9-->
+        <div class="col-2 card-smal">
+            <div class="card-basique-smal">
+                <div class="d-flex justify-content-around align-items-center pt-6">
+                    <div>
+                        <h4>Basique</h4>   
+                    </div>
+                    <div>
+                        <img class="img-fluid" src="/svg/recompense/icone-basique-smal.svg" alt="icone basique">
+                    </div>
+                </div>
+                <div class="px-6 pt-6">
+                    <p class="">Skin basique avatar</p>
+                </div>
+            </div>
+        </div>
+        <!--FIN CARD 9-->
+
+    </div>
+
+    <!--FIN CARD-->
+
+    </div>
+
+
+<!--SCRIPT BOOTSTRAP-->
+
+
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js" integrity="sha384-oBqDVmMz9ATKxIep9tiCxS/Z9fNfEXiDAYTujMAeBAsjFuCZSmKbSSUnQlmh/jp3" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/js/bootstrap.min.js" integrity="sha384-7VPbUDkoPSGFnVtYi0QogXtr74QeVeeIs99Qfg5YCF+TidwNdjvaKZX19NZ/e6oz" crossorigin="anonymous"></script>
+
+</body>
+{% endblock %}

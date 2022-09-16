@@ -81,7 +81,17 @@ class GameController extends AbstractController
     }
     
 
+    #[Route('game/recompense', name: 'app_game_recompense')]
+    public function recompense(): Response
+    {
+       
+        return $this->render('game/recompense.html.twig', [
+            'controller_name' => 'GameController',
+            
+        ]); 
+
+
 }
 
 
-
+}

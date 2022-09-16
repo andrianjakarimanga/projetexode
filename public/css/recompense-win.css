@@ -1,0 +1,90 @@
+body{
+    background-color: var(--main-bg-color);
+}
+
+.bg-nav{
+    background-image: url(/svg/icone/game-nav/bg-nav.svg);
+    height: 180px;
+    background-repeat: no-repeat;
+}
+body h2{
+    font-family: "Batman";
+    font-size: 5.2rem;
+}
+body h3{
+    font-family: "Batman";
+    font-size: 3.2rem;
+}
+hr{
+    border-top: 2rem solid;
+    color: var(--color-success);
+    opacity: 1;
+    border-radius: 10px;
+  }
+
+/* ----- CARD BIG ------*/
+.card-big{
+    height: 32vw;
+
+}
+.card-basique-big{
+    background-image: url(/img/game/card-basique-big.png);
+    background-size: contain;
+    background-repeat: no-repeat;
+    height: 100%;
+}
+
+.card-rare-big{
+    background-image: url(/img/game/card-rare-big.png);
+    background-size: contain;
+    background-repeat: no-repeat;
+    height: 100%;
+}
+.card-legendaire-big{
+    background-image: url(/img/game/card-legendaire-big.png);
+    background-size: contain;
+    background-repeat: no-repeat;
+    height: 100%;
+}
+
+.card-big p{
+    font-family: 'Orbitron', sans-serif;
+    font-size: 4rem;
+}
+.card-big h4{
+    font-family: 'Orbitron', sans-serif;
+}
+
+
+/* ----- CARD SMALL ------*/
+.card-smal{
+    height: 22vw;
+}
+
+.card-basique-smal{
+    background-image: url(/img/game/card-basique-smal.png);
+    height: 100%;
+    background-size: contain;
+    background-repeat: no-repeat;
+
+}
+
+.card-rare-smal{
+    background-image: url(/img/game/card-rare-smal.png);
+    height: 100%;
+    background-size: contain;
+    background-repeat: no-repeat;
+}
+.card-legendaire-smal{
+    background-image: url(/img/game/card-legendaire-smal.png);
+    height: 100%;
+    background-size: contain;
+    background-repeat: no-repeat;
+}
+.card-smal h4{
+    font-family: 'Orbitron', sans-serif;
+}
+.card-smal p{
+    font-family: 'Orbitron', sans-serif;
+    font-size: 1.5rem;
+}
