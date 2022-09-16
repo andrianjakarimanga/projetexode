@@ -1,0 +1,145 @@
+@font-face {
+  font-family: "Press Start";
+  src: url(fonts/PressStart2P-Regular.ttf) format("truetype");
+}
+
+@font-face {
+  font-family: "vt32";
+  src: url(fonts/VT323-Regular.ttf);
+}
+
+* {
+  margin: 0;
+  padding: 0;
+}
+
+/* body {
+  background-color: black;
+  height: 100vh;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-evenly;
+}
+ */
+
+/* .gameScreen {
+  width: 1576px;
+  height: 890px;
+  border: 1px solid red;
+  overflow: hidden;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+} */
+
+#ecran-enigme {
+  /* border: 1px solid rgba(139, 139, 139, 0.336); */
+  width: 1276px;
+  height: 710px;
+
+
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+p {
+  margin-top: 20px;
+  text-align: center;
+  font-family: "Press Start", cursive;
+
+  color: whitesmoke;
+}
+
+h1 {
+  font-family: "Press Start", cursive;
+
+  color: whitesmoke;
+}
+
+span {
+  color: #ff0331;
+}
+
+#screen {
+  background: rgb(18, 18, 18);
+  border: 1px solid #ff0331;
+  border-radius: 1%;
+  width: 600px;
+  height: 600px;
+  box-shadow: 0 0 7px #ff0331, 0 0 5px #ff0331, 0 0 12px #ff0331;
+
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+#start,
+#gameOver,
+#hiddenPuzzle {
+  /* border: 3px solid white; */
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+#start a,
+#gameOver a {
+  /* display: block; */
+  /* background-color: aliceblue; */
+  /* border: 3px solid white; */
+  text-decoration: none;
+  font-family: "vt32";
+  font-size: 2rem;
+  color: rgb(255, 255, 255);
+
+  -webkit-text-stroke: 1px rgba(0, 0, 0, 0.461);
+}
+
+#gameOver {
+  text-shadow: 0 0 12px white;
+}
+
+#start p {
+  font-size: 2rem;
+  -webkit-text-stroke: 1px rgba(0, 0, 0, 0.461);
+}
+
+#start a:hover {
+  color: red;
+}
+
+#hiddenPuzzle {
+  height: 600px;
+  width: 600px;
+
+  border: 1px solid #03d1ff;
+  border-radius: 1%;
+  box-shadow: 0 0 7px #03d1ff, 0 0 5px #03d1ff, 0 0 12px #03d1ff;
+}
+
+img {
+  object-fit: cover;
+}
+
+.puzzleReveal {
+  background: url("../../Puzzle/imagesPuzzle/AffichePuzzle01.png");
+  animation: fadeIn 10s;
+  animation-fill-mode: forwards;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+
+  to {
+    opacity: 1;
+  }
+}

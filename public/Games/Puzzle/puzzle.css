@@ -1,0 +1,97 @@
+#ecran-enigme {
+  width: 1276px;
+  height: 710px;
+  /* border: 1px solid rgba(255, 0, 0, 0.979); */
+
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+#table {
+  display: table;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+#row1,
+#row2,
+#row3 {
+  display: table-row;
+}
+
+.block1,
+.block2,
+.block3,
+.block4,
+.block5,
+.block6,
+.block7,
+.block8,
+.block9 {
+  display: table-cell;
+  border: 1px solid black;
+  /* border-radius: 2%; */
+
+  width: 210px;
+  height: 210px;
+  background-image: url(imagesPuzzle/AffichePuzzle01.png);
+
+  cursor: pointer;
+}
+
+.block1 {
+  background-position: left top;
+}
+
+.block2 {
+  background-position: center top;
+}
+
+.block3 {
+  background-position: right top;
+}
+
+.block4 {
+  background-position: left center;
+}
+
+.block5 {
+  background-position: center center;
+}
+
+.block6 {
+  background-position: right center;
+}
+
+.block7 {
+  background-position: left bottom;
+}
+
+.block8 {
+  background-position: center bottom;
+}
+
+.block9 {
+  background: black;
+  /* background: url("09.png"); */
+  cursor: default;
+}
+
+.solved {
+  background: url("imagesPuzzle/AffichePuzzle01_SolvedBlock.png");
+  animation: fadeIn 2s;
+}
+
+@keyframes fadeIn {
+  0% {
+    opacity: 0;
+  }
+
+  100% {
+    opacity: 1;
+  }
+}

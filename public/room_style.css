@@ -1,0 +1,212 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  width: 100%;
+  height: 100%;
+}
+
+body {
+  background-color: black !important;
+  overflow: hidden;
+}
+
+main {
+  background-image: url(images/Vue_room.jpg);
+
+  width: 1920px;
+  height: 1080px;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+
+
+/* BTN OPEN VUES */
+#zoomAfficheBtn {
+  border: 1px solid white;
+  position: absolute;
+  top: 250px;
+  left: 1120px;
+  width: 500px;
+  height: 450px;
+}
+
+#zoomCoffresBtn {
+  border: 1px solid white;
+  position: absolute;
+  top: 400px;
+  left: 150px;
+  width: 280px;
+  height: 320px;
+}
+
+#zoomSnakeBtn {
+  border: 1px solid white;
+  position: absolute;
+  top: 400px;
+  left: 450px;
+  width: 180px;
+  height: 220px;
+}
+
+#zoomBoitierBtn {
+  border: 1px solid white;
+  position: absolute;
+  top: 428px;
+  left: 784px;
+  width: 50px;
+  height: 70px;
+}
+
+/* .zoom:hover {
+  background-color: rgba(119, 119, 119, 0.123);
+} */
+
+/************************** VUES ***********************/
+
+/* BG IMAGES */
+#vueAffiche {
+  background-image: url(images/Vue_affiche.jpg);
+}
+
+#vueSnake {
+  background-image: url(images/Vue_Snake.jpg);
+}
+
+#vueBoitier {
+  background-image: url(images/Vue_Boitier.jpg);
+}
+
+#vueCoffres {
+  background-image: url(images/Vue_Coffres.jpg);
+}
+
+.modal {
+  /* border: 2px solid black; */
+  width: 1920px;
+  height: 1080px;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.hidden {
+  display: none;
+}
+
+
+
+/********************* POPUP *********************/
+
+/* BTN OPEN POPUP */
+#openPuzzleBtn {
+  border: 1px solid rgb(255, 66, 66);
+  position: absolute;
+  width: 384px;
+  height: 89px;
+  bottom: 154px;
+  left: 492px;
+}
+
+#openPuzzleBtn:hover {
+  background-image: url('images/objet_affiche-light.png');
+  transition: all 1 ease;
+}
+
+#openSnakeBtn {
+  border: 1px solid rgb(255, 7, 7);
+  position: absolute;
+  bottom: 527px;
+  left: 900px;
+  width: 261px;
+  height: 148px;
+  /* top: 420px;
+  left: 975px; */
+}
+
+#openSnakeBtn:hover {
+  background-image: url('images/objet_snake-light.png');
+}
+
+#openBoitierBtn {
+  border: 1px solid rgb(255, 24, 24);
+  position: absolute;
+  bottom: 461px;
+  left: 781px;
+  width: 83px;
+  height: 143px;
+
+}
+
+#openBoitierBtn:hover {
+  background-image: url('images/objet_boitier-light.png');
+}
+
+#openHanoiBtn {
+  border: 1px solid rgb(255, 36, 36);
+
+  position: absolute;
+  bottom: 280px;
+  left: 747px;
+  width: 236px;
+  height: 252px;
+
+}
+
+#openHanoiBtn:hover {
+  background-image: url('images/objet_coffre-light.png');
+}
+
+/* POPUP */
+#popupPuzzle,
+#popupSnake,
+#popupHanoi,
+#popupBoitier {
+  background-color: rgba(0, 0, 0, 0.557);
+  /* border: 1px solid yellow; */
+  width: 1920px;
+  height: 1080px;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+
+
+
+
+/* BTN CLOSE VUES */
+.closeVue {
+  color: white;
+  padding: 20px;
+  cursor: pointer;
+  position: absolute;
+  top: 5%;
+  left: 96%;
+}
+
+/* Btn Close PopUp */
+.closePopUp {
+  padding: 20px;
+  color: rgb(253, 147, 7);
+  cursor: pointer;
+  position: absolute;
+  top: 5%;
+  left: 96%;
+  z-index: 50;
+}
+
+
+
+.puzzleScreen {
+  width: 1920px;
+  height: 1080px;
+}

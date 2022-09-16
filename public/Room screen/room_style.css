@@ -1,0 +1,42 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  height: 100%;
+  width: 100%;
+}
+
+body {
+  background-image: url(images/Version_3.jpg);
+  background-repeat: no-repeat;
+  background-size: 1400px;
+  /* height: 1920px;
+  width: 1080px; */
+  overflow: hidden;
+  background-position: center center;
+  position: relative;
+  background-color: black;
+}
+
+.rightSide {
+  background-color: rgba(192, 192, 192, 0.021);
+  width: 40vw;
+  height: 70vh;
+  position: absolute;
+  left: 50%;
+  transform: translate(80%);
+}
+
+.zoom1 {
+  background-image: url(images/Vue_affiche.jpg);
+}
+
+.btn-close {
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 99;
+}

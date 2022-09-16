@@ -1,0 +1,15 @@
+body {
+    margin: 0;
+    overflow: hidden;
+}
+
+#ecran-enigme {
+    width: 1276px;
+    height: 710px;
+    border: 1px solid rgba(255, 0, 0, 0.979);
+
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}

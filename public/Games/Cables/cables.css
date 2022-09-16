@@ -1,0 +1,83 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+/* body {
+    background-color: black;
+    height: 100vh;
+    overflow: hidden;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-evenly;
+} */
+
+/* #pop-up-enigme {
+    width: 1576px;
+    height: 890px;
+    border: 1px solid white;
+
+    position: relative;
+} */
+
+#ecran-enigme {
+    width: 1276px;
+    height: 710px;
+
+    border: 1px solid white;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+#lightsContainer {
+    background-color: rgb(21, 21, 21);
+    width: 100%;
+    display: inline-block;
+    text-align: center;
+
+    border: 5px solid white;
+    box-sizing: border-box;
+}
+
+#buttonsContainer {
+    width: 100%;
+    display: inline-block;
+    text-align: center;
+}
+
+button {
+    margin-top: 50px;
+    width: 50px;
+    display: inline;
+    font-weight: bolder;
+}
+
+.btn {
+    display: inline-block;
+    /* border: 1px solid red; */
+    width: 200px;
+}
+
+
+
+.light {
+
+    display: inline-block;
+    width: 205px;
+    height: 305px;
+
+}
+
+img {
+    width: 205px;
+    height: 305px;
+    object-fit: cover
+}

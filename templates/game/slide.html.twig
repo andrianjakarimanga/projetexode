@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="/Games/Lumière/toggleLight.css">
+    <link rel="stylesheet" href="/room_style.css">
+
+</head>
+
+<body>
+
+
+    <main>
+
+        <div id="toggleLight"> </div>
+        <!----------------------- ROOM ------------------------>
+
+        <!-- Btn Imgages, au clic ouvertures des VUES -->
+        <div id="zoomCoffresBtn" class="zoom coffres hidden "></div>
+        <div id="zoomSnakeBtn" class="zoom snake hidden"></div>
+        <div id="zoomBoitierBtn" class="zoom boitier hidden"></div>
+        <div id="zoomAfficheBtn" class="zoom affiche hidden"></div>
+
+
+
+
+        <!----------------------- VUES ------------------------->
+
+
+
+        <!-- VUE SNAKE -->
+
+        <div class="modal hidden" id="vueSnake">
+            <span class="closeVue closeVueSnakeBtn">X</span>
+
+            <!-- By clic ouverture snake -->
+            <div id="openSnakeBtn" class="zoom"></div>
+
+            <!-- PopUp Snake -->
+            <div id="popupSnake" class="hidden">
+                <span class="closePopUp closePopUpSnakeBtn">X</span>
+                <div id="gameScreenSnake" class="snakeScreen">
+                    <!-- Chargement du snake ici -->
+                </div>
+            </div>
+        </div>
+
+
+        <!-- VUE AFFICHE -->
+
+        <div class="modal hidden" id="vueAffiche">
+            <span class="closeVue closeVueAfficheBtn">X</span>
+
+            <!-- Btn puzzle opening -->
+            <div id="openPuzzleBtn" class="zoom"></div>
+
+            <!-- PopUp Puzzle -->
+            <div id="popupPuzzle" class="hidden">
+                <span class="closePopUp closePopUpAfficheBtn">X</span>
+
+                <div id="gameScreenPuzzle" class="puzzleScreen">
+                    <!-- Chargement du puzzle ici -->
+                </div>
+            </div>
+        </div>
+
+
+
+
+        <!-- VUE COFFRES -->
+
+        <div class="modal hidden" id="vueCoffres">
+            <span class="closeVue closeVueCoffresBtn">X</span>
+
+
+            <!-- By clic ouverture tour Hanoï -->
+            <div id="openHanoiBtn" class="zoom"></div>
+
+            <!-- PopUp Hanoi -->
+            <div id="popupHanoi" class="hidden">
+                <span class="closePopUp closePopUpHanoiBtn hidden">X</span>
+                <div id="gameScreenHanoi" class="hanoiScreen">
+                    <!-- Chargement tour d'hanoï ici -->
+                </div>
+            </div>
+        </div>
+
+
+
+        <!-- VUE BOITIER -->
+
+        <div class="modal hidden" id="vueBoitier">
+            <span class="closeVue closeVueBoitierBtn">X</span>
+
+
+            <!-- By clic ouverture boitier éléctrique -->
+            <div id="openBoitierBtn" class="zoom"></div>
+
+            <!-- PopUp Boitier cables -->
+            <div id="popupBoitier" class="hidden">
+                <span class="closePopUp closePopUpBoitierBtn">X</span>
+                <div id="gameScreenBoitier" class="boitierScreen">
+                    <!-- Chargement énigme ici -->
+                </div>
+            </div>
+        </div>
+
+
+
+    </main>
+
+
+
+
+
+
+    <script src="https://code.jquery.com/jquery-3.6.1.js"
+        integrity="sha256-3zlB5s2uwoUzrXK3BT7AX3FyvojsraNFxCc2vC/7pNI=" crossorigin="anonymous"></script>
+
+
+
+    <script src="/room_main.js"></script>
+    <script src="/Games/Lumière/toggleLight.js"></script>
+</body>
+
+</html>
