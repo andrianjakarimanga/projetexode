@@ -44,7 +44,7 @@ p {
     font-size: 2.4rem;
     padding-left: 3rem;
     padding-right: 3rem;    
-    color: var(--text-color);
+    color: var(--text-color-defaut);
     z-index: 10;
 }
 
@@ -96,14 +96,13 @@ p {
     border-radius: 50px;
 }
 
-.av + img {
+[type=radio] + img {
     cursor: pointer;
 }
-label.av {
+[type=radio] + label {
     position: relative;
 }
-
-label.av::before {
+[type=radio] + label::before {
     content: '';
     display: block;
     position: absolute;
@@ -112,16 +111,13 @@ label.av::before {
     top:-12%;
     left: -12%;
     z-index: -1;
-   background: none;
+    background: none;
 } 
 
-label.av:hover::before {
+[type=radio] + label:hover::before {
     background: radial-gradient( rgba(182, 158, 210, 0.6) 0%, rgba(135, 98, 176, 0.0) 70%);
 }
 
-label.av.selected {
+[type=radio]:checked + label::before {
     background: radial-gradient( rgba(255,255,255,0.6) 0%, rgba(255,255,255,0) 70%);
-}
-/*#registration_form_agreeTerms{
-    display: none;
-}
+} 
