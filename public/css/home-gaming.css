@@ -1,16 +1,16 @@
 /**************************** BODY ***************************/
 
-
+body {
+    background-color: black ;
+}
 /************************** NAVIGATION **************************************/
 .bg-nav{
     background-image: url(/svg/icone/game-nav/bg-nav.svg);
+    background-color: black;
     height: 180px;
     background-repeat: no-repeat;
 }
 
-body {
-    background-image: url(../img/home-gaming/home-gaming-bg.jpg);
-}
 
 
 h3 {
@@ -49,6 +49,7 @@ p {
 
 #home-bienvenue,
 #home-score,
+#home-face,
 #home-profil,
 #home-jouer {
     position: fixed;
@@ -62,6 +63,12 @@ p {
     bottom: 10px;
     left: 100px;
 }
+
+#home-face {
+    bottom: 200px;
+    left : 850px;
+}
+
 
 #home-profil {
     width: 30%;
