@@ -9,12 +9,14 @@ function switch1() {
             group1[i].src = "/Games/Cables/imagesCables/FilOn.gif";
             group1[i].classList.remove('off');
             group1[i].classList.add('on');
-            input1.textContent = 'ON';
+            input1.classList.remove('imgBtnOff')
+            input1.classList.add('imgBtnOn')
         } else {
             group1[i].src = "/Games/Cables/imagesCables/FilOff.png";
             group1[i].classList.remove('on');
             group1[i].classList.add('off');
-            input1.textContent = 'OFF';
+            input1.classList.remove('imgBtnOn')
+            input1.classList.add('imgBtnOff')
         }
     }
     checkIfWin()
@@ -32,13 +34,15 @@ function switch2() {
             group2[i].src = "/Games/Cables/imagesCables/FilOn.gif";
             group2[i].classList.remove('off');
             group2[i].classList.add('on');
-            input2.textContent = 'ON';
+            input2.classList.remove('imgBtnOff')
+            input2.classList.add('imgBtnOn')
 
         } else {
             group2[i].src = "/Games/Cables/imagesCables/FilOff.png";
             group2[i].classList.remove('on');
             group2[i].classList.add('off');
-            input2.textContent = 'OFF';
+            input2.classList.remove('imgBtnOn')
+            input2.classList.add('imgBtnOff')
         }
     }
     checkIfWin()
@@ -56,12 +60,14 @@ function switch3() {
             group3[i].src = "/Games/Cables/imagesCables/FilOn.gif";
             group3[i].classList.remove('off');
             group3[i].classList.add('on');
-            input3.textContent = 'ON';
+            input3.classList.remove('imgBtnOff')
+            input3.classList.add('imgBtnOn')
         } else {
             group3[i].src = "/Games/Cables/imagesCables/FilOff.png";
             group3[i].classList.remove('on');
             group3[i].classList.add('off');
-            input3.textContent = 'OFF';
+            input3.classList.remove('imgBtnOn')
+            input3.classList.add('imgBtnOff')
         }
     }
     checkIfWin();
@@ -79,12 +85,14 @@ function switch4() {
             group4[i].src = "/Games/Cables/imagesCables/FilOn.gif";
             group4[i].classList.remove('off');
             group4[i].classList.add('on');
-            input4.textContent = 'ON';
+            input4.classList.remove('imgBtnOff')
+            input4.classList.add('imgBtnOn')
         } else {
             group4[i].src = "/Games/Cables/imagesCables/FilOff.png";
             group4[i].classList.remove('on');
             group4[i].classList.add('off');
-            input4.textContent = 'OFF';
+            input4.classList.remove('imgBtnOn')
+            input4.classList.add('imgBtnOff')
         }
     }
     checkIfWin()
@@ -102,12 +110,14 @@ function switch5() {
             group5[i].src = "/Games/Cables/imagesCables/FilOn.gif";
             group5[i].classList.remove('off');
             group5[i].classList.add('on');
-            input5.textContent = 'ON';
+            input5.classList.remove('imgBtnOff')
+            input5.classList.add('imgBtnOn')
         } else {
             group5[i].src = "/Games/Cables/imagesCables/FilOff.png";
             group5[i].classList.remove('on');
             group5[i].classList.add('off');
-            input5.textContent = 'OFF';
+            input5.classList.remove('imgBtnOn')
+            input5.classList.add('imgBtnOff')
         }
     }
     checkIfWin()
@@ -124,12 +134,14 @@ function switch6() {
             group6[i].src = "/Games/Cables/imagesCables/FilOn.gif";
             group6[i].classList.remove('off');
             group6[i].classList.add('on');
-            input6.textContent = 'ON';
+            input6.classList.remove('imgBtnOff')
+            input6.classList.add('imgBtnOn')
         } else {
             group6[i].src = "/Games/Cables/imagesCables/FilOff.png";
             group6[i].classList.remove('on');
             group6[i].classList.add('off');
-            input6.textContent = 'OFF';
+            input6.classList.remove('imgBtnOn')
+            input6.classList.add('imgBtnOff')
         }
     }
     checkIfWin();
@@ -146,6 +158,19 @@ function checkIfWin() {
         document.querySelector('.cable5').classList.contains('on') &&
         document.querySelector('.cable6').classList.contains('on')
     ) {
-        alert('Bravo! Porte dévérouillée');
+
+        let finalTime = 1800 - timeGame;
+
+        alert('Bravo! Porte dévérouillée' + finalTime);
+
+
+        fetch('/game/saveresult', { method: 'POST', body: JSON.stringify({ "time": finalTime }) }).then(function (headers) {
+            return headers.json();
+        }).then(function (body) {
+            if (body.result == "ok") {
+                document.location.href = " "
+            }
+        })
+
     }
 }
