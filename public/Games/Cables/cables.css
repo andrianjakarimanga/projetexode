@@ -4,29 +4,29 @@
 }
 
 /* body {
-    background-color: black;
-    height: 100vh;
-    overflow: hidden;
-
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: space-evenly;
-} */
+      background-color: black;
+      height: 100vh;
+      overflow: hidden;
+  
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: space-evenly;
+  } */
 
 /* #pop-up-enigme {
-    width: 1576px;
-    height: 890px;
-    border: 1px solid white;
-
-    position: relative;
-} */
+      width: 1576px;
+      height: 890px;
+      border: 1px solid white;
+  
+      position: relative;
+  } */
 
 #ecran-enigme {
     width: 1276px;
     height: 710px;
-
-    border: 1px solid white;
+    background-color: rgba(0, 0, 0, 0.596);
+    border: 1px solid rgba(255, 255, 255, 0.069);
     position: absolute;
     top: 50%;
     left: 50%;
@@ -38,12 +38,12 @@
 }
 
 #lightsContainer {
-    background-color: rgb(21, 21, 21);
+    background-image: url("imagesCables/cablesBackground.png");
     width: 100%;
     display: inline-block;
     text-align: center;
 
-    border: 5px solid white;
+    border: 5px solid rgba(255, 255, 255, 0.069);
     box-sizing: border-box;
 }
 
@@ -53,31 +53,45 @@
     text-align: center;
 }
 
-button {
-    margin-top: 50px;
-    width: 50px;
-    display: inline;
-    font-weight: bolder;
+.imgBtnOff {
+    /* border: 1px solid yellow; */
+    margin: auto;
+    width: 120px;
+    height: 32px;
+    /* display: inline;
+    font-weight: bolder; */
+    background-image: url("imagesCables/btnOFF.png");
+    background-size: cover;
+    background-position: center;
+}
+
+.imgBtnOn {
+    /* border: 1px solid yellow; */
+    margin: auto;
+    width: 120px;
+    height: 32px;
+    /* display: inline;
+      font-weight: bolder; */
+    background-image: url("imagesCables/btnON.png");
+    background-size: cover;
+    background-position: center;
 }
 
 .btn {
+    margin-top: 30px;
     display: inline-block;
     /* border: 1px solid red; */
-    width: 200px;
+    width: 207px;
 }
 
-
-
 .light {
-
     display: inline-block;
     width: 205px;
     height: 305px;
-
 }
 
 img {
     width: 205px;
     height: 305px;
-    object-fit: cover
+    object-fit: cover;
 }

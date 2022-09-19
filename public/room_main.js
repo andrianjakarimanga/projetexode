@@ -3,6 +3,8 @@ var gamePuzzleIsDone = false;
 var gameHanoiIsDone = false;
 var gameBoiteIsDone = false;
 
+var timeGame = 0;
+
 
 /**************************************** OPEN VUES ***************************************/
 
