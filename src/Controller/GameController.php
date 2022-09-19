@@ -16,8 +16,24 @@ class GameController extends AbstractController
     #[Route('game/index', name: 'app_game_index')]
     public function index(): Response
     {
+
+        $score = 0;
+        $rang = 0;
+        $date = 0;
+        $user = $this->getUser();
+        foreach($user->getHistorique() as $row){
+            //if(date($row->getScore()->getTimestamp()) > $score){
+                $score = $row->getScore()->getTimestamp();
+                $rang = $row->getRang();
+                $date = $row->getLastGame();
+            //}
+        };
+   
         return $this->render('game/index.html.twig', [
             'controller_name' => 'GameController',
+            'score' => gmdate("H:i:s", $score),
+            'rang' => $rang,
+            'date' => $date,
         ]);
     }
 
@@ -76,7 +92,7 @@ class GameController extends AbstractController
         return $this->render('game/win.html.twig', [
             'controller_name' => 'GameController',
             /* 'temps_total ' => $histo->getTempsTotal(),
-            'rang' => $user->getRang() */
+            'rang' => $historique->getRang() */
         ]); 
     }
     
@@ -91,7 +107,60 @@ class GameController extends AbstractController
         ]); 
 
 
-}
+    }
 
+    #[Route('game/statistiques', name: 'app_game_statistiques')]
+    public function statistiques(HistoriqueRepository $HistoriqueRepository ): Response
+    {
+
+        $tabScore = [
+            0 => [
+                'min' => '0:00:00',
+                'max' => '00:06:00',
+            ],
+            1 => [
+                'min' => '00:06:01',
+                'max' => '00:12:00',
+            ],
+            
+            2 => [
+                'min' => '00:12:01',
+                'max' => '00:18:00',
+            ],
+
+            3 => [
+                'min' => '00:18:01',
+                'max' => '00:24:00',
+            ],
+
+            4 => [
+                'min' => '00:24:01',
+                'max' => '00:30:00',
+            ]
+            ]; 
+
+            $score = 0;
+            $rang = 0;
+            $user = $this->getUser();
+            foreach($user->getHistorique() as $row){
+                //if(date($row->getScore()->getTimestamp()) > $score){
+                    $score = $row->getScore()->getTimestamp();
+                    $rang = $row->getRang();
+    
+                //}
+            };
+       
+            return $this->render('game/statistiques.html.twig', [
+                'controller_name' => 'GameController',
+                'score' => gmdate("H:i:s", $score),
+                'rang' => $rang,
+            ]); 
+
+
+            if ($score == $tabScore[0]){
+
+            } 
+
+}
 
 }

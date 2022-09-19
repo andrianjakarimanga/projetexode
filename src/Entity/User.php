@@ -34,25 +34,24 @@ class User implements UserInterface, PasswordAuthenticatedUserInterface
     #[ORM\Column(length: 100)]
     private ?string $pseudo = null;
 
-    #[ORM\Column]
-    private ?int $Rang = null;
-
-    #[ORM\Column]
-    private ?int $score = null;
-
-    #[ORM\ManyToOne(inversedBy: 'User')]
-    private ?Historique $historique = null;
-
     #[ORM\ManyToMany(targetEntity: Badge::class, inversedBy: 'users')]
     private Collection $Badge;
 
     #[ORM\ManyToOne(inversedBy: 'user')]
     private ?Avatar $avatar = null;
 
+    #[ORM\OneToMany(mappedBy: 'user', targetEntity: Historique::class)]
+    private Collection $Score;
+
+    #[ORM\OneToMany(mappedBy: 'user', targetEntity: Historique::class)]
+    private Collection $historique;
+
     public function __construct()
     {
         $this->Badge = new ArrayCollection();
         $this->Avatar = new ArrayCollection();
+        $this->Score = new ArrayCollection();
+        $this->historique = new ArrayCollection();
     }
 
     public function getId(): ?int
@@ -156,42 +155,6 @@ class User implements UserInterface, PasswordAuthenticatedUserInterface
         return $this;
     }
 
-    public function getRang(): ?int
-    {
-        return $this->Rang;
-    }
-
-    public function setRang(int $Rang): self
-    {
-        $this->Rang = $Rang;
-
-        return $this;
-    }
-
-    public function getScore(): ?int
-    {
-        return $this->score;
-    }
-
-    public function setScore(int $score): self
-    {
-        $this->score = $score;
-
-        return $this;
-    }
-
-    public function getHistorique(): ?Historique
-    {
-        return $this->historique;
-    }
-
-    public function setHistorique(?Historique $historique): self
-    {
-        $this->historique = $historique;
-
-        return $this;
-    }
-
     /**
      * @return Collection<int, Badge>
      */
@@ -230,6 +193,58 @@ class User implements UserInterface, PasswordAuthenticatedUserInterface
     public function setAvatar(?Avatar $avatar): self
     {
         $this->avatar = $avatar;
+
+        return $this;
+    }
+
+    public function addScore(Historique $score): self
+    {
+        if (!$this->Score->contains($score)) {
+            $this->Score->add($score);
+            $score->setUser($this);
+        }
+
+        return $this;
+    }
+
+    public function removeScore(Historique $score): self
+    {
+        if ($this->Score->removeElement($score)) {
+            // set the owning side to null (unless already changed)
+            if ($score->getUser() === $this) {
+                $score->setUser(null);
+            }
+        }
+
+        return $this;
+    }
+
+    /**
+     * @return Collection<int, Historique>
+     */
+    public function getHistorique(): Collection
+    {
+        return $this->historique;
+    }
+
+    public function addHistorique(Historique $historique): self
+    {
+        if (!$this->historique->contains($historique)) {
+            $this->historique->add($historique);
+            $historique->setUser($this);
+        }
+
+        return $this;
+    }
+
+    public function removeHistorique(Historique $historique): self
+    {
+        if ($this->historique->removeElement($historique)) {
+            // set the owning side to null (unless already changed)
+            if ($historique->getUser() === $this) {
+                $historique->setUser(null);
+            }
+        }
 
         return $this;
     }
