@@ -168,7 +168,9 @@ function checkIfWin() {
             return headers.json();
         }).then(function (body) {
             if (body.result == "ok") {
-                document.location.href = " "
+                document.location.href = "game/win"
+            } else {
+                // 404 
             }
         })
 
