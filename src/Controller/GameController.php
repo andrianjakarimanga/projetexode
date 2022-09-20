@@ -45,15 +45,14 @@ class GameController extends AbstractController
         ]);
     }
 
-    /*#[Route('game/saveresult', name: 'app_game_save')]
-    public function saveresult(EntityManagerInterface $em): JsonResponse
+    #[Route('game/saveresult', name: 'app_game_save')]
+    public function saveresult(EntityManagerInterface $em , \DateTimeInterface $LastGame , \DateTimeInterface $score , string $rang): JsonResponse
     {
         $history = new Historique();
-        $history->setEnigmes();
-        $history->setLastGame();
-        $history->setNombreDIndices();
-        $history->setScore();
-        $history->setTempsTotal();
+        $history->setLastGame($LastGame);
+        $history->setScore($score);
+        $history->setRang($rang);
+
 
         $em->persist($history);
         $em->flush();
@@ -61,14 +60,13 @@ class GameController extends AbstractController
         $winLose = false;
 
         $user = $this->getUser();
-        $user->setScore(100);
-        $user->setRang(10);
         
         $em->persist($user);
         $em->flush();
 
-        return new JsonResponse(['result' => $winLose]);
-    }*/
+        return new JsonResponse(['result' => 'ok']);
+    }
+
 
     #[Route('game/lost', name: 'app_game_lost')]
     public function lost(HistoriqueRepository $HistoriqueRepository): Response
@@ -149,17 +147,21 @@ class GameController extends AbstractController
     
                 //}
             };
+
+            $rang = 24;
        
+        
+
+            // if ($score >= 0  && $score <= 360){
+             //   $rang
+
+             //} 
+            
             return $this->render('game/statistiques.html.twig', [
                 'controller_name' => 'GameController',
                 'score' => gmdate("H:i:s", $score),
                 'rang' => $rang,
             ]); 
-
-
-            if ($score == $tabScore[0]){
-
-            } 
 
 }
 
