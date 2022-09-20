@@ -60,9 +60,9 @@ function game() {
     }
   }
 
-  /*  else {
-     gameOver();
-   } */
+  else {
+    gameOver();
+  }
 }
 
 
@@ -135,6 +135,10 @@ function checkIfWin() {
     puzzle.style.display = "block";
     screen.style.display = "none";
 
+    document.getElementById("text").innerHTML = "You did it !";
+    document.querySelector('.closePopUpSnakeBtn').classList.remove('hidden'); // Active le bouton pour fermer le jeu
+
+
     gameSnakeIsDone = true;
   }
 
@@ -173,12 +177,24 @@ function startGame() {
 function gameOver() {
   clearInterval(intervalID);
   startGameBtn.style.display = "none";
-  gameScreen.style.opacity = "20%";
-  newGameBtn.style.display = "block";
+  /* gameScreen.style.opacity = "20%";
+  newGameBtn.style.display = "block"; */
 
-  setInterval(() => {
+
+  snake = [[0, 0]]; // Tableau des positions des carrés du serpent. Tête en début de tableau
+
+  snakeX = 1; // direction initiale du serpent, vers la droite
+  snakeY = 0;
+  tour = 0;
+
+  majScore(50);
+  startGame();
+
+
+
+  /* setInterval(() => {
     location.reload();
-  }, 2200);
+  }, 2200); */
 }
 
 

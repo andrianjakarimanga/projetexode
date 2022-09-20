@@ -113,11 +113,13 @@ main {
   height: 89px;
   bottom: 154px;
   left: 492px;
+  transition: opacity 1s ease-out;
+  opacity: 0;
 }
 
 #openPuzzleBtn:hover {
   background-image: url('images/objet_affiche-light.png');
-  transition: all 1 ease;
+  opacity: 1;
 }
 
 #openSnakeBtn {
@@ -127,12 +129,13 @@ main {
   left: 900px;
   width: 261px;
   height: 148px;
-  /* top: 420px;
-  left: 975px; */
+  transition: opacity 1s ease-out;
+  opacity: 0;
 }
 
 #openSnakeBtn:hover {
   background-image: url('images/objet_snake-light.png');
+  opacity: 1;
 }
 
 #openBoitierBtn {
@@ -142,11 +145,13 @@ main {
   left: 781px;
   width: 83px;
   height: 143px;
-
+  transition: opacity 1s ease-out;
+  opacity: 0;
 }
 
 #openBoitierBtn:hover {
   background-image: url('images/objet_boitier-light.png');
+  opacity: 1;
 }
 
 #openHanoiBtn {
@@ -157,11 +162,13 @@ main {
   left: 747px;
   width: 236px;
   height: 252px;
-
+  transition: opacity 1s ease-out;
+  opacity: 0;
 }
 
 #openHanoiBtn:hover {
   background-image: url('images/objet_coffre-light.png');
+  opacity: 1;
 }
 
 /* POPUP */
@@ -193,6 +200,11 @@ main {
   left: 96%;
 }
 
+.closeVue:hover {
+  text-shadow: 1px 1px 2px rgb(255, 115, 15), 0 0 1em rgb(253, 147, 7),
+    0 0 0.2em rgb(253, 147, 7);
+}
+
 /* Btn Close PopUp */
 .closePopUp {
   padding: 20px;
@@ -202,6 +214,11 @@ main {
   top: 5%;
   left: 96%;
   z-index: 50;
+}
+
+.closeVue:hover {
+  text-shadow: 1px 1px 2px rgb(255, 115, 15), 0 0 1em rgb(253, 147, 7),
+    0 0 0.2em rgb(253, 147, 7);
 }
 
 
