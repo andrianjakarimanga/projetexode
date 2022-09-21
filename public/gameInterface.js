@@ -20,7 +20,7 @@ function stopSon() {
     document.getElementById("sonChrono").pause()
 } */
 
-setTimeout(timer, 10000);
+setTimeout(timer, 20000);
 /* timer(); */
 
 function timer() {

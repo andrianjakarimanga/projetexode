@@ -164,16 +164,16 @@ function checkIfWin() {
         alert('Bravo! Porte dévérouillée en ' + finalTime + 'secondes !');
         document.querySelector('.closePopUpBoitierBtn').classList.remove('hidden');
 
+        /* document.location.href = "/game/win" */
 
 
-
-        /* fetch('/game/saveresult', { method: 'POST', body: JSON.stringify({ "time": finalTime }) }).then(function (headers) {
-            return headers.json();
-        }).then(function (body) {
-            if (body.result == "ok") {
-                document.location.href = " "
-            }
-        }) */
+        /*  fetch('/game/saveresult', { method: 'POST', body: JSON.stringify({ "time": finalTime }) }).then(function (headers) {
+             return headers.json();
+         }).then(function (body) {
+             if (body.result == "ok") {
+                 document.location.href = ""
+             }
+         }) */
 
     }
 }

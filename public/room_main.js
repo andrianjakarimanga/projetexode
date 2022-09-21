@@ -17,8 +17,8 @@ function turnOfftheLightAndStartGame() {
     document.querySelector(':root').classList.add("lumiere");
 }
 
-setTimeout(animIntroSynopsis, 10000);
-setTimeout(turnOfftheLightAndStartGame, 10000)
+setTimeout(animIntroSynopsis, 20000);
+setTimeout(turnOfftheLightAndStartGame, 20000)
 /* Fin Intro */
 
 
@@ -162,12 +162,30 @@ let closeVueBoitierBtn = document.querySelector('.closeVueBoitierBtn');
 closeVueBoitierBtn.addEventListener('click', function () {
     vueBoitier.classList.add('hidden');
 });
-/* CLOSE BTN POPUP BOITIER */
+
+
+/* CLOSE BTN POPUP BOITIER */ /* --> OUVERTURE PORTE */ /* --> Page Win */
 let closePopupBoitierBtn = document.querySelector('.closePopUpBoitierBtn');
 closePopupBoitierBtn.addEventListener('click', function () {
     popupBoitier.classList.add('hidden');
     vueBoitier.classList.add('hidden');
     document.getElementById('doorOpening').classList.remove('hidden');
+
+    setTimeout(loadWinPage, 2850);
+
+    function loadWinPage() {
+        document.location.href = "/game/win"
+
+
+        /*  fetch('/game/saveresult', { method: 'POST', body: JSON.stringify({ "time": finalTime }) }).then(function (headers) {
+             return headers.json();
+         }).then(function (body) {
+             if (body.result == "ok") {
+                 document.location.href = ""
+             }
+         }) */
+    }
+
 
 });
 

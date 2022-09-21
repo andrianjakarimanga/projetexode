@@ -1,3 +1,8 @@
+:root {
+  background: green;
+  transition: all 1s linear;
+}
+
 .lumiere {
   cursor: none;
   --cursorX: 50vw;
@@ -18,6 +23,7 @@
     rgba(0, 0, 0, 0.5) 80%,
     rgba(0, 0, 0, 0.95) 100%
   );
+  transition: opacity 0.3s linear 2s;
 }
 
 #toggleLight {

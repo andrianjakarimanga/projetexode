@@ -15,20 +15,55 @@
   height: 1080px;
 
   background-color: black;
-  animation-name: opacity;
-  animation-duration: 8s;
-  animation-fill-mode: forwards;
-  animation-delay: 2s;
+  animation-name: opacityBlackScreen;
+  animation-duration: 15s;
+  /* animation-fill-mode: forwards; */
+  animation-delay: 5s;
 }
-@keyframes opacity {
+@keyframes opacityBlackScreen {
   0% {
     opacity: 1;
   }
-  100% {
+  40% {
     opacity: 0;
+  }
+  90% {
+    opacity: 0;
+  }
+  98% {
+    opacity: 1;
   }
 }
 
+#logoExode {
+  background-image: url(img/logo/headshot-logo2.png);
+
+  position: absolute;
+  width: 866px;
+  height: 226px;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+
+  opacity: 0;
+  animation: opacityLogo;
+  animation-duration: 3s;
+  animation-delay: 1s;
+}
+@keyframes opacityLogo {
+  0% {
+    opacity: 0;
+  }
+  10% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 1;
+  }
+  80% {
+    opacity: 0;
+  }
+}
 /* FIN */
 
 #doorOpening {
