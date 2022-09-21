@@ -166,6 +166,9 @@ closeVueBoitierBtn.addEventListener('click', function () {
 let closePopupBoitierBtn = document.querySelector('.closePopUpBoitierBtn');
 closePopupBoitierBtn.addEventListener('click', function () {
     popupBoitier.classList.add('hidden');
+    vueBoitier.classList.add('hidden');
+    document.getElementById('doorOpening').classList.remove('hidden');
+
 });
 
 

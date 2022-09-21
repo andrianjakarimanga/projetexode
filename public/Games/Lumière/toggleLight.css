@@ -21,7 +21,7 @@
 }
 
 #toggleLight {
-  border: 1px solid red;
+  /* border: 1px solid red; */
   border-radius: 50%;
   background-image: url("Bouton_lumiere.png");
   background-repeat: no-repeat;

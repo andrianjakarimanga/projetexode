@@ -161,16 +161,19 @@ function checkIfWin() {
 
         let finalTime = 1800 - timeGame;
 
-        alert('Bravo! Porte dévérouillée' + finalTime);
-        document.querySelector('.closePopUpCablesBtn').classList.remove('hidden');
+        alert('Bravo! Porte dévérouillée en ' + finalTime + 'secondes !');
+        document.querySelector('.closePopUpBoitierBtn').classList.remove('hidden');
 
-        fetch('/game/saveresult', { method: 'POST', body: JSON.stringify({ "time": finalTime }) }).then(function (headers) {
+
+
+
+        /* fetch('/game/saveresult', { method: 'POST', body: JSON.stringify({ "time": finalTime }) }).then(function (headers) {
             return headers.json();
         }).then(function (body) {
             if (body.result == "ok") {
                 document.location.href = " "
             }
-        })
+        }) */
 
     }
 }
