@@ -6,6 +6,22 @@ var gameBoiteIsDone = true;
 var timeGame = 0;
 
 
+
+
+/* Intro */
+
+function animIntroSynopsis() {
+    document.getElementById('screenIntro').classList.add('hidden');
+}
+function turnOfftheLightAndStartGame() {
+    document.querySelector(':root').classList.add("lumiere");
+}
+
+setTimeout(animIntroSynopsis, 10000);
+setTimeout(turnOfftheLightAndStartGame, 10000)
+/* Fin Intro */
+
+
 /**************************************** OPEN VUES ***************************************/
 
 // VUE AFFICHE open by clic
