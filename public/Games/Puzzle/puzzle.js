@@ -96,6 +96,7 @@ function isSolved() {
 
         if (element.classList.contains('solved')) {
             setTimeout("alert('bravo!'); ", 1200)
+            document.querySelector('.closePopUpAfficheBtn').classList.remove('hidden');
             gamePuzzleIsDone = true;
         }
     }

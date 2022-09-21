@@ -135,10 +135,9 @@ function checkIfWin() {
     puzzle.style.display = "block";
     screen.style.display = "none";
 
-    document.getElementById("text").innerHTML = "You did it !";
+    /* document.getElementById("text").innerHTML = "You did it !"; */
     document.querySelector('.closePopUpSnakeBtn').classList.remove('hidden'); // Active le bouton pour fermer le jeu
-
-
+    /* ctx.clearRect(0, 0, screen.width, screen.height); */
     gameSnakeIsDone = true;
   }
 
