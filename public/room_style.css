@@ -25,11 +25,9 @@ main {
   transform: translate(-50%, -50%);
 }
 
-
-
 /* BTN OPEN VUES */
 #zoomAfficheBtn {
-  border: 1px solid white;
+  /* border: 1px solid white; */
   position: absolute;
   top: 250px;
   left: 1120px;
@@ -38,7 +36,7 @@ main {
 }
 
 #zoomCoffresBtn {
-  border: 1px solid white;
+  /* border: 1px solid white; */
   position: absolute;
   top: 400px;
   left: 150px;
@@ -47,7 +45,7 @@ main {
 }
 
 #zoomSnakeBtn {
-  border: 1px solid white;
+  /* border: 1px solid white; */
   position: absolute;
   top: 400px;
   left: 450px;
@@ -56,7 +54,7 @@ main {
 }
 
 #zoomBoitierBtn {
-  border: 1px solid white;
+  /* border: 1px solid white; */
   position: absolute;
   top: 428px;
   left: 784px;
@@ -101,13 +99,11 @@ main {
   display: none;
 }
 
-
-
 /********************* POPUP *********************/
 
 /* BTN OPEN POPUP */
 #openPuzzleBtn {
-  border: 1px solid rgb(255, 66, 66);
+  /* border: 1px solid rgb(255, 66, 66); */
   position: absolute;
   width: 384px;
   height: 89px;
@@ -118,12 +114,12 @@ main {
 }
 
 #openPuzzleBtn:hover {
-  background-image: url('images/objet_affiche-light.png');
-  opacity: 0.7;
+  background-image: url("images/objet_affiche-light.png");
+  opacity: 1;
 }
 
 #openSnakeBtn {
-  border: 1px solid rgb(255, 7, 7);
+  /* border: 1px solid rgb(255, 7, 7); */
   position: absolute;
   bottom: 527px;
   left: 900px;
@@ -134,12 +130,12 @@ main {
 }
 
 #openSnakeBtn:hover {
-  background-image: url('images/objet_snake-light.png');
-  opacity: 0.8;
+  background-image: url("images/objet_snake-light.png");
+  opacity: 1;
 }
 
 #openBoitierBtn {
-  border: 1px solid rgb(255, 24, 24);
+  /* border: 1px solid rgb(255, 24, 24); */
   position: absolute;
   bottom: 461px;
   left: 781px;
@@ -150,12 +146,12 @@ main {
 }
 
 #openBoitierBtn:hover {
-  background-image: url('images/objet_boitier-light.png');
-  opacity: 0.8;
+  background-image: url("images/objet_boitier-light.png");
+  opacity: 1;
 }
 
 #openHanoiBtn {
-  border: 1px solid rgb(255, 36, 36);
+  /* border: 1px solid rgb(255, 36, 36); */
 
   position: absolute;
   bottom: 280px;
@@ -167,8 +163,8 @@ main {
 }
 
 #openHanoiBtn:hover {
-  background-image: url('images/objet_coffre-light.png');
-  opacity: 0.8;
+  background-image: url("images/objet_coffre-light.png");
+  opacity: 1;
 }
 
 /* POPUP */
@@ -185,10 +181,6 @@ main {
   left: 50%;
   transform: translate(-50%, -50%);
 }
-
-
-
-
 
 /* BTN CLOSE VUES */
 .closeVue {
@@ -208,7 +200,7 @@ main {
 /* Btn Close PopUp */
 .closePopUp {
   padding: 20px;
-  color: rgb(253, 147, 7);
+  color: rgb(255, 115, 15);
   cursor: pointer;
   position: absolute;
   top: 5%;
@@ -220,8 +212,6 @@ main {
   text-shadow: 1px 1px 2px red, 0 0 1em rgb(253, 147, 7),
     0 0 0.2em rgb(253, 147, 7);
 }
-
-
 
 .puzzleScreen {
   width: 1920px;

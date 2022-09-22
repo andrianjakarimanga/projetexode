@@ -1,9 +1,25 @@
-var gameSnakeIsDone = false;
-var gamePuzzleIsDone = false;
-var gameHanoiIsDone = false;
-var gameBoiteIsDone = false;
+var gameSnakeIsDone = true;
+var gamePuzzleIsDone = true;
+var gameHanoiIsDone = true;
+var gameBoiteIsDone = true;
 
 var timeGame = 0;
+
+
+
+
+/* Intro */
+
+function animIntroSynopsis() {
+    document.getElementById('screenIntro').classList.add('hidden');
+}
+function turnOfftheLightAndStartGame() {
+    document.querySelector(':root').classList.add("lumiere");
+}
+
+setTimeout(animIntroSynopsis, 20000);
+setTimeout(turnOfftheLightAndStartGame, 20000)
+/* Fin Intro */
 
 
 /**************************************** OPEN VUES ***************************************/
@@ -146,10 +162,31 @@ let closeVueBoitierBtn = document.querySelector('.closeVueBoitierBtn');
 closeVueBoitierBtn.addEventListener('click', function () {
     vueBoitier.classList.add('hidden');
 });
-/* CLOSE BTN POPUP BOITIER */
+
+
+/* CLOSE BTN POPUP BOITIER */ /* --> OUVERTURE PORTE */ /* --> Page Win */
 let closePopupBoitierBtn = document.querySelector('.closePopUpBoitierBtn');
 closePopupBoitierBtn.addEventListener('click', function () {
     popupBoitier.classList.add('hidden');
+    vueBoitier.classList.add('hidden');
+    document.getElementById('doorOpening').classList.remove('hidden');
+
+    setTimeout(loadWinPage, 2850);
+
+    function loadWinPage() {
+        let finalTime = 1800 - timeGame;
+
+
+          fetch('/game/saveresult', { method: 'POST', body: JSON.stringify({ "time": finalTime }) }).then(function (headers) {
+             return headers.json();
+         }).then(function (body) {
+             if (body.result == "ok") {
+                 document.location.href = "/game/win"
+             }
+         }) 
+    }
+
+
 });
 
 

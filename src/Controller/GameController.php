@@ -5,9 +5,11 @@ namespace App\Controller;
 use App\Entity\Historique;
 use App\Repository\HistoriqueRepository;
 use App\Repository\UserRepository;
+use DateTime;
 use Doctrine\ORM\EntityManagerInterface;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\JsonResponse;
+use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
 
@@ -46,27 +48,24 @@ class GameController extends AbstractController
     }
 
     #[Route('game/saveresult', name: 'app_game_save')]
-    public function saveresult(EntityManagerInterface $em , \DateTimeInterface $LastGame , \DateTimeInterface $score , string $rang): JsonResponse
+    public function saveresult(EntityManagerInterface $em , Request $request): JsonResponse
     {
-        $history = new Historique();
-        $history->setLastGame($LastGame);
-        $history->setScore($score);
-        $history->setRang($rang);
 
+        $history = new Historique();
+        $history->setLastGame(new DateTime());
+        $history->setScore(json_decode($request->getContent())->time);
+        $history->setTempsTotal(json_decode($request->getContent())->time);
+        
 
         $em->persist($history);
         $em->flush();
 
-        $winLose = false;
+        
 
         $user = $this->getUser();
         
-        $em->persist($user);
-        $em->flush();
-
         return new JsonResponse(['result' => 'ok']);
     }
-
 
     #[Route('game/lost', name: 'app_game_lost')]
     public function lost(HistoriqueRepository $HistoriqueRepository): Response
@@ -89,8 +88,8 @@ class GameController extends AbstractController
         $histo = $HistoriqueRepository ->findOneById(); */
         return $this->render('game/win.html.twig', [
             'controller_name' => 'GameController',
-            /* 'temps_total ' => $histo->getTempsTotal(),
-            'rang' => $historique->getRang() */
+             'temps_total ' => $HistoriqueRepository->getTempsTotal(),
+            /* 'rang' => $user->getRang() */
         ]); 
     }
     

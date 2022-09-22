@@ -2,7 +2,8 @@
 
 /* CHRONO */
 
-alert("vous avez 30 minute pour sortir de la pièce...")
+/* setTimeout(alert("vous avez 3000 minute pour sortir de la pièce..."), 50000) */
+/* alert("vous avez 30 minute pour sortir de la pièce...") */
 
 
 // const pour le depart avec 30 min //
@@ -19,8 +20,8 @@ function stopSon() {
     document.getElementById("sonChrono").pause()
 } */
 
-
-timer();
+setTimeout(timer, 20000);
+/* timer(); */
 
 function timer() {
 

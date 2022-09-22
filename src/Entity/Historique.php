@@ -14,13 +14,19 @@ class Historique
     #[ORM\Id]
     #[ORM\GeneratedValue]
     #[ORM\Column]
-    private ?int $id = null;   
+    private ?int $id = null;
+
+   /*  #[ORM\Column]
+    private ?int $NombreDIndices = null; */
+
+    #[ORM\Column]
+    private ?int $TempsTotal = null;
 
     #[ORM\Column(type: Types::DATETIME_MUTABLE)]
     private ?\DateTimeInterface $LastGame = null;  
 
-    #[ORM\ManyToOne(inversedBy: 'Historique')]
-    private ?Enigmes $enigmes = null;
+   /*  #[ORM\ManyToOne(inversedBy: 'Historique')]
+    private ?Enigmes $enigmes = null; */
 
     #[ORM\OneToMany(mappedBy: 'historique', targetEntity: User::class)]
     private Collection $User;
@@ -44,6 +50,30 @@ class Historique
         return $this->id;
     }
 
+    /* public function getNombreDIndices(): ?int
+    {
+        return $this->NombreDIndices;
+    }
+
+    public function setNombreDIndices(int $NombreDIndices): self
+    {
+        $this->NombreDIndices = $NombreDIndices;
+
+        return $this;
+    }
+ */
+    public function getTempsTotal(): ?int
+    {
+        return $this->TempsTotal;
+    }
+
+    public function setTempsTotal(int $TempsTotal): self
+    {
+        $this->TempsTotal = $TempsTotal;
+
+        return $this;
+    }
+
     public function getLastGame(): ?\DateTimeInterface
     {
         return $this->LastGame;
@@ -58,7 +88,7 @@ class Historique
 
     
 
-    public function getEnigmes(): ?Enigmes
+    /* public function getEnigmes(): ?Enigmes
     {
         return $this->enigmes;
     }
@@ -68,7 +98,7 @@ class Historique
         $this->enigmes = $enigmes;
 
         return $this;
-    }
+    } */
 
     public function getRang(): ?string
     {

@@ -8,8 +8,14 @@ function update(element) {
 
 document.addEventListener('mousemove', update)
 document.addEventListener('touchmove', update)
-document.querySelector(':root').classList.add("lumiere");
+
+
+
+
+
+
 const btn = document.getElementById("toggleLight");
+
 btn.addEventListener("click", function () {
   lumiereToggle();
   if (lumiere) {
