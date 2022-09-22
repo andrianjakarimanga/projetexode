@@ -18,7 +18,7 @@ function turnOfftheLightAndStartGame() {
 }
 
 setTimeout(animIntroSynopsis, 20000);
-setTimeout(turnOfftheLightAndStartGame, 20000)
+/* setTimeout(turnOfftheLightAndStartGame, 20000) */
 /* Fin Intro */
 
 
@@ -98,7 +98,7 @@ openHanoiBtn.addEventListener('click', function () {
         popupHanoi.classList.remove('hidden');
         // LOAD GAME:
         /* hanoiScreen.innerHTML = '<object width="1920" height="1080" type="text/html" data="Games/Hanoi/hanoi.html" ></object>'; */
-        jQuery('#gameScreenHanoi').load('/Games/Hanoi/index.html');
+        jQuery('#gameScreenHanoi').getScript('/Games/Hanoi/index.html');
     }
 });
 

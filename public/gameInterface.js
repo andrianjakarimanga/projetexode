@@ -39,7 +39,7 @@ function timer() {
 
 
     timeGame = temps;
-    console.log(temps);
+    /* console.log(temps); */
 
     if (temps > (-1)) {
         setTimeout(function () { timer(); }, 1000);

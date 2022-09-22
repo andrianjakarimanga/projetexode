@@ -20,12 +20,12 @@
 
 
 {# SCREEN INTRO #}
-        <div id='screenIntro'>
+        {# <div id='screenIntro'>
             
             <div id="blackScreenIntro">
                 <div id="logoExode"></div>
             </div>
-        </div>
+        </div> #}
 
 
         {# CHRONO #}
@@ -41,19 +41,31 @@
         </div>
         <!--FIN DE BULLE INDICE-->
 
-        <!--DEBUT DE EXIT-->
-        <div id="exit" class="row align-items-center justify-content-center">
-            <a href="#"> <img src="/public/svg/icone/screen-start/icone-exit.svg" alt="icone exit"></a>
-        </div>
-        <!--FIN DE EXIT-->
-                
-            
 
         <!--DEBUT DE BTN INDICE-->
-        <div id="btn-indice" class="text-center pt-2">
-                <a href=""><img class="img-fluid" src="/public/svg/icone/screen-start/icone-indice.svg" alt="icone indice"></a>
+        <div id="btn-indice">
+            <img src="\svg\icone\screen-start\icone-indice.svg" alt="icone indice">
         </div>
-        <!--FIN DE BTN INDICE-->
+
+        <!--DEBUT DE EXIT-->
+        <div id="exit">
+            <a href="#"> <img src="\svg\icone\screen-start\icone-exit.svg" alt="icone exit"></a>
+        </div>
+        <!--FIN DE EXIT-->
+
+        <!--DEBUT DE NARRATION-->
+        <div id="narration">
+            <i class="corner corner-top-left"></i>
+            <i class="corner corner-top-right"></i>
+            <p class="py-3">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Aliquam architecto nam maiores
+                officiis porro cumque necessitatibus perferendis, eaque doloremque, consequuntur itaque voluptate
+                ut. Temporibus magni est quo quam voluptatum assumenda voluptates aspernatur quaerat voluptas, et
+                reiciendis iure quos eaque ea similique placeat quibusdam incidunt quidem.
+            </p>
+            <i class="corner corner-bottom-left"></i>
+            <i class="corner corner-bottom-right"></i>
+        </div>
+        <!--FIN DE NARRATION-->
 
 
         <div id="toggleLight"> </div>
@@ -162,8 +174,6 @@
 
     <script src="https://code.jquery.com/jquery-3.6.1.js"
         integrity="sha256-3zlB5s2uwoUzrXK3BT7AX3FyvojsraNFxCc2vC/7pNI=" crossorigin="anonymous"></script>
-
-
 
     <script src="/room_main.js"></script>
     <script src="/gameInterface.js"></script>
