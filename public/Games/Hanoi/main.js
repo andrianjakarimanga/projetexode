@@ -370,7 +370,7 @@ class Renderer {
 
 class Ecrou {
 
-    constructor(x, y, width, heigth,imageSrc) {
+    constructor(x, y, width, heigth, imageSrc) {
         this.x = x;
         this.y = y;
         this.width = width;
@@ -387,22 +387,22 @@ class Ecrou {
             this.ready = true;
         }
 
-        this.image.src =imageSrc;
+        this.image.src = imageSrc;
 
 
     }
 
     draw(renderer) {
-        
+
     }
 }
 
 //////////////////////////////////////////
 
-class Socle{
+class Socle {
 
-    constructor(x,y,width,heigth,newImageSrc) {
-        
+    constructor(x, y, width, heigth, newImageSrc) {
+
         this.x = x;
         this.y = y;
         this.width = width;
@@ -426,20 +426,20 @@ class Socle{
     }
 
     draw(renderer) {
-       
+
     }
 }
 
 ////////////////////////////////////////
 
 class Tige {
-    constructor(x,y,width,heigth,imageSrc,pole) {
+    constructor(x, y, width, heigth, imageSrc, pole) {
         this.x = x;
         this.y = y;
         this.width = width;
         this.heigth = heigth;
         this.tabRectangle = [];
-        this.pole=pole;
+        this.pole = pole;
 
         this.ready = false;
 
@@ -452,18 +452,18 @@ class Tige {
             this.ready = true;
         }
 
-        this.image.src =imageSrc;
+        this.image.src = imageSrc;
 
 
 
-        
+
     }
 
     draw(renderer) {
-        
+
     }
 
-    
+
 
 
 }
