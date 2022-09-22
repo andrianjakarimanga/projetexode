@@ -174,16 +174,16 @@ closePopupBoitierBtn.addEventListener('click', function () {
     setTimeout(loadWinPage, 2850);
 
     function loadWinPage() {
-        document.location.href = "/game/win"
+        let finalTime = 1800 - timeGame;
 
 
-        /*  fetch('/game/saveresult', { method: 'POST', body: JSON.stringify({ "time": finalTime }) }).then(function (headers) {
+          fetch('/game/saveresult', { method: 'POST', body: JSON.stringify({ "time": finalTime }) }).then(function (headers) {
              return headers.json();
          }).then(function (body) {
              if (body.result == "ok") {
-                 document.location.href = ""
+                 document.location.href = "/game/win"
              }
-         }) */
+         }) 
     }
 
 

@@ -16,11 +16,11 @@ class Historique
     #[ORM\Column]
     private ?int $id = null;
 
-    #[ORM\Column]
-    private ?int $NombreDIndices = null;
+   /*  #[ORM\Column]
+    private ?int $NombreDIndices = null; */
 
-    #[ORM\Column(type: Types::TIME_MUTABLE)]
-    private ?\DateTimeInterface $TempsTotal = null;
+    #[ORM\Column]
+    private ?int $TempsTotal = null;
 
     #[ORM\Column(type: Types::DATETIME_MUTABLE)]
     private ?\DateTimeInterface $LastGame = null;
@@ -28,8 +28,8 @@ class Historique
     #[ORM\Column]
     private ?int $Score = null;
 
-    #[ORM\ManyToOne(inversedBy: 'Historique')]
-    private ?Enigmes $enigmes = null;
+   /*  #[ORM\ManyToOne(inversedBy: 'Historique')]
+    private ?Enigmes $enigmes = null; */
 
     #[ORM\OneToMany(mappedBy: 'historique', targetEntity: User::class)]
     private Collection $User;
@@ -44,7 +44,7 @@ class Historique
         return $this->id;
     }
 
-    public function getNombreDIndices(): ?int
+    /* public function getNombreDIndices(): ?int
     {
         return $this->NombreDIndices;
     }
@@ -55,13 +55,13 @@ class Historique
 
         return $this;
     }
-
-    public function getTempsTotal(): ?\DateTimeInterface
+ */
+    public function getTempsTotal(): ?int
     {
         return $this->TempsTotal;
     }
 
-    public function setTempsTotal(\DateTimeInterface $TempsTotal): self
+    public function setTempsTotal(int $TempsTotal): self
     {
         $this->TempsTotal = $TempsTotal;
 
@@ -92,7 +92,7 @@ class Historique
         return $this;
     }
 
-    public function getEnigmes(): ?Enigmes
+    /* public function getEnigmes(): ?Enigmes
     {
         return $this->enigmes;
     }
@@ -102,7 +102,7 @@ class Historique
         $this->enigmes = $enigmes;
 
         return $this;
-    }
+    } */
 
     /**
      * @return Collection<int, User>
