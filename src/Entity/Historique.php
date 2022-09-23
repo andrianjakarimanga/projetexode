@@ -16,16 +16,16 @@ class Historique
     #[ORM\Column]
     private ?int $id = null;
 
-   /*  #[ORM\Column]
+    /*  #[ORM\Column]
     private ?int $NombreDIndices = null; */
 
     #[ORM\Column]
     private ?int $TempsTotal = null;
 
-    #[ORM\Column(type: Types::DATE_MUTABLE)]
-    private ?\DateTimeInterface $LastGame = null;  
+    #[ORM\Column(type: Types::DATETIME_MUTABLE)]
+    private ?\DateTimeInterface $LastGame = null;
 
-   /*  #[ORM\ManyToOne(inversedBy: 'Historique')]
+    /*  #[ORM\ManyToOne(inversedBy: 'Historique')]
     private ?Enigmes $enigmes = null; */
 
     #[ORM\OneToMany(mappedBy: 'historique', targetEntity: User::class)]
@@ -34,8 +34,8 @@ class Historique
     #[ORM\Column(length: 255)]
     private ?string $rang = null;
 
-    #[ORM\Column(type: Types::TIME_MUTABLE)]
-    private ?\DateTimeInterface $score = null;
+    #[ORM\Column]
+    private ?int $score = null;
 
     #[ORM\ManyToOne(inversedBy: 'historique')]
     private ?User $user = null;
@@ -86,7 +86,7 @@ class Historique
         return $this;
     }
 
-    
+
 
     /* public function getEnigmes(): ?Enigmes
     {
@@ -112,12 +112,12 @@ class Historique
         return $this;
     }
 
-    public function getScore(): ?\DateTimeInterface
+    public function getScore(): ?int
     {
         return $this->score;
     }
 
-    public function setScore(\DateTimeInterface $score): self
+    public function setScore(int $score): self
     {
         $this->score = $score;
 
