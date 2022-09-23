@@ -12,10 +12,9 @@
 <link rel="stylesheet" href="/css/home-gaming.css">
 {% endblock %}
 
+{% block header %}
 
-
-{% block body %}
-    <body>
+<header>
 
         <nav class="navbar navbar-expand-lg pb-5">
             <div class="container-fluid justify-content-between">
@@ -24,7 +23,7 @@
                 <div class="bg-nav col-3">
                     <div class="pt-5">
 
-                        <a href="#" class="ps-7">
+                        <a href="{{ path('app_game_statistiques') }}" class="ps-7">
                             <img class="img-fluid" src="/svg/icone/game-nav/icone-statistique.svg" alt="icone-statistique">
                         </a>
 
@@ -41,7 +40,15 @@
             </div>
         
         </nav>
-    <!--FIN DE NAVIGATION-->
+
+</header>
+
+{% endblock %}
+
+
+
+{% block body %}
+    <body>
     
 
     <!--MAIN-->
@@ -64,7 +71,7 @@
                                 <path id="Vector_5" d="M235.246 107.979L219.042 123.397H162.242L139.532 145H41.7949L67.5487 120.517L80.7236 107.979H235.246Z" fill="#409BFF"/>
                                 <path id="Vector_6" d="M151.38 145L164.364 132.658H229.273L255.24 107.979H462.945L449.969 120.315H255.24L229.273 145H151.38Z" fill="#FFB13C"/>
                                 <path id="Vector_7" d="M70.3796 36.825L49.8901 56.3031L70.3796 75.7677L90.8549 56.3031L70.3796 36.825Z" fill="#409BFF"/>
-                                <text id="BIENVENUE !" fill="#F9F9F9" xml:space="preserve" style="white-space: pre" font-family="Batman" font-size="40" letter-spacing="0em"><tspan x="138.279" y="69.0222">BIENVENUE !</tspan></text>
+                                <text id="BIENVENUE !" fill="#F9F9F9" xml:space="preserve" style="white-space: pre" font-family="Batman" font-size="25" letter-spacing="0em"><tspan x="138.279" y="69.0222">BIENVENUE {{ app.user.pseudo }}!</tspan></text>
                             </g>
                             <defs>
                                 <clipPath id="clip0_522_10016">
@@ -162,17 +169,17 @@
                                     <path id="Vector_20" d="M131.99 199.761L124.218 193.277L112.761 203.863L120.533 210.347L131.99 199.761Z" fill="#409BFF"/>
                                     <path id="Vector_21" d="M161.738 204L161.738 195L125.29 195L125.29 204L161.738 204Z" fill="#409BFF"/>
                                 <g id="Derniere partie : JJ/MM/AAAA">
-                                    <text id="date-last-game" fill="#F9F9F9" xml:space="preserve" style="white-space: pre" font-family="Orbitron" font-size="25" letter-spacing="0em"><tspan x="387.457" y="75.1"> JJ/MM/AAAA</tspan></text>
-                                    <text fill="#F9F9F9" xml:space="preserve" style="white-space: pre" font-family="Batman" font-size="25" letter-spacing="0em"><tspan x="94" y="75.1">Derniere partie :</tspan></text>
+                                    <text id="date-last-game" fill="#F9F9F9" xml:space="preserve" style="white-space: pre" font-family="Orbitron" font-size="25" letter-spacing="0em"><tspan x="387.457" y="75.1"> </tspan></text>
+                                    <text fill="#F9F9F9" xml:space="preserve" style="white-space: pre" font-family="Batman" font-size="25" letter-spacing="0em"><tspan x="94" y="75.1">Derniere partie : {{ date }}</tspan></text>
                                 </g>
                                 <g id="Rang : 0000">
-                                    <text id="rang" fill="#F9F9F9" xml:space="preserve" style="white-space: pre" font-family="Orbitron" font-size="25" letter-spacing="0em"><tspan x="252.252" y="134.1"> 0000</tspan></text>
+                                    <text id="rang" fill="#F9F9F9" xml:space="preserve" style="white-space: pre" font-family="Orbitron" font-size="25" letter-spacing="0em"><tspan x="252.252" y="134.1">{{ rang }}</tspan></text>
                                     <text fill="#F9F9F9" xml:space="preserve" style="white-space: pre" font-family="Batman" font-size="25" letter-spacing="0em"><tspan x="150.347" y="134.1">Rang</tspan><tspan x="246.685" y="134.1">:</tspan></text>
                                     <text fill="#F9F9F9" xml:space="preserve" style="white-space: pre" font-family="Batman" font-size="25" letter-spacing="0em"><tspan x="233.648" y="134.1"> </tspan></text>
                                 </g>
                                 <g id="Score : 0000">
-                                    <text id="score-last-game" fill="#F9F9F9" xml:space="preserve" style="white-space: pre" font-family="Orbitron" font-size="25" letter-spacing="0em"><tspan x="310.981" y="195.1"> 0000</tspan></text>
-                                    <text fill="#F9F9F9" xml:space="preserve" style="white-space: pre" font-family="Batman" font-size="25" letter-spacing="0em"><tspan x="187.934" y="195.1">Score :</tspan></text>
+                                    <text id="score-last-game" fill="#F9F9F9" xml:space="preserve" style="white-space: pre" font-family="Orbitron" font-size="25" letter-spacing="0em"><tspan x="310.981" y="195.1"> </tspan></text>
+                                    <text fill="#F9F9F9" xml:space="preserve" style="white-space: pre" font-family="Batman" font-size="25" letter-spacing="0em"><tspan x="187.934" y="195.1">Temps : {{ score }} </tspan></text>
                                 </g>
                                 </g>
                                     <path id="Vector_22" d="M584.847 43.5859H80.3789V88.5859H584.847L618 66.0892L584.847 43.5925V43.5859ZM582.1 84.0734H87.0192V48.0919H582.1L608.612 66.0826L582.1 84.0734V84.0734Z" fill="#FFB13C"/>
@@ -211,7 +218,7 @@
                     </div>
 
                     <div>
-                        <p>Veuillez présenter votre oeil devant le scanner rétinien afin d'effectuer une identifaction biométrique.</p>
+                        <p>Veuillez présenter votre oeil droit  devant le scanner rétinien afin d'effectuer une identifaction biométrique afin de charger l' escape game</p>
                     </div>
 
                     <div class="d-flex pt-5 pb-4">

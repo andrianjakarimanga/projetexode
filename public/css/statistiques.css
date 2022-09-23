@@ -1,0 +1,23 @@
+body{
+    background-color: var(--main-bg-color);
+}
+
+.bg-nav{
+    background-image: url(/svg/icone/game-nav/bg-nav.svg);
+    height: 180px;
+    background-repeat: no-repeat;
+}
+body h2{
+    font-family: "Batman";
+    font-size: 5.2rem;
+}
+body h3{
+    font-family: "Batman";
+    font-size: 2.5rem;
+}
+hr{
+    border-top: 2rem solid;
+    color: var(--color-success);
+    opacity: 1;
+    border-radius: 10px;
+  }

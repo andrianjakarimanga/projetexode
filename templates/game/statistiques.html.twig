@@ -1,0 +1,198 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Statistique{% endblock %}
+
+{% block stylesheets %}
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-iYQeCzEYFbKjA/T2uDLTpkwGzCiq6soy8tYaI1GyVh/UjpbCx/TYkiZhlZB6+fzT" crossorigin="anonymous">
+    <link rel="stylesheet" href="/css/general.css">
+    <link rel="stylesheet" href="/css/statistiques.css">
+{% endblock %}
+
+
+
+{% block header %}
+
+    <header>
+        <!--METTRE DES DIV CONTAINER POUR CHAQUE SECTION-->
+        
+        <!--NAVIGATION-->
+        <nav class="navbar navbar-expand-lg">
+            <div class="container-fluid justify-content-between">
+
+                <a class="navbar-brand col-1" href="#"> <img class="img-fluid" src="/img/logo/nav-logo.png" alt="logo"></a>
+                <div class="bg-nav col-3">
+                    <div class="pt-5">
+                        <a href="#" class="ps-7">
+                                    <img class="img-fluid" src="/svg/icone/game-nav/icone-statistique.svg" alt="icone-statistique">
+                        </a>
+                        <a href="{{ path('app_game_recompense') }}" class="ps-6">
+                                    <img class="img-fluid" src="/svg/icone/game-nav/icone-trophees.svg" alt="icone-trophees">
+                        </a>
+                        <a href="{{ path('app_logout') }}" class="ps-6">
+                                    <img class="img-fluid" src="/svg/icone/game-nav/icone-exit.svg" alt="icone-exit">
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </nav>
+        <!--FIN DE NAVIGATION-->
+    </header>   
+
+{% endblock %}
+
+{% block body %}    
+    
+    <main>
+        <div class="container-fluid">
+            <div class="offset-1">
+                <h2>Statistiques</h2>
+            </div>
+            <div class="row my-5 py-5">
+                <div class="col-3 offset-1">
+                    <h3>Votre dernière partie</h3>
+                </div>
+                <div class="col-7">
+                    <hr>
+                </div>
+
+            </div>
+        </div>
+        <div class="container-fluid mb-5">
+            <div class="offset-1">
+                <!-- <img src="/svg/statistiques/card.svg" alt=""> -->
+                <svg width="1578" height="598" viewBox="0 0 1578 598" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <g id="Group 258">
+                        <path id="Vector 180" d="M1577 1H1V71.6022L24.524 92.7927V507.382L1 526.398V597H1577V1Z" stroke="#FFFDFB" stroke-opacity="0.99" stroke-width="2"/>
+                        <path id="Vector 179" d="M1542 106.472H1149.26L1118 131.631V552.635H1542V106.472Z" fill="#10161C" stroke="#FF5600" stroke-width="2"/>
+                    <g id="Group 209">
+                        <path id="Vector 178" d="M482.283 106.675H948.742L1015.38 169.938H1039.81L1098.12 234.879V552.31H502.274V169.938H482.283V106.675Z" fill="#10161C" stroke="#FF5600" stroke-width="2"/>
+                        <path id="Vector 181" d="M502.273 552.31H796.031L778.261 566.865H502.273V552.31Z" fill="#FF5600" stroke="#FF5600" stroke-width="2"/>
+                        <line id="Line 13" x1="483.998" y1="182.063" x2="483.998" y2="553.575" stroke="#FFFDFB" stroke-opacity="0.99" stroke-width="3"/>
+                    </g>
+                    <path id="Vector 176" d="M1545.01 91.3356L1574.61 71.3086V2.7052H422.475L398.692 21.8801H169.851L53.0527 91.3356H1545.01Z" fill="url(#paint0_linear_676_14159)" stroke="black"/>
+                    <text id="Victoire" fill="#FFFDFB" fill-opacity="0.99" xml:space="preserve" style="white-space: pre" font-family="BatmanForeverAlternate" font-size="54" letter-spacing="0em"><tspan x="558.629" y="62.6158">Victoire</tspan></text>
+                    <path id="Vector 177" d="M460 552V45H227.65L57 156.594V552H460Z" fill="#10161C" stroke="#FF5600" stroke-width="2"/>
+                    <text id="Temps" transform="translate(559 135.77)" fill="#F9F9F9" xml:space="preserve" style="white-space: pre" font-family="Orbitron" font-size="48" font-weight="600" letter-spacing="0em"><tspan x="0" y="48.432">Temps</tspan></text>
+                    <text id="Rang" transform="translate(264 134)" fill="#F9F9F9" xml:space="preserve" style="white-space: pre" font-family="Orbitron" font-size="30" font-weight="bold" letter-spacing="0em"><tspan x="0" y="48.432">Rang </tspan></text>
+                    <text id="Pseudo" transform="translate(233 62)" fill="#F9F9F9" xml:space="preserve" style="white-space: pre" font-family="Orbitron" font-size="32" letter-spacing="0em"><tspan x="33.3594" y="32.288">{{ app.user.pseudo }},</tspan></text>
+                    <text id="######" transform="translate(560 218)" fill="#F9F9F9" xml:space="preserve" style="white-space: pre" font-family="Orbitron" font-size="32" font-weight="600" letter-spacing="0em"><tspan x="0" y="32.288">{{ score }}</tspan></text>
+                    <text id="R&#195;&#169;ussite" fill="#F9F9F9" xml:space="preserve" style="white-space: pre" font-family="Orbitron" font-size="48" font-weight="600" letter-spacing="0em"><tspan x="1211.95" y="184.202">R&#xe9;ussite</tspan></text>
+                    <g id="Derni&#195;&#169;re_partie">
+                        <g id="data_taux_reussite">
+                            <text id="100%" transform="translate(1282 302.826)" fill="#FFFDFB" fill-opacity="0.99" xml:space="preserve" style="white-space: pre" font-family="Orbitron" font-size="32" font-weight="bold" letter-spacing="0px"><tspan x="0" y="32.288">100%</tspan></text>
+                            <path id="Ellipse 76" d="M1430 322.826C1430 378.054 1385.23 422.826 1330 422.826C1274.77 422.826 1230 378.054 1230 322.826C1230 267.597 1274.77 222.826 1330 222.826C1385.23 222.826 1430 267.597 1430 322.826ZM1245 322.826C1245 369.77 1283.06 407.826 1330 407.826C1376.94 407.826 1415 369.77 1415 322.826C1415 275.882 1376.94 237.826 1330 237.826C1283.06 237.826 1245 275.882 1245 322.826Z" fill="url(#paint1_linear_676_14159)"/>
+                        </g>
+                    </g>
+                    {# <text id="4 Enigmes" transform="translate(1254.5 428.747)" fill="#F9F9F9" xml:space="preserve" style="white-space: pre" font-family="Orbitron" font-size="25" font-weight="600" letter-spacing="0em"><tspan x="0" y="25.1"> 4 Enigmes</tspan></text>#}
+                    <g id="Indice utilis&#195;&#169; : 00">
+                    </g>
+                    <g id="courbes_statistiques">
+                        <path id="courbe_vert" d="M557.889 548.837C557.889 548.837 591.508 530.585 616.948 507.966C647.544 480.765 665.334 425.925 702.498 426.225C741.372 426.539 751.592 500.853 789.351 488.931C825.907 477.389 808.094 399.336 844.502 387.034C893.581 370.451 920.573 424.663 971.23 428.337C1027.15 432.393 1051.18 370.337 1051.18 370.337" stroke="#00FFC8" stroke-width="2" stroke-dasharray="4 4"/>
+                        <text id="Parties (min)" fill="#F9F9F9" xml:space="preserve" style="white-space: pre" font-family="Orbitron" font-size="17" font-weight="600" letter-spacing="-0.01em"><tspan x="523" y="323.365">Parties (min)</tspan></text>
+                        <path id="Vector" d="M1045.37 313.762L1049.25 317.476L1053.12 313.762" stroke="#F9F9F9" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round"/>
+                        <line id="Line 1" x1="558.859" y1="366.562" x2="1055.06" y2="366.562" stroke="#B7B8C1" stroke-width="0.5"/>
+                        <text id="30" fill="#3E4259" xml:space="preserve" style="white-space: pre" font-family="Orbitron" font-size="13" letter-spacing="-0.01em"><tspan x="523" y="373.022">30</tspan></text>
+                        <line id="Line 1_2" x1="558.859" y1="420.406" x2="1055.06" y2="420.406" stroke="#B7B8C1" stroke-width="0.5"/>
+                        <text id="20" fill="#3E4259" xml:space="preserve" style="white-space: pre" font-family="Orbitron" font-size="13" letter-spacing="-0.01em"><tspan x="523" y="426.866">20</tspan></text>
+                        <line id="Line 1_3" x1="558.859" y1="474.25" x2="1055.06" y2="474.25" stroke="#B7B8C1" stroke-width="0.5"/>
+                        <text id="10" fill="#3E4259" xml:space="preserve" style="white-space: pre" font-family="Orbitron" font-size="13" letter-spacing="-0.01em"><tspan x="523" y="484.71">10</tspan></text>
+                        <line id="Line 1_4" x1="558.859" y1="528.094" x2="1055.06" y2="528.094" stroke="#B7B8C1" stroke-width="0.5"/>
+                        <text id="0" fill="#3E4259" xml:space="preserve" style="white-space: pre" font-family="Orbitron" font-size="13" letter-spacing="-0.01em"><tspan x="523" y="534.554">0</tspan></text>
+                        <rect id="Rectangle_vert" x="994" y="341.837" width="80" height="25" rx="12.5" fill="#00FFC8"/>
+                        <rect id="Rectangle_bleu" x="998" y="380.837" width="80" height="25" rx="12.5" fill="#409BFF"/>
+                        <path id="courbe_bleu" d="M559.828 528.837C559.828 528.837 583.44 481.637 617.526 474.71C657.542 466.58 686.763 510.25 727.006 502.837C767.1 495.451 763.343 439.252 804.538 439.337C836.006 439.402 897.61 475.187 929.073 474.71C950.821 474.381 1030.35 459.337 1050.22 413.837" stroke="#4169E1" stroke-width="4" stroke-linecap="round"/>
+                        <line id="ligne_centre" x1="791.482" y1="360.917" x2="791.482" y2="577.113" stroke="#9D9EA9" stroke-dasharray="6 6"/>
+                        <path id="Ellipse_bleu" d="M1052.15 413.264C1055.32 413.264 1058.03 410.786 1058.03 407.55C1058.03 404.315 1055.32 401.837 1052.15 401.837C1048.99 401.837 1046.28 404.315 1046.28 407.55C1046.28 410.786 1048.99 413.264 1052.15 413.264Z" fill="#0E132F" stroke="white" stroke-width="4"/>
+                        <g id="Ellipse_vert">
+                            <mask id="path-34-outside-1_676_14159" maskUnits="userSpaceOnUse" x="1044.28" y="359.837" width="16" height="16" fill="black">
+                            <rect fill="white" x="1044.28" y="359.837" width="16" height="16"/>
+                            <path d="M1056.03 367.55C1056.03 369.601 1054.29 371.264 1052.15 371.264C1050.01 371.264 1048.28 369.601 1048.28 367.55C1048.28 365.5 1050.01 363.837 1052.15 363.837C1054.29 363.837 1056.03 365.5 1056.03 367.55Z"/>
+                            </mask>
+                            <path d="M1056.03 367.55C1056.03 369.601 1054.29 371.264 1052.15 371.264C1050.01 371.264 1048.28 369.601 1048.28 367.55C1048.28 365.5 1050.01 363.837 1052.15 363.837C1054.29 363.837 1056.03 365.5 1056.03 367.55Z" fill="#0E132F"/>
+                            <path d="M1056.03 367.55C1056.03 369.601 1054.29 371.264 1052.15 371.264C1050.01 371.264 1048.28 369.601 1048.28 367.55C1048.28 365.5 1050.01 363.837 1052.15 363.837C1054.29 363.837 1056.03 365.5 1056.03 367.55Z" stroke="white" stroke-width="8" mask="url(#path-34-outside-1_676_14159)"/>
+                        </g>
+                        <text id="28 : 57 min" fill="#10161C" xml:space="preserve" style="white-space: pre" font-family="Orbitron" font-size="10" font-weight="bold" letter-spacing="-0.01em"><tspan x="1003" y="357.677">28 : 57 min</tspan></text>
+                        <text id="24 : 32 min" fill="#10161C" xml:space="preserve" style="white-space: pre" font-family="Orbitron" font-size="10" font-weight="bold" letter-spacing="-0.01em"><tspan x="1009" y="396.677">24 : 32 min</tspan></text>
+                    </g>
+                    <g id="data_classement-rang">
+                        <g id="Group 253">
+                            <text id="100 - 200" transform="translate(343.641 339.999)" fill="#F9F9F9" xml:space="preserve" style="white-space: pre" font-family="Orbitron" font-size="15" font-weight="600" letter-spacing="0em"><tspan x="12.7657" y="15.26">100&#10;</tspan><tspan x="22.0967" y="34.26">- &#10;</tspan><tspan x="9.46978" y="53.26">200</tspan></text>
+
+                            {% if(rang > 100 ) %}
+                                <rect id="Rectangle" x="366.469" y="404.292" width="11.4453" height="74.7077" rx="4.5" fill="#FF5600"/>
+                            {% else %}
+                                <rect id="Rectangle" x="366.469" y="404.292" width="11.4453" height="74.7077" rx="4.5" fill="#CACACA"/>
+                            {% endif %}
+
+                        </g>
+                        <g id="Group 254">
+                            <text id="25 - 99" transform="translate(287.23 302.227)" fill="#F9F9F9" xml:space="preserve" style="white-space: pre" font-family="Orbitron" font-size="15" font-weight="600" letter-spacing="0em"><tspan x="15.754" y="15.26">25&#10;</tspan><tspan x="24.3306" y="34.26">-&#10;</tspan><tspan x="15.7833" y="53.26">99</tspan></text>
+
+
+                            {% if(rang >= 25 and rang <= 99 ) %}
+                                <rect id="Rectangle_2" x="309.547" y="369.429" width="12.3991" height="109.571" rx="4.5" fill="#FF5600"/>
+                            {% else %}
+                                <rect id="Rectangle_2" x="309.547" y="369.429" width="12.3991" height="109.571" rx="4.5" fill="#CACACA"/>
+                            {% endif %}
+                        </g>
+                        <g id="Group 255">
+                            <text id="10 - 24" transform="translate(230.82 271.413)" fill="#F9F9F9" xml:space="preserve" style="white-space: pre" font-family="Orbitron" font-size="15" font-weight="600" letter-spacing="0em"><tspan x="19.0206" y="15.26">10&#10;</tspan><tspan x="24.3306" y="34.26">-&#10;</tspan><tspan x="16.501" y="53.26">24</tspan></text>
+
+                            {% if(rang >= 10 and rang <= 24 ) %}
+                                <rect id="Rectangle_3" x="253.219" y="339.546" width="11.4453" height="139.454" rx="4.5" fill="#FF5600"/>
+                            {% else %}
+                                <rect id="Rectangle_3" x="253.219" y="339.546" width="11.4453" height="139.454" rx="4.5" fill="#CACACA"/>
+                            {% endif %}
+
+                        </g>
+                        <g id="Group 256">
+                            <text id="4 - 9" transform="translate(174.41 237.616)" fill="#F9F9F9" xml:space="preserve" style="white-space: pre" font-family="Orbitron" font-size="15" font-weight="600" letter-spacing="0em"><tspan x="22.7266" y="15.26">4&#10;</tspan><tspan x="24.3306" y="34.26">-&#10;</tspan><tspan x="21.9942" y="53.26">9</tspan></text>
+
+                            {% if(rang >= 4 and rang <= 9 ) %}
+                                <rect id="Rectangle_4" x="197.094" y="299.702" width="12.3991" height="179.298" rx="4.5" fill= "#FF5600"/>
+                            {% else %}
+                                <rect id="Rectangle_4" x="197.094" y="299.702" width="12.3991" height="179.298" rx="4.5" fill= "#CACACA"/>
+                            {% endif %}
+
+                        </g>
+                        <g id="Group 257">
+                            <text id="1 - 3" transform="translate(118 174)" fill="#F9F9F9" xml:space="preserve" style="white-space: pre" font-family="Orbitron" font-size="15" font-weight="600" letter-spacing="0em"><tspan x="25.2754" y="15.26">1&#10;</tspan><tspan x="24.3306" y="34.26">-&#10;</tspan><tspan x="22.0088" y="53.26">3</tspan></text>
+
+                            {% if(rang >= 1 and rang <= 3 ) %}
+                                <path id="Subtract" fill-rule="evenodd" clip-rule="evenodd" d="M143.906 239.936C141.421 239.936 139.406 241.95 139.406 244.436L139.406 474.5C139.406 476.986 141.421 479 143.906 479L146.645 479C149.13 479 151.145 476.986 151.145 474.5L151.145 244.436C151.145 241.95 149.13 239.936 146.645 239.936L143.906 239.936Z" fill="#FF5600"/>
+                            {% else %}
+                                <path id="Subtract" fill-rule="evenodd" clip-rule="evenodd" d="M143.906 239.936C141.421 239.936 139.406 241.95 139.406 244.436L139.406 474.5C139.406 476.986 141.421 479 143.906 479L146.645 479C149.13 479 151.145 476.986 151.145 474.5L151.145 244.436C151.145 241.95 149.13 239.936 146.645 239.936L143.906 239.936Z" fill="#CACACA"/>
+                            {% endif %} 
+
+                        </g>
+                    </g>
+                    </g>
+                    <defs>
+                        <linearGradient id="paint0_linear_676_14159" x1="1871.56" y1="35.4735" x2="54.9315" y2="-22.9485" gradientUnits="userSpaceOnUse">
+                            <stop offset="0.161458" stop-color="#00FFF0" stop-opacity="0"/>
+                            <stop offset="0.463542" stop-color="#00FFF0" stop-opacity="0.5"/>
+                            <stop offset="0.697917" stop-color="#007AFF"/>
+                        </linearGradient>
+                        <linearGradient id="paint1_linear_676_14159" x1="1469.03" y1="296.769" x2="1230" y2="296.322" gradientUnits="userSpaceOnUse">
+                            <stop offset="0.3125" stop-color="#FF5600"/>
+                            <stop offset="0.9999" stop-color="#FFB13C" stop-opacity="0.506"/>
+                            <stop offset="1" stop-color="#FFB13C" stop-opacity="0"/>
+                        </linearGradient>
+                    </defs>
+                </svg>
+            </div>
+        </div>
+
+
+    </main>
+
+
+
+{% block javascripts %}
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js" integrity="sha384-oBqDVmMz9ATKxIep9tiCxS/Z9fNfEXiDAYTujMAeBAsjFuCZSmKbSSUnQlmh/jp3" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/js/bootstrap.min.js" integrity="sha384-7VPbUDkoPSGFnVtYi0QogXtr74QeVeeIs99Qfg5YCF+TidwNdjvaKZX19NZ/e6oz" crossorigin="anonymous"></script>
+{% endblock %}
+
+
+{% endblock %}
+
