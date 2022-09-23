@@ -1,13 +1,13 @@
 function update(element) {
-  var x = element.clientX || e.touches[0].clientX
-  var y = element.clientY || e.touches[0].clientY
+  var x = element.clientX
+  var y = element.clientY
 
   document.documentElement.style.setProperty('--cursorX', x + 'px')
   document.documentElement.style.setProperty('--cursorY', y + 'px')
 }
 
 document.addEventListener('mousemove', update)
-document.addEventListener('touchmove', update)
+
 
 
 

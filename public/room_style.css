@@ -103,7 +103,6 @@ main {
 
 /* BTN OPEN POPUP */
 #openPuzzleBtn {
-  /* border: 1px solid rgb(255, 66, 66); */
   position: absolute;
   width: 384px;
   height: 89px;
@@ -119,7 +118,6 @@ main {
 }
 
 #openSnakeBtn {
-  /* border: 1px solid rgb(255, 7, 7); */
   position: absolute;
   bottom: 527px;
   left: 900px;
@@ -135,7 +133,6 @@ main {
 }
 
 #openBoitierBtn {
-  /* border: 1px solid rgb(255, 24, 24); */
   position: absolute;
   bottom: 461px;
   left: 781px;
@@ -151,8 +148,6 @@ main {
 }
 
 #openHanoiBtn {
-  /* border: 1px solid rgb(255, 36, 36); */
-
   position: absolute;
   bottom: 280px;
   left: 747px;

@@ -18,7 +18,7 @@ function turnOfftheLightAndStartGame() {
 }
 
 setTimeout(animIntroSynopsis, 20000);
-setTimeout(turnOfftheLightAndStartGame, 20000)
+setTimeout(turnOfftheLightAndStartGame, 20000);
 /* Fin Intro */
 
 
@@ -177,13 +177,13 @@ closePopupBoitierBtn.addEventListener('click', function () {
         let finalTime = 1800 - timeGame;
 
 
-          fetch('/game/saveresult', { method: 'POST', body: JSON.stringify({ "time": finalTime }) }).then(function (headers) {
-             return headers.json();
-         }).then(function (body) {
-             if (body.result == "ok") {
-                 document.location.href = "/game/win"
-             }
-         }) 
+        fetch('/game/saveresult', { method: 'POST', body: JSON.stringify({ "time": finalTime }) }).then(function (headers) {
+            return headers.json();
+        }).then(function (body) {
+            if (body.result == "ok") {
+                document.location.href = "/game/win"
+            }
+        })
     }
 
 
