@@ -22,17 +22,23 @@ class Historique
     #[ORM\Column]
     private ?int $TempsTotal = null;
 
-    #[ORM\Column(type: Types::DATETIME_MUTABLE)]
-    private ?\DateTimeInterface $LastGame = null;
-
-    #[ORM\Column]
-    private ?int $Score = null;
+    #[ORM\Column(type: Types::DATE_MUTABLE)]
+    private ?\DateTimeInterface $LastGame = null;  
 
    /*  #[ORM\ManyToOne(inversedBy: 'Historique')]
     private ?Enigmes $enigmes = null; */
 
     #[ORM\OneToMany(mappedBy: 'historique', targetEntity: User::class)]
     private Collection $User;
+
+    #[ORM\Column(length: 255)]
+    private ?string $rang = null;
+
+    #[ORM\Column(type: Types::TIME_MUTABLE)]
+    private ?\DateTimeInterface $score = null;
+
+    #[ORM\ManyToOne(inversedBy: 'historique')]
+    private ?User $user = null;
 
     public function __construct()
     {
@@ -80,17 +86,7 @@ class Historique
         return $this;
     }
 
-    public function getScore(): ?int
-    {
-        return $this->Score;
-    }
-
-    public function setScore(int $Score): self
-    {
-        $this->Score = $Score;
-
-        return $this;
-    }
+    
 
     /* public function getEnigmes(): ?Enigmes
     {
@@ -104,32 +100,38 @@ class Historique
         return $this;
     } */
 
-    /**
-     * @return Collection<int, User>
-     */
-    public function getUser(): Collection
+    public function getRang(): ?string
     {
-        return $this->User;
+        return $this->rang;
     }
 
-    public function addUser(User $user): self
+    public function setRang(string $rang): self
     {
-        if (!$this->User->contains($user)) {
-            $this->User->add($user);
-            $user->setHistorique($this);
-        }
+        $this->rang = $rang;
 
         return $this;
     }
 
-    public function removeUser(User $user): self
+    public function getScore(): ?\DateTimeInterface
     {
-        if ($this->User->removeElement($user)) {
-            // set the owning side to null (unless already changed)
-            if ($user->getHistorique() === $this) {
-                $user->setHistorique(null);
-            }
-        }
+        return $this->score;
+    }
+
+    public function setScore(\DateTimeInterface $score): self
+    {
+        $this->score = $score;
+
+        return $this;
+    }
+
+    public function getUser(): ?User
+    {
+        return $this->user;
+    }
+
+    public function setUser(?User $user): self
+    {
+        $this->user = $user;
 
         return $this;
     }

@@ -35,37 +35,25 @@
         </div>
         {# FIN CHRONO #}
 
-        <!--DEBUT DE BULLE INDICE-->
-        <div id="indice" class="hidden">   
-            <p class="text-center">Lorem ipsum dolor sit amet consectetur adipisicing elit. Odit ab eum excepturi delectus saepe reprehenderit doloremque tempore voluptas ipsam necessitatibus!</p>
+       {#  <!--DEBUT DE BULLE INDICE-->
+        <div id="indice">   
+            <p class=" text-center">Lorem ipsum dolor sit amet consectetur adipisicing elit. Odit ab eum excepturi delectus saepe reprehenderit doloremque tempore voluptas ipsam necessitatibus!</p>
         </div>
         <!--FIN DE BULLE INDICE-->
-
-
-        <!--DEBUT DE BTN INDICE-->
-        <div id="btn-indice">
-            <a href="#"><img src="\svg\icone\screen-start\icone-indice.svg" alt="icone indice"></a>
-        </div>
-
+ #}
         <!--DEBUT DE EXIT-->
-        <a href="#">
-            <div id="exit"></div>
-        </a>
-        <!--FIN DE EXIT-->
-
-        <!--DEBUT DE NARRATION-->
-        <div id="narration">
-            <i class="corner corner-top-left"></i>
-            <i class="corner corner-top-right"></i>
-            <p class="py-3">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Aliquam architecto nam maiores
-                officiis porro cumque necessitatibus perferendis, eaque doloremque, consequuntur itaque voluptate
-                ut. Temporibus magni est quo quam voluptatum assumenda voluptates aspernatur quaerat voluptas, et
-                reiciendis iure quos eaque ea similique placeat quibusdam incidunt quidem.
-            </p>
-            <i class="corner corner-bottom-left"></i>
-            <i class="corner corner-bottom-right"></i>
+        <div id="exit" class="row align-items-center justify-content-center">
+            <a href="{{ path('app_game_index') }}"> <img src="/svg/icone/screen-start/icone-exit.svg" alt="icone exit"></a>
         </div>
-        <!--FIN DE NARRATION-->
+        <!--FIN DE EXIT-->
+                
+            
+
+        {# <!--DEBUT DE BTN INDICE-->
+        <div id="btn-indice" class="text-center pt-2">
+                <a href=""><img class="img-fluid" src="/public/svg/icone/screen-start/icone-indice.svg" alt="icone indice"></a>
+        </div>
+        <!--FIN DE BTN INDICE--> #}
 
 
         <div id="toggleLight"> </div>

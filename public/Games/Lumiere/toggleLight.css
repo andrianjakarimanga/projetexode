@@ -41,6 +41,10 @@
   background-color: rgba(255, 193, 111, 0.462);
 }
 
+#toggleLight:hover {
+  background-color: rgba(255, 245, 140, 0.267);
+}
+
 input {
   cursor: pointer;
 }
