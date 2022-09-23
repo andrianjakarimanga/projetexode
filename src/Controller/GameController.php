@@ -104,7 +104,6 @@ class GameController extends AbstractController
 
         return $this->render('game/recompense.html.twig', [
             'controller_name' => 'GameController',
-
         ]);
     }
 
