@@ -22,7 +22,7 @@ class Historique
     #[ORM\Column]
     private ?int $TempsTotal = null;
 
-    #[ORM\Column(type: Types::DATETIME_MUTABLE)]
+    #[ORM\Column(type: Types::DATE_MUTABLE)]
     private ?\DateTimeInterface $LastGame = null;  
 
    /*  #[ORM\ManyToOne(inversedBy: 'Historique')]
