@@ -40,7 +40,6 @@
   width: 1276px;
   height: 710px;
 
-
   position: absolute;
   top: 50%;
   left: 50%;
@@ -129,7 +128,10 @@ img {
 }
 
 .puzzleReveal {
-  background: url("../../Puzzle/imagesPuzzle/AffichePuzzle01.png");
+  background: url(../../Puzzle/imagesPuzzle/AffichePuzzle01_SolvedBlock.png);
+  background-repeat: no-repeat;
+  background-size: cover;
+
   animation: fadeIn 10s;
   animation-fill-mode: forwards;
 }
