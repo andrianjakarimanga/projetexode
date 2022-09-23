@@ -1,31 +1,46 @@
+
+
+
+
+/************* Fonction swapBloc pour échanger deux blocs : ************/
+
 function swapBlocks(cell1, cell2) {
-    let x = document.getElementById(cell1).className; // x = a;
-    document.getElementById(cell1).className = document.getElementById(cell2).className; // a = b;
-    document.getElementById(cell2).className = x; // b = x;
 
+    // Dans une variable temporaire, on place le premier bloc : x = a
+    let x = document.getElementById(cell1).className;
 
+    // On déclare que le premier bloc est égal au second : a = b
+    document.getElementById(cell1).className = document.getElementById(cell2).className;
+
+    // Et donc finalement x vaut b !
+    document.getElementById(cell2).className = x;
 }
 
+
+/* Fonction clickBlock pour :
+ -> Localiser la  cellule cliquée, 
+-> Localiser la cellule vide, 
+-> Et échanger les deux blocs : */
 
 function clickBlock(row, column) {
 
     let cell = document.getElementById("cell" + row + column);
     let block = cell.className;
 
-    if (block != "block9") {
+    if (block != "block9") { // Si le joueur clique sur une cellule qui contient un bloc du puzzle
 
-        // Si click sur col 1 et 2
-        if (column < 3) {
-            // Si empty bloc est à droite
+        if (column < 3) { // Si la cellule cliquée est sur la colone 1 ou sur la colonne 2
+
+            // Et si le bloc vide est à droite (column + 1)
             if (document.getElementById("cell" + row + (column + 1)).className == "block9") {
 
-                // swap le bloc cliqué sur column+1
+                // swap le bloc cliqué à droite sur column+1
                 swapBlocks("cell" + row + column, "cell" + row + (column + 1));
                 return;
             }
         }
 
-        // Si click sur col 2 et 3
+        // Si clic sur col 2 ou 3
         if (column > 1) {
             // Si empty bloc à gauche
             if (document.getElementById("cell" + row + (column - 1)).className == "block9") {
@@ -35,7 +50,7 @@ function clickBlock(row, column) {
             }
         }
 
-        // SI click sur ligne 2 et 3
+        // SI click sur ligne 2 ou 3
         if (row > 1) {
             // Si empty bloc en haut
             if (document.getElementById("cell" + (row - 1) + column).className == "block9") {
@@ -44,7 +59,7 @@ function clickBlock(row, column) {
             }
         }
 
-        // Sur ligne 1 et 2
+        // Sur ligne 1 ou 2
         if (row < 3) {
             // Si empty bloc en bas
             if (document.getElementById("cell" + (row + 1) + column).className == "block9") {
@@ -67,18 +82,20 @@ function shuffle() {
 
             swapBlocks("cell" + row + column, "cell" + row2 + column2); // échange les blocs 
 
-
             let element = document.querySelector(".block9");
             element.classList.remove("solved"); // remet le bloc vide
         }
     }
 
 }
+
+
+
 /* let btn = document.querySelector('button');
 btn.addEventListener('click', shuffle); */
 
 
-// Victoire si
+// Victoire si chaque bloc est dans sa bonne cellule :
 function isSolved() {
     if (cell11.className == 'block1' &&
         cell12.className == 'block2' &&
@@ -90,25 +107,26 @@ function isSolved() {
         cell32.className == 'block8' &&
         cell33.className == 'block9') {
 
+        // Apparition du bloc manquant dans la cellule vide :
         let element = document.getElementById("cell33");
         element.classList.add("solved");
 
 
         if (element.classList.contains('solved')) {
             setTimeout("alert('bravo!'); ", 1200)
+
+            // Active le bouton qui permet de fermer la popup du puzzle
             document.querySelector('.closePopUpAfficheBtn').classList.remove('hidden');
-            gamePuzzleIsDone = true;
+
+            gamePuzzleIsDone = true; // Active l'énigme suivante
         }
     }
-
-
 }
-
 
 function game() {
 
-
-    /* setTimeout(() => {
+    /* // Le puzzle apparait dans l'ordre puis se mélange au bout de 500ms :
+    setTimeout(() => {
         // Après 500ms, mélange toutes les 100ms
         let timerId = setInterval(() => shuffle(), 100);
 
@@ -116,10 +134,7 @@ function game() {
         setTimeout(() => { clearInterval(timerId); shuffle(); }, 1000);
     }, "500") */
 
-
-
-
-    // Click Events
+    // A chaque clic du joueur la fonction clickBloc accompli sa mission :
     document.getElementById('cell11').addEventListener('click', function () { clickBlock(1, 1); });
     document.getElementById('cell12').addEventListener('click', function () { clickBlock(1, 2); });
     document.getElementById('cell13').addEventListener('click', function () { clickBlock(1, 3); });
@@ -131,9 +146,7 @@ function game() {
     document.getElementById('cell33').addEventListener('click', function () { clickBlock(3, 3); });
 
     setTimeout(() => {
-        isSolved(); //  A chaque bloc déplacé, check si c'est gagné
+        isSolved(); //  A chaque bloc déplacé, check si c'est gagné ou non 
     }, "1000")
-
 }
-
 game();
