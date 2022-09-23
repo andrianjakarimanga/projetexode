@@ -25,8 +25,7 @@ class Historique
     #[ORM\Column(type: Types::DATETIME_MUTABLE)]
     private ?\DateTimeInterface $LastGame = null;
 
-    #[ORM\Column]
-    private ?int $TempsTotal = null;
+    
 
    /*  #[ORM\ManyToOne(inversedBy: 'Historique')]
     private ?Enigmes $enigmes = null; */
