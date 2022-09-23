@@ -39,7 +39,7 @@ function timer() {
 
 
     timeGame = temps;
-    console.log(temps);
+    /* console.log(temps); */
 
     if (temps > (-1)) {
         setTimeout(function () { timer(); }, 1000);
@@ -50,3 +50,20 @@ function timer() {
 }
 
 /* fin chrono */
+
+
+/* BTN INDICE */
+
+/* let bulleIndice = document.getElementById("indice"); */
+
+function toggleIndice() {
+    if (document.getElementById("indice").classList.contains("hidden")) {
+        document.getElementById("indice").classList.remove("hidden");
+    } else {
+        document.getElementById("indice").classList.add("hidden");
+    }
+}
+
+document.getElementById("btn-indice").addEventListener('click', function () {
+    toggleIndice();
+});

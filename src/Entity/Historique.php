@@ -16,7 +16,7 @@ class Historique
     #[ORM\Column]
     private ?int $id = null;
 
-   /*  #[ORM\Column]
+    /*  #[ORM\Column]
     private ?int $NombreDIndices = null; */
 
     #[ORM\Column]
@@ -25,9 +25,7 @@ class Historique
     #[ORM\Column(type: Types::DATETIME_MUTABLE)]
     private ?\DateTimeInterface $LastGame = null;
 
-    
-
-   /*  #[ORM\ManyToOne(inversedBy: 'Historique')]
+    /*  #[ORM\ManyToOne(inversedBy: 'Historique')]
     private ?Enigmes $enigmes = null; */
 
     #[ORM\OneToMany(mappedBy: 'historique', targetEntity: User::class)]
@@ -36,8 +34,8 @@ class Historique
     #[ORM\Column(length: 255)]
     private ?string $rang = null;
 
-    #[ORM\Column(type: Types::TIME_MUTABLE)]
-    private ?\DateTimeInterface $score = null;
+    #[ORM\Column]
+    private ?int $score = null;
 
     #[ORM\ManyToOne(inversedBy: 'historique')]
     private ?User $user = null;
@@ -88,53 +86,4 @@ class Historique
         return $this;
     }
 
-    
-
-    /* public function getEnigmes(): ?Enigmes
-    {
-        return $this->enigmes;
-    }
-
-    public function setEnigmes(?Enigmes $enigmes): self
-    {
-        $this->enigmes = $enigmes;
-
-        return $this;
-    } */
-
-    public function getRang(): ?string
-    {
-        return $this->rang;
-    }
-
-    public function setRang(string $rang): self
-    {
-        $this->rang = $rang;
-
-        return $this;
-    }
-
-    public function getScore(): ?\DateTimeInterface
-    {
-        return $this->score;
-    }
-
-    public function setScore(\DateTimeInterface $score): self
-    {
-        $this->score = $score;
-
-        return $this;
-    }
-
-    public function getUser(): ?User
-    {
-        return $this->user;
-    }
-
-    public function setUser(?User $user): self
-    {
-        $this->user = $user;
-
-        return $this;
-    }
 }
