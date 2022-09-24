@@ -160,8 +160,12 @@ function checkIfWin() {
     ) {
 
         let finalTime = 1800 - timeGame;
-        document.getElementById("text-narration").innerHTML = "Félicitation ! Vous avez dévérouillé la porte en " + finalTime + " secondes."
-        alert('Bravo! Porte dévérouillée en ' + finalTime + 'secondes !');
+
+        document.getElementById("text-narration").innerHTML = "Félicitation ! Vous avez dévérouillé la porte !"
+        document.getElementById("text-narration").style.zIndex = "99"
+
+
+        /* alert('Bravooooooououou! Porte dévérouillée en ' + finalTime + 'secondes !'); */
         document.querySelector('.closePopUpBoitierBtn').classList.remove('hidden');
 
         /* document.location.href = "/game/win" */

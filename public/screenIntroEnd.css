@@ -6,7 +6,7 @@
 
   background-image: url(img/synopsis/introSynopsis.jpg);
 
-  z-index: 80;
+  z-index: 90;
 }
 
 #blackScreenIntro {
@@ -19,6 +19,7 @@
   animation-duration: 15s;
   /* animation-fill-mode: forwards; */
   animation-delay: 5s;
+  z-index: 90;
 }
 @keyframes opacityBlackScreen {
   0% {
@@ -49,6 +50,7 @@
   animation: opacityLogo;
   animation-duration: 3s;
   animation-delay: 1s;
+  z-index: 90;
 }
 @keyframes opacityLogo {
   0% {

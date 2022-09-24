@@ -117,7 +117,10 @@ function isSolved() {
 
 
             document.getElementById("text-indice").innerHTML = "Aucun indice disponible.<br>Continuez d'explorer la pièce.";
-            document.getElementById("narration").style.zIndex = "50";
+            document.getElementById("text-narration").innerHTML = "Vous avez du talent... mais le temps presse.<br>Continuez d'explorer la pièce.";
+
+
+            document.getElementById("narration").style.zIndex = "80";
             // Active le bouton qui permet de fermer la popup du puzzle
             document.querySelector('.closePopUpAfficheBtn').classList.remove('hidden');
 

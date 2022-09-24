@@ -45,7 +45,7 @@ function timer() {
         setTimeout(function () { timer(); }, 1000);
     } else {
         /* stopSon(); */
-        alert('vous avez perdu');
+        document.location.href = "/game/lost"
     }
 }
 

@@ -102,9 +102,13 @@ openHanoiBtn.addEventListener('click', function () {
 
     if (gamePuzzleIsDone) {
         popupHanoi.classList.remove('hidden');
-        document.getElementById("text-indice").innerHTML = "Je ne serai pas toujours là pour vous aider.<br>Déplacez les 5 anneaux sur la tige de droite."
-        document.getElementById("narration").style.zIndex = "50";
-        document.getElementById("text-narration").innerHTML = "Ma patience a des limites. <br>Terminez l'épreuve de la tour d'Hanoï où c'en est fini pour vous."
+        document.getElementById("text-indice").innerHTML = "Ma patience a des limites. <br>Terminez l'épreuve de la tour d'Hanoï où c'en est fini pour vous."
+        setTimeout(() => {
+            document.getElementById("text-indice").innerHTML = "Déplacez les 5 anneaux sur la tige de droite.<br>Un anneau ne peut se placer que sur un autre anneau plus grand."
+        }, 20000);
+
+
+
         // LOAD GAME:
         hanoiScreen.innerHTML = '<object width="1920" height="1080" type="text/html" data="/Games/Hanoi/index_copy.html" ></object>';
         /* jQuery('#gameScreenHanoi').load('/Games/Hanoi/index.html'); */
@@ -119,7 +123,7 @@ openBoitierBtn.addEventListener('click', function () {
     if (gameHanoiIsDone) {
 
         popupBoitier.classList.remove('hidden');
-
+        document.getElementById("narration").style.zIndex = "80";
         document.getElementById("text-narration").innerHTML = "Vous avez fait le plus dur. Maintenant, rétablissez l'alimentation éléctrique de la porte."
         // LOAD GAME:
         /* boitierScreen.innerHTML = '<object width="1920" height="1080" type="text/html" data="Games/Cables/cables.html" ></object>'; */
@@ -144,7 +148,7 @@ let closePopupAfficheBtn = document.querySelector('.closePopUpAfficheBtn');
 closePopupAfficheBtn.addEventListener('click', function () {
     popupPuzzle.classList.add('hidden');
     puzzleScreen.classList.add('hidden');
-    document.getElementById("text-narration").innerHTML = "Vous avez du talent... mais le temps presse.<br>Continuez d'explorer la pièce.";
+    openPuzzleBtn.classList.add('hidden');
     document.getElementById("text-indice").innerHTML = "Je ne serai pas toujours là pour vous aider.<br>Continuez d'explorer la pièce.";
 
 });
@@ -159,6 +163,7 @@ closeVueSnakeBtn.addEventListener('click', function () {
 let closePopupSnakeBtn = document.querySelector('.closePopUpSnakeBtn');
 closePopupSnakeBtn.addEventListener('click', function () {
     popupSnake.classList.add('hidden');
+    openSnakeBtn.classList.add('hidden');
     snakeScreen.classList.add('hidden');
 });
 
@@ -172,6 +177,7 @@ closeVueCoffresBtn.addEventListener('click', function () {
 let closePopupHanoiBtn = document.querySelector('.closePopUpHanoiBtn');
 closePopupHanoiBtn.addEventListener('click', function () {
     popupHanoi.classList.add('hidden');
+    openHanoiBtn.classList.add('hidden');
     gameHanoiIsDone = true;
     hanoiScreen.classList.add('hidden');
     document.getElementById("text-indice").innerHTML = "Vous avez maintenant accès au boitier d'alimentation de la porte.";
