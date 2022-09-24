@@ -28,6 +28,7 @@ btn.addEventListener("click", function () {
     document.getElementById("zoomBoitierBtn").classList.add('hidden');
     document.getElementById("zoomAfficheBtn").classList.add('hidden');
     document.getElementById("zoomCoffresBtn").classList.add('hidden');
+
   }
 
 });
@@ -38,7 +39,7 @@ function lumiereToggle() {
   if (document.querySelector(':root').classList.contains("lumiere")) {
     document.querySelector(':root').classList.remove("lumiere");
     lumiere = true
-
+    document.getElementById("text-indice").innerHTML = "Aucun indice disponible.<br>Continuez d'explorer la pièce.";
 
   } else {
     document.querySelector(':root').classList.add("lumiere");

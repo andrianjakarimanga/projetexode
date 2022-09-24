@@ -115,6 +115,9 @@ function isSolved() {
         if (element.classList.contains('solved')) {
             setTimeout("alert('bravo!'); ", 1200)
 
+
+            document.getElementById("text-indice").innerHTML = "Aucun indice disponible.<br>Continuez d'explorer la pièce.";
+            document.getElementById("narration").style.zIndex = "50";
             // Active le bouton qui permet de fermer la popup du puzzle
             document.querySelector('.closePopUpAfficheBtn').classList.remove('hidden');
 

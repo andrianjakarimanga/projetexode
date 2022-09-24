@@ -1,7 +1,7 @@
-var gameSnakeIsDone = true;
-var gamePuzzleIsDone = true;
-var gameHanoiIsDone = true;
-var gameBoiteIsDone = true;
+var gameSnakeIsDone = false;
+var gamePuzzleIsDone = false;
+var gameHanoiIsDone = false;
+var gameBoiteIsDone = false;
 
 var timeGame = 0;
 
@@ -15,6 +15,7 @@ function animIntroSynopsis() {
 }
 function turnOfftheLightAndStartGame() {
     document.querySelector(':root').classList.add("lumiere");
+    document.getElementById("text-indice").innerHTML = "Pour y voir plus clair, <br> commencez par chercher la lumière.";
 }
 
 setTimeout(animIntroSynopsis, 20000);
@@ -28,6 +29,7 @@ setTimeout(turnOfftheLightAndStartGame, 20000);
 let zoomAffiche = document.getElementById('zoomAfficheBtn');
 let vueAffiche = document.getElementById('vueAffiche');
 zoomAffiche.addEventListener('click', function () {
+    document.getElementById("narration").style.zIndex = "0";
     vueAffiche.classList.remove('hidden');
 });
 // VUE COFFRES open by clic
@@ -70,13 +72,16 @@ openSnakeBtn.addEventListener('click', function () {
     // LOAD GAME:
     //snakeScreen.innerHTML = '<object width="1920" height="1080" type="text/html" data="Games/Snake/snake.html" ></object>';
     jQuery('#gameScreenSnake').load('/Games/Snake/snake.html');
-
+    document.getElementById("text-indice").innerHTML = "Utilsez votre clavier.<br>Atteignez 50 fois la cible";
 });
 
 // POPUP PUZZLE open by clic
 let openPuzzleBtn = document.getElementById('openPuzzleBtn');
 let popupPuzzle = document.getElementById('popupPuzzle');
 openPuzzleBtn.addEventListener('click', function () {
+    if (gameSnakeIsDone) {
+        document.getElementById("text-indice").innerHTML = "Remettez le puzzle en ordre<br>pour y placer la pièce manquante ";
+    }
 
     if (gameSnakeIsDone) {
 
@@ -94,11 +99,15 @@ let openHanoiBtn = document.getElementById('openHanoiBtn');
 let popupHanoi = document.getElementById('popupHanoi');
 openHanoiBtn.addEventListener('click', function () {
 
+
     if (gamePuzzleIsDone) {
         popupHanoi.classList.remove('hidden');
+        document.getElementById("text-indice").innerHTML = "Je ne serai pas toujours là pour vous aider.<br>Déplacez les 5 anneaux sur la tige de droite."
+        document.getElementById("narration").style.zIndex = "50";
+        document.getElementById("text-narration").innerHTML = "Ma patience a des limites. <br>Terminez l'épreuve de la tour d'Hanoï où c'en est fini pour vous."
         // LOAD GAME:
-        /* hanoiScreen.innerHTML = '<object width="1920" height="1080" type="text/html" data="Games/Hanoi/hanoi.html" ></object>'; */
-        jQuery('#gameScreenHanoi').load('/Games/Hanoi/index.html');
+        hanoiScreen.innerHTML = '<object width="1920" height="1080" type="text/html" data="/Games/Hanoi/index_copy.html" ></object>';
+        /* jQuery('#gameScreenHanoi').load('/Games/Hanoi/index.html'); */
     }
 });
 
@@ -110,6 +119,8 @@ openBoitierBtn.addEventListener('click', function () {
     if (gameHanoiIsDone) {
 
         popupBoitier.classList.remove('hidden');
+
+        document.getElementById("text-narration").innerHTML = "Vous avez fait le plus dur. Maintenant, rétablissez l'alimentation éléctrique de la porte."
         // LOAD GAME:
         /* boitierScreen.innerHTML = '<object width="1920" height="1080" type="text/html" data="Games/Cables/cables.html" ></object>'; */
         jQuery('#gameScreenBoitier').load('/Games/Cables/cables.html');
@@ -125,11 +136,17 @@ openBoitierBtn.addEventListener('click', function () {
 let closeVueAfficheBtn = document.querySelector('.closeVueAfficheBtn');
 closeVueAfficheBtn.addEventListener('click', function () {
     vueAffiche.classList.add('hidden');
+    document.getElementById("narration").style.zIndex = "0";
+
 });
 /* CLOSE BTN POPUP AFFICHE */
 let closePopupAfficheBtn = document.querySelector('.closePopUpAfficheBtn');
 closePopupAfficheBtn.addEventListener('click', function () {
     popupPuzzle.classList.add('hidden');
+    puzzleScreen.classList.add('hidden');
+    document.getElementById("text-narration").innerHTML = "Vous avez du talent... mais le temps presse.<br>Continuez d'explorer la pièce.";
+    document.getElementById("text-indice").innerHTML = "Je ne serai pas toujours là pour vous aider.<br>Continuez d'explorer la pièce.";
+
 });
 
 /********************************************************************************/
@@ -142,6 +159,7 @@ closeVueSnakeBtn.addEventListener('click', function () {
 let closePopupSnakeBtn = document.querySelector('.closePopUpSnakeBtn');
 closePopupSnakeBtn.addEventListener('click', function () {
     popupSnake.classList.add('hidden');
+    snakeScreen.classList.add('hidden');
 });
 
 /********************************************************************************/
@@ -154,6 +172,10 @@ closeVueCoffresBtn.addEventListener('click', function () {
 let closePopupHanoiBtn = document.querySelector('.closePopUpHanoiBtn');
 closePopupHanoiBtn.addEventListener('click', function () {
     popupHanoi.classList.add('hidden');
+    gameHanoiIsDone = true;
+    hanoiScreen.classList.add('hidden');
+    document.getElementById("text-indice").innerHTML = "Vous avez maintenant accès au boitier d'alimentation de la porte.";
+    document.getElementById("text-narration").innerHTML = "Vous avez terminé la tour d'Hanoï. Quelque chose semble s'être débloqué.";
 });
 
 /********************************************************************************/
@@ -161,6 +183,7 @@ closePopupHanoiBtn.addEventListener('click', function () {
 let closeVueBoitierBtn = document.querySelector('.closeVueBoitierBtn');
 closeVueBoitierBtn.addEventListener('click', function () {
     vueBoitier.classList.add('hidden');
+    boitierScreen.classList.add('hidden');
 });
 
 

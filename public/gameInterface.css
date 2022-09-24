@@ -26,6 +26,7 @@
   margin-left: 10px;
   border-radius: 50%;
   position: relative;
+  z-index: 80;
 }
 
 .bulle {
@@ -78,21 +79,44 @@
 
   width: 1500px;
   height: 120px;
-  padding-top: 15px;
-  padding-bottom: 15px;
+  /* padding-top: 10px;
+  padding-bottom: 10px; */
   border-radius: 100px;
   background-color: rgba(56, 109, 173, 0.3);
   backdrop-filter: blur(15px);
   box-shadow: -1px -1px 31px -5px rgba(255, 255, 255, 0.75) inset;
   -webkit-box-shadow: -1px -1px 31px -5px rgba(255, 255, 255, 0.75) inset;
   -moz-box-shadow: -1px -1px 31px -5px rgba(255, 255, 255, 0.75) inset;
+  z-index: 80;
+  opacity: 0;
+}
+.fade {
+  opacity: 0;
+  animation: fadeIndice 8s;
+}
+
+@keyframes fadeIndice {
+  10% {
+    opacity: 1;
+  }
+  80% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+  }
 }
 
 #indice p {
+  max-height: 120px;
+  line-height: 40px;
+  padding: 15px;
   text-align: center;
   font-family: "Jura", sans-serif;
   font-size: 2rem;
   color: white;
+  /* margin-top: 35px;
+  margin-bottom: 35px; */
 }
 
 /*-------- FIN CSS INDICE------*/
@@ -108,15 +132,17 @@
   width: 80px;
   height: 80px;
   position: absolute;
-  left: 80px;
+  left: 48px;
   top: 200px;
 
   text-align: center;
   padding-top: 8px;
+  z-index: 80;
 }
 
 #btn-indice img {
-  height: 66px;
+  max-width: 66px;
+  max-height: 66px;
 }
 /*-------- FIN CSS BTN INDICE------*/
 
@@ -126,7 +152,7 @@
   border: 1px solid white;
   position: absolute;
   width: 1500px;
-  height: 180px;
+  height: 100px;
   left: 230px;
   bottom: 50px;
   display: flex;
@@ -138,10 +164,11 @@
   font-family: "Orbitron", Tahoma, sans-serif;
   color: #fffdfb;
   font-size: 1.6rem;
-
+  text-align: center;
   width: 100%;
   padding-left: 3rem;
   padding-right: 3rem;
+  line-height: 40px;
 }
 
 .corner {

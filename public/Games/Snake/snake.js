@@ -135,8 +135,11 @@ function checkIfWin() {
     puzzle.style.display = "block";
     screen.style.display = "none";
 
-    /* document.getElementById("text").innerHTML = "You did it !"; */
+    document.getElementById("textScore").innerHTML = "";
+    document.getElementById("text-indice").innerHTML = "Aucun indice disponible. Continuez d'explorer la pièce.";
+    document.getElementById("text-narration").innerHTML = "Vous avez trouvé la pièce manquante d'un puzzle. <br> Continuez d'explorer la pièce.";
     document.querySelector('.closePopUpSnakeBtn').classList.remove('hidden'); // Active le bouton pour fermer le jeu
+    document.getElementById("narration").style.zIndex = "50";
     /* ctx.clearRect(0, 0, screen.width, screen.height); */
     gameSnakeIsDone = true;
   }

@@ -40,14 +40,13 @@
   width: 1276px;
   height: 710px;
 
-
   position: absolute;
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
 }
 
-p {
+#textScore {
   margin-top: 20px;
   text-align: center;
   font-family: "Press Start", cursive;
@@ -129,7 +128,9 @@ img {
 }
 
 .puzzleReveal {
-  background: url("../../Puzzle/imagesPuzzle/AffichePuzzle01.png");
+  background: url("../../Puzzle/imagesPuzzle/AffichePuzzle01_SolvedBlock.png");
+  background-repeat: no-repeat;
+  background-position: center;
   animation: fadeIn 10s;
   animation-fill-mode: forwards;
 }

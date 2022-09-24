@@ -57,10 +57,14 @@ function timer() {
 /* let bulleIndice = document.getElementById("indice"); */
 
 function toggleIndice() {
-    if (document.getElementById("indice").classList.contains("hidden")) {
-        document.getElementById("indice").classList.remove("hidden");
+    if (document.getElementById("indice").classList.contains("fade")) {
+        document.getElementById("indice").classList.remove("fade");
+
     } else {
-        document.getElementById("indice").classList.add("hidden");
+        document.getElementById("indice").classList.add("fade");
+        setTimeout(() => {
+            document.getElementById("indice").classList.remove("fade");
+        }, 8000);
     }
 }
 

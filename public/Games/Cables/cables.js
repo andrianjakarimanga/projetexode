@@ -160,7 +160,7 @@ function checkIfWin() {
     ) {
 
         let finalTime = 1800 - timeGame;
-
+        document.getElementById("text-narration").innerHTML = "Félicitation ! Vous avez dévérouillé la porte en " + finalTime + " secondes."
         alert('Bravo! Porte dévérouillée en ' + finalTime + 'secondes !');
         document.querySelector('.closePopUpBoitierBtn').classList.remove('hidden');
 
