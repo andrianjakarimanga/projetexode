@@ -26,6 +26,7 @@
   margin-left: 10px;
   border-radius: 50%;
   position: relative;
+  z-index: 60;
 }
 
 .bulle {
@@ -86,6 +87,7 @@
   box-shadow: -1px -1px 31px -5px rgba(255, 255, 255, 0.75) inset;
   -webkit-box-shadow: -1px -1px 31px -5px rgba(255, 255, 255, 0.75) inset;
   -moz-box-shadow: -1px -1px 31px -5px rgba(255, 255, 255, 0.75) inset;
+  z-index: 60;
 }
 
 #indice p {
@@ -108,11 +110,12 @@
   width: 80px;
   height: 80px;
   position: absolute;
-  left: 80px;
+  left: 45px;
   top: 200px;
 
   text-align: center;
   padding-top: 8px;
+  z-index: 60;
 }
 
 #btn-indice img {
