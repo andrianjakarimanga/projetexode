@@ -86,6 +86,20 @@ class Historique
         return $this;
     }
 
+
+
+    /* public function getEnigmes(): ?Enigmes
+    {
+        return $this->enigmes;
+    }
+
+    public function setEnigmes(?Enigmes $enigmes): self
+    {
+        $this->enigmes = $enigmes;
+
+        return $this;
+    } */
+
     public function getRang(): ?string
     {
         return $this->rang;
@@ -98,4 +112,27 @@ class Historique
         return $this;
     }
 
+    public function getScore(): ?int
+    {
+        return $this->score;
+    }
+
+    public function setScore(int $score): self
+    {
+        $this->score = $score;
+
+        return $this;
+    }
+
+    public function getUser(): ?User
+    {
+        return $this->user;
+    }
+
+    public function setUser(?User $user): self
+    {
+        $this->user = $user;
+
+        return $this;
+    }
 }

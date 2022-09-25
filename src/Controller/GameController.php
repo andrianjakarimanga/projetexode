@@ -28,13 +28,14 @@ class GameController extends AbstractController
             //$score = $row->getScore()->getTimestamp();
             $rang = $row->getRang();
             $date = $row->getLastGame();
+            $tempsTotal = $row->getTempsTotal();
             //}
         };
 
 
         return $this->render('game/index.html.twig', [
             'controller_name' => 'GameController',
-            'score' => date_format($date, 'd/m/Y'),
+            'score' => gmdate("H:i:s", $tempsTotal),
             'rang' => $rang,
             'date' => date_format($date, 'd/m/Y'),
         ]);
@@ -138,7 +139,7 @@ class GameController extends AbstractController
         $user = $this->getUser();
         foreach ($user->getHistorique() as $row) {
             //if(date($row->getScore()->getTimestamp()) > $score){
-            $score = $row->getScore()->getTimestamp();
+            $score = $row->getScore();
             $rang = $row->getRang();
 
             //}
