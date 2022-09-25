@@ -68,7 +68,7 @@ function clickBlock(row, column) {
             }
         }
     }
-
+    isSolved()
 }
 
 
@@ -113,7 +113,7 @@ function isSolved() {
 
 
         if (element.classList.contains('solved')) {
-            /* setTimeout("alert('bravouuuooo!'); ", 1200) */
+            setTimeout("alert('bravouuuooo!'); ", 1200)
 
 
             document.getElementById("text-indice").innerHTML = "Je ne peux pas vous aider.<br>Continuez d'explorer la pièce.";
@@ -129,7 +129,7 @@ function isSolved() {
     }
 }
 
-function game() {
+function gameOn() {
 
     // Le puzzle apparait dans l'ordre puis se mélange au bout de 500ms:
     setTimeout(() => {
@@ -155,4 +155,6 @@ function game() {
         isSolved(); //  A chaque bloc déplacé, check si c'est gagné ou non 
     }, "1000")
 }
-game();
+gameOn();
+
+document.getElementById('shuffleBtn').addEventListener('click', function () { shuffle(); });

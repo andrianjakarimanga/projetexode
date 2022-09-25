@@ -94,3 +94,8 @@
     opacity: 1;
   }
 }
+
+#shuffleBtn {
+  border: 1px solid yellow;
+  font-family: "Batman";
+}
