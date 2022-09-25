@@ -113,7 +113,7 @@ function isSolved() {
 
 
         if (element.classList.contains('solved')) {
-            /* setTimeout("alert('bravo!'); ", 1200) */
+            /* setTimeout("alert('bravouuuooo!'); ", 1200) */
 
 
             document.getElementById("text-indice").innerHTML = "Je ne peux pas vous aider.<br>Continuez d'explorer la pièce.";
@@ -131,7 +131,7 @@ function isSolved() {
 
 function game() {
 
-    // Le puzzle apparait dans l'ordre puis se mélange au bout de 500ms :
+    // Le puzzle apparait dans l'ordre puis se mélange au bout de 500ms:
     setTimeout(() => {
         // Après 500ms, mélange toutes les 100ms
         let timerId = setInterval(() => shuffle(), 100);
