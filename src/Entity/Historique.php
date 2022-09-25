@@ -86,4 +86,16 @@ class Historique
         return $this;
     }
 
+    public function getRang(): ?string
+    {
+        return $this->rang;
+    }
+
+    public function setRang(string $rang): self
+    {
+        $this->rang = $rang;
+
+        return $this;
+    }
+
 }
