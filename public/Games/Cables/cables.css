@@ -1,6 +1,6 @@
 * {
-    margin: 0;
-    padding: 0;
+  margin: 0;
+  padding: 0;
 }
 
 /* body {
@@ -23,75 +23,75 @@
   } */
 
 #ecran-enigme {
-    width: 1276px;
-    height: 710px;
-    background-color: rgba(0, 0, 0, 0.596);
-    border: 1px solid rgba(255, 255, 255, 0.069);
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
+  width: 1276px;
+  height: 710px;
+  background-color: rgba(0, 0, 0, 0.596);
+  border: 1px solid rgba(255, 255, 255, 0.069);
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
 
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
 }
 
 #lightsContainer {
-    background-image: url("imagesCables/cablesBackground.png");
-    width: 100%;
-    display: inline-block;
-    text-align: center;
+  background-image: url("imagesCables/cablesBackground.png");
+  width: 100%;
+  display: inline-block;
+  text-align: center;
 
-    border: 5px solid rgba(255, 255, 255, 0.069);
-    box-sizing: border-box;
+  border: 5px solid rgba(255, 255, 255, 0.069);
+  box-sizing: border-box;
 }
 
 #buttonsContainer {
-    width: 100%;
-    display: inline-block;
-    text-align: center;
+  width: 100%;
+  display: inline-block;
+  text-align: center;
 }
 
 .imgBtnOff {
-    /* border: 1px solid yellow; */
-    margin: auto;
-    width: 120px;
-    height: 32px;
-    /* display: inline;
+  /* border: 1px solid yellow; */
+  margin: auto;
+  width: 120px;
+  height: 32px;
+  /* display: inline;
     font-weight: bolder; */
-    background-image: url("imagesCables/btnOFF.png");
-    background-size: cover;
-    background-position: center;
+  background-image: url("imagesCables/btnOFF.png");
+  background-size: cover;
+  background-position: center;
 }
 
 .imgBtnOn {
-    /* border: 1px solid yellow; */
-    margin: auto;
-    width: 120px;
-    height: 32px;
-    /* display: inline;
+  /* border: 1px solid yellow; */
+  margin: auto;
+  width: 120px;
+  height: 32px;
+  /* display: inline;
       font-weight: bolder; */
-    background-image: url("imagesCables/btnON.png");
-    background-size: cover;
-    background-position: center;
+  background-image: url("imagesCables/btnON.png");
+  background-size: cover;
+  background-position: center;
 }
 
 .btn {
-    margin-top: 30px;
-    display: inline-block;
-    /* border: 1px solid red; */
-    width: 207px;
+  margin-top: 30px;
+  display: inline-block;
+  /* border: 1px solid red; */
+  width: 207px;
 }
 
 .light {
-    display: inline-block;
-    width: 205px;
-    height: 305px;
+  display: inline-block;
+  width: 205px;
+  height: 305px;
 }
 
-img {
-    width: 205px;
-    height: 305px;
-    object-fit: cover;
+.lightImg {
+  width: 205px;
+  height: 305px;
+  object-fit: cover;
 }

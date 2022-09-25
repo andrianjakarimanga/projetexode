@@ -304,8 +304,8 @@ class Renderer {
                                 alert('Bravo !');
                             }, 800);
 
-                            document.querySelector('.closePopUpHanoiBtn').classList.remove('hidden');
-                            gameHanoiIsDone = true;
+                            /* document.querySelector('.closePopUpHanoiBtn').classList.remove('hidden'); */
+                            /* gameHanoiIsDone = true; */
                         }
 
                         _this.refresh();
