@@ -1,4 +1,4 @@
-var gameSnakeIsDone = true;
+var gameSnakeIsDone = false;
 var gamePuzzleIsDone = false;
 var gameHanoiIsDone = false;
 var gameBoiteIsDone = false;

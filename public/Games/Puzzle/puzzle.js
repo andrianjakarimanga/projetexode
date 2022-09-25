@@ -36,6 +36,7 @@ function clickBlock(row, column) {
 
                 // swap le bloc cliqué à droite sur column+1
                 swapBlocks("cell" + row + column, "cell" + row + (column + 1));
+                isSolved()
                 return;
             }
         }
@@ -46,6 +47,7 @@ function clickBlock(row, column) {
             if (document.getElementById("cell" + row + (column - 1)).className == "block9") {
                 // swap le bloc cliqué sur col-1
                 swapBlocks("cell" + row + column, "cell" + row + (column - 1));
+                isSolved()
                 return;
             }
         }
@@ -55,6 +57,7 @@ function clickBlock(row, column) {
             // Si empty bloc en haut
             if (document.getElementById("cell" + (row - 1) + column).className == "block9") {
                 swapBlocks("cell" + row + column, "cell" + (row - 1) + column);
+                isSolved()
                 return;
             }
         }
@@ -64,11 +67,14 @@ function clickBlock(row, column) {
             // Si empty bloc en bas
             if (document.getElementById("cell" + (row + 1) + column).className == "block9") {
                 swapBlocks("cell" + row + column, "cell" + (row + 1) + column);
+                isSolved()
                 return;
             }
+
         }
+
     }
-    isSolved()
+
 }
 
 
@@ -113,7 +119,7 @@ function isSolved() {
 
 
         if (element.classList.contains('solved')) {
-            setTimeout("alert('bravouuuooo!'); ", 1200)
+            /* setTimeout("alert('bravouuuooo!'); ", 1200) */
 
 
             document.getElementById("text-indice").innerHTML = "Je ne peux pas vous aider.<br>Continuez d'explorer la pièce.";
@@ -151,9 +157,9 @@ function gameOn() {
     document.getElementById('cell32').addEventListener('click', function () { clickBlock(3, 2); });
     document.getElementById('cell33').addEventListener('click', function () { clickBlock(3, 3); });
 
-    setTimeout(() => {
+    /* setTimeout(() => {
         isSolved(); //  A chaque bloc déplacé, check si c'est gagné ou non 
-    }, "1000")
+    }, "1000") */
 }
 gameOn();
 

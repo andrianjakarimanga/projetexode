@@ -96,6 +96,18 @@
 }
 
 #shuffleBtn {
-  border: 1px solid yellow;
-  font-family: "Batman";
+  width: 100px;
+  height: 25px;
+
+  font-family: "Batman", sans-serif;
+  color: rgba(255, 255, 255, 0.123);
+  position: absolute;
+  left: 600px;
+  cursor: pointer;
+}
+
+#shuffleBtn:hover {
+  color: white;
+  text-shadow: 1px 1px 2px rgb(255, 115, 15), 0 0 1em rgb(253, 147, 7),
+    0 0 0.2em rgb(253, 147, 7);
 }

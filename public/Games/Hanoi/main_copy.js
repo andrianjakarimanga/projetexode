@@ -299,7 +299,11 @@ class Renderer {
                         }
                         /* Check If Win */
                         if (_this.tige3.length == 5) {
-                            alert('Bravo !');
+
+                            setTimeout(() => {
+                                alert('Bravo !');
+                            }, 800);
+
                             document.querySelector('.closePopUpHanoiBtn').classList.remove('hidden');
                             gameHanoiIsDone = true;
                         }
@@ -486,11 +490,16 @@ let tige3 = new Tige(1000, 80, 50, 558, "/Games/Hanoi/images/TourDeHanoi/Barre.p
 
 
 // initialisation des rectangles de jeu
-let ecrou5 = new Ecrou(0, 0, 240, 50, "/Games/Hanoi/images/TourDeHanoi/Ecrou1.png");
-let ecrou4 = new Ecrou(0, 0, 200, 50, "/Games/Hanoi/images/TourDeHanoi/Ecrou2.png");
+
+let ecrou5 = new Ecrou(0, 0, 80, 50, "/Games/Hanoi/images/TourDeHanoi/Ecrou5.png");
+let ecrou4 = new Ecrou(0, 0, 120, 50, "/Games/Hanoi/images/TourDeHanoi/Ecrou4.png");
 let ecrou3 = new Ecrou(0, 0, 160, 50, "/Games/Hanoi/images/TourDeHanoi/Ecrou3.png");
-let ecrou2 = new Ecrou(0, 0, 120, 50, "/Games/Hanoi/images/TourDeHanoi/Ecrou4.png");
-let ecrou1 = new Ecrou(0, 0, 80, 50, "/Games/Hanoi/images/TourDeHanoi/Ecrou5.png");
+let ecrou2 = new Ecrou(0, 0, 200, 50, "/Games/Hanoi/images/TourDeHanoi/Ecrou2.png");
+let ecrou1 = new Ecrou(0, 0, 240, 50, "/Games/Hanoi/images/TourDeHanoi/Ecrou1.png");
+
+
+
+
 
 
 

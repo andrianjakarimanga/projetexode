@@ -129,7 +129,7 @@ function checkIfWin() {
   let puzzle = document.getElementById("hiddenPuzzle");
   let screen = document.getElementById("screen");
 
-  if (snake.length == 2) {
+  if (snake.length == 50) {
 
     puzzle.classList.add("puzzleReveal");
     puzzle.style.display = "block";
