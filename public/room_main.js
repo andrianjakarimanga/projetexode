@@ -180,7 +180,7 @@ closePopupHanoiBtn.addEventListener('click', function () {
     openHanoiBtn.classList.add('hidden');
     gameHanoiIsDone = true;
     hanoiScreen.classList.add('hidden');
-    document.getElementById("text-indice").innerHTML = "Vous avez maintenant accès au boitier d'alimentation de la porte.";
+    document.getElementById("text-indice").innerHTML = "Vous êtes sur le bon chemin.<br>Vous avez maintenant accès au boitier d'alimentation de la porte.";
     document.getElementById("text-narration").innerHTML = "Vous avez terminé la tour d'Hanoï. Quelque chose semble s'être débloqué.";
 });
 

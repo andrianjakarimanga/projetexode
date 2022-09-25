@@ -113,10 +113,10 @@ function isSolved() {
 
 
         if (element.classList.contains('solved')) {
-            setTimeout("alert('bravo!'); ", 1200)
+            /* setTimeout("alert('bravo!'); ", 1200) */
 
 
-            document.getElementById("text-indice").innerHTML = "Aucun indice disponible.<br>Continuez d'explorer la pièce.";
+            document.getElementById("text-indice").innerHTML = "Je ne peux pas vous aider.<br>Continuez d'explorer la pièce.";
             document.getElementById("text-narration").innerHTML = "Vous avez du talent... mais le temps presse.<br>Continuez d'explorer la pièce.";
 
 
@@ -131,14 +131,14 @@ function isSolved() {
 
 function game() {
 
-    /* // Le puzzle apparait dans l'ordre puis se mélange au bout de 500ms :
+    // Le puzzle apparait dans l'ordre puis se mélange au bout de 500ms :
     setTimeout(() => {
         // Après 500ms, mélange toutes les 100ms
         let timerId = setInterval(() => shuffle(), 100);
 
         // Arrête après 1200ms
         setTimeout(() => { clearInterval(timerId); shuffle(); }, 1000);
-    }, "500") */
+    }, "500")
 
     // A chaque clic du joueur la fonction clickBloc accompli sa mission :
     document.getElementById('cell11').addEventListener('click', function () { clickBlock(1, 1); });

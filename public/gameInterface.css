@@ -212,3 +212,9 @@
   display: none;
 }
  */
+
+.closeVue,
+.closePopUp {
+  font-family: "Batman", sans-serif;
+  font-size: larger;
+}

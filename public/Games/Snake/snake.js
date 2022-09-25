@@ -136,7 +136,7 @@ function checkIfWin() {
     screen.style.display = "none";
 
     document.getElementById("textScore").innerHTML = "";
-    document.getElementById("text-indice").innerHTML = "Aucun indice disponible. Continuez d'explorer la pièce.";
+    document.getElementById("text-indice").innerHTML = "Je ne sais pas si je veux vous aider.<br>Continuez d'explorer la pièce.";
     document.getElementById("text-narration").innerHTML = "Vous avez trouvé la pièce manquante d'un puzzle. <br> Continuez d'explorer la pièce.";
     document.querySelector('.closePopUpSnakeBtn').classList.remove('hidden'); // Active le bouton pour fermer le jeu
     document.getElementById("narration").style.zIndex = "50";
