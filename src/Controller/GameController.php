@@ -89,11 +89,34 @@ class GameController extends AbstractController
         $user = $this->getUser();
         foreach ($user->getHistorique() as $row) {
             $histo = $row;
+            $tempsTotal = $histo->getTempsTotal();
+            $rang = $row->getRang();
         }
+
+        if($tempsTotal >= 0 && $tempsTotal <= 360){
+            $rang = "1-3";
+        } 
+
+        if($tempsTotal >= 361 && $tempsTotal <= 720){
+            $rang = "4-9";
+        } 
+
+        if($tempsTotal >= 721 && $tempsTotal <= 1080){
+            $rang = "10-24";
+        } 
+
+        if($tempsTotal >= 1081 && $tempsTotal <= 1440){
+            $rang = "25-99";
+        } 
+
+        if($tempsTotal >= 1441){
+            $rang = "99-200";
+        } 
+
         return $this->render('game/win.html.twig', [
             'controller_name' => 'GameController',
-            'temps_total' => $histo->getTempsTotal()
-            /* 'rang' => $user->getRang() */
+            'temps_total' => gmdate("H:i:s", $tempsTotal),
+            'rang' => $rang,
         ]);
     }
 
@@ -110,33 +133,6 @@ class GameController extends AbstractController
     #[Route('game/statistiques', name: 'app_game_statistiques')]
     public function statistiques(HistoriqueRepository $HistoriqueRepository): Response
     {
-
-        $tabScore = [
-            0 => [
-                'min' => '0:00:00',
-                'max' => '00:06:00',
-            ],
-            1 => [
-                'min' => '00:06:01',
-                'max' => '00:12:00',
-            ],
-
-            2 => [
-                'min' => '00:12:01',
-                'max' => '00:18:00',
-            ],
-
-            3 => [
-                'min' => '00:18:01',
-                'max' => '00:24:00',
-            ],
-
-            4 => [
-                'min' => '00:24:01',
-                'max' => '00:30:00',
-            ]
-        ];
-
         $score = 0;
         $rang = 0;
         $user = $this->getUser();
@@ -148,14 +144,27 @@ class GameController extends AbstractController
             //}
         };
 
-        $rang = 24;
+    
+         if ($score >= 0  && $score <= 360){
+           $rang = "1-3";
+        } 
 
+        if($score >= 361 && $score <= 720){
+            $rang = "4-9";
+        } 
 
+        if($score >= 721 && $score <= 1080){
+            $rang = "10-24";
+        } 
 
-        // if ($score >= 0  && $score <= 360){
-        //   $rang
+        if($score >= 1081 && $score <= 1440){
+            $rang = "25-99";
+        } 
 
-        //} 
+        if($score >= 1441){
+            $rang = "99-200";
+        } 
+
 
         return $this->render('game/statistiques.html.twig', [
             'controller_name' => 'GameController',
