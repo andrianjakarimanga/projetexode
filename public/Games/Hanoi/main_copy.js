@@ -498,8 +498,20 @@ let ecrou2 = new Ecrou(0, 0, 200, 50, "/Games/Hanoi/images/TourDeHanoi/Ecrou2.pn
 let ecrou1 = new Ecrou(0, 0, 240, 50, "/Games/Hanoi/images/TourDeHanoi/Ecrou1.png");
 
 
+/* Fonction triche */
+function cheatHanoi() {
+    ecrou1 = new Ecrou(0, 0, 80, 50, "/Games/Hanoi/images/TourDeHanoi/Ecrou5.png");
+    ecrou2 = new Ecrou(0, 0, 120, 50, "/Games/Hanoi/images/TourDeHanoi/Ecrou4.png");
+    ecrou3 = new Ecrou(0, 0, 160, 50, "/Games/Hanoi/images/TourDeHanoi/Ecrou3.png");
+    ecrou4 = new Ecrou(0, 0, 200, 50, "/Games/Hanoi/images/TourDeHanoi/Ecrou2.png");
+    ecrou5 = new Ecrou(0, 0, 240, 50, "/Games/Hanoi/images/TourDeHanoi/Ecrou1.png");
 
-
+    renderer.addToTige(1, ecrou1);
+    renderer.addToTige(1, ecrou2);
+    renderer.addToTige(1, ecrou3);
+    renderer.addToTige(1, ecrou4);
+    renderer.addToTige(1, ecrou5);
+}
 
 
 

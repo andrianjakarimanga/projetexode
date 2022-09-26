@@ -1,7 +1,7 @@
-var gameSnakeIsDone = true;
-var gamePuzzleIsDone = true;
-var gameHanoiIsDone = true;
-var gameBoiteIsDone = true;
+var gameSnakeIsDone = false;
+var gamePuzzleIsDone = false;
+var gameHanoiIsDone = false;
+var gameBoiteIsDone = false;
 
 var timeGame = 0;
 

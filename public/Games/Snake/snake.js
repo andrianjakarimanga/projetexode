@@ -129,7 +129,7 @@ function checkIfWin() {
   let puzzle = document.getElementById("hiddenPuzzle");
   let screen = document.getElementById("screen");
 
-  if (snake.length == 50) {
+  if (snake.length == 10) {
 
     puzzle.classList.add("puzzleReveal");
     puzzle.style.display = "block";
@@ -148,13 +148,7 @@ function checkIfWin() {
 
 }
 
-function revealPuzzle() {
-  if (snake.length == 50) {
 
-
-    alert('Bravo!')
-  }
-}
 
 
 /* START BTN ET GAME OVER */

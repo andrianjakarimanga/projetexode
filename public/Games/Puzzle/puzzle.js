@@ -164,3 +164,18 @@ function gameOn() {
 gameOn();
 
 document.getElementById('shuffleBtn').addEventListener('click', function () { shuffle(); });
+
+
+
+/* Fonction à executer pour gagner */
+function cheatPuzzle() {
+    cell11.className == 'block1';
+    cell12.className == 'block2';
+    cell13.className == 'block3';
+    cell21.className == 'block4';
+    cell22.className == 'block5';
+    cell23.className == 'block6';
+    cell31.className == 'block7';
+    cell32.className == 'block8';
+    cell33.className == 'block9';
+}
