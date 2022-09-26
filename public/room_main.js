@@ -1,7 +1,7 @@
 var gameSnakeIsDone = false;
-var gamePuzzleIsDone = false;
-var gameHanoiIsDone = false;
-var gameBoiteIsDone = false;
+var gamePuzzleIsDone = true;
+var gameHanoiIsDone = true;
+var gameBoiteIsDone = true;
 
 var timeGame = 0;
 
@@ -189,7 +189,7 @@ closePopupHanoiBtn.addEventListener('click', function () {
 let closeVueBoitierBtn = document.querySelector('.closeVueBoitierBtn');
 closeVueBoitierBtn.addEventListener('click', function () {
     vueBoitier.classList.add('hidden');
-    boitierScreen.classList.add('hidden');
+
 });
 
 
@@ -198,6 +198,7 @@ let closePopupBoitierBtn = document.querySelector('.closePopUpBoitierBtn');
 closePopupBoitierBtn.addEventListener('click', function () {
     popupBoitier.classList.add('hidden');
     vueBoitier.classList.add('hidden');
+    boitierScreen.classList.add('hidden');
     document.getElementById('doorOpening').classList.remove('hidden');
 
     setTimeout(loadWinPage, 2850);

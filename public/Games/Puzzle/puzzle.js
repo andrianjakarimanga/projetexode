@@ -137,14 +137,14 @@ function isSolved() {
 
 function gameOn() {
 
-    /*   // Le puzzle apparait dans l'ordre puis se mélange au bout de 500ms:
-      setTimeout(() => {
-          // Après 500ms, mélange toutes les 100ms
-          let timerId = setInterval(() => shuffle(), 100);
-  
-          // Arrête après 1200ms
-          setTimeout(() => { clearInterval(timerId); shuffle(); }, 1000);
-      }, "500") */
+    // Le puzzle apparait dans l'ordre puis se mélange au bout de 500ms:
+    setTimeout(() => {
+        // Après 500ms, mélange toutes les 100ms
+        let timerId = setInterval(() => shuffle(), 100);
+
+        // Arrête après 1200ms
+        setTimeout(() => { clearInterval(timerId); shuffle(); }, 1000);
+    }, "500")
 
     // A chaque clic du joueur la fonction clickBloc accompli sa mission :
     document.getElementById('cell11').addEventListener('click', function () { clickBlock(1, 1); });
@@ -162,20 +162,6 @@ function gameOn() {
     }, "1000") */
 
 
-
-    /* Fonction à executer pour gagner */
-    function cheatPuzzle() {
-        cell11.className == 'block1';
-        cell12.className == 'block2';
-        cell13.className == 'block3';
-        cell21.className == 'block4';
-        cell22.className == 'block5';
-        cell23.className == 'block6';
-        cell31.className == 'block7';
-        cell32.className == 'block8';
-        cell33.className == 'block9';
-    }
-
 }
 gameOn();
 
@@ -183,3 +169,28 @@ document.getElementById('shuffleBtn').addEventListener('click', function () { sh
 
 
 
+function cheatPuzzle() {
+    document.getElementById('cell11').classList.removeAttribute('class');
+    document.getElementById('cell12').classList.removeAttribute('class');
+    document.getElementById('cell13').classList.removeAttribute('class');
+    document.getElementById('cell21').classList.removeAttribute('class');
+    document.getElementById('cell22').classList.removeAttribute('class');
+    document.getElementById('cell23').classList.removeAttribute('class');
+    document.getElementById('cell31').classList.removeAttribute('class');
+    document.getElementById('cell32').classList.removeAttribute('class');
+    document.getElementById('cell33').classList.removeAttribute('class');
+
+    document.getElementById('cell11').classList.add('block1');
+    document.getElementById('cell12').classList.add('block2');
+    document.getElementById('cell13').classList.add('block3');
+    document.getElementById('cell21').classList.add('block4');
+    document.getElementById('cell22').classList.add('block5');
+    document.getElementById('cell23').classList.add('block6');
+    document.getElementById('cell31').classList.add('block7');
+    document.getElementById('cell32').classList.add('block8');
+    document.getElementById('cell33').classList.add('block9');
+
+    alert('tricheur !')
+}
+
+document.getElementById('cheatPuzzle').addEventListener('click', function () { cheatPuzzle(); });
