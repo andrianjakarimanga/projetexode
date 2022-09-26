@@ -16,7 +16,7 @@ use App\Repository\AvatarRepository;
 class RegistrationController extends AbstractController
 {
     #[Route('/register', name: 'app_register')]
-    public function register(Request $request, UserPasswordHasherInterface $userPasswordHasher, EntityManagerInterface $entityManager ,AvatarRepository $AvatarRepository ): Response
+    public function register(Request $request, UserPasswordHasherInterface $userPasswordHasher, EntityManagerInterface $entityManager, AvatarRepository $AvatarRepository): Response
     {
         $user = new User();
 
@@ -31,8 +31,8 @@ class RegistrationController extends AbstractController
                     $form->get('plainPassword')->getData()
                 )
             );
-            $user->setRang(0);
-            $user->setScore(0);
+            /* $user->setRang(0);
+            $user->setScore(0); */
 
             $entityManager->persist($user);
             $entityManager->flush();
@@ -43,11 +43,11 @@ class RegistrationController extends AbstractController
 
         //aller chercher les avatars grace au repository
 
-        
+
 
         return $this->render('registration/register.html.twig', [
             'registrationForm' => $form->createView(),
-             'avatars' =>$AvatarRepository->findAll()
+            'avatars' => $AvatarRepository->findAll()
         ]);
     }
 }
