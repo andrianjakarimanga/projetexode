@@ -19,15 +19,16 @@ class GameController extends AbstractController
     public function index(): Response
     {
 
-        $score = 0;
+        $tempsTotal = 0;
         $rang = 0;
-        $date = 0;
+        $date = "-";
+        
         $user = $this->getUser();
         foreach ($user->getHistorique() as $row) {
             //if(date($row->getScore()->getTimestamp()) > $score){
             //$score = $row->getScore()->getTimestamp();
             $rang = $row->getRang();
-            $date = $row->getLastGame();
+            $date = date_format($row->getLastGame(), 'd/m/Y');
             $tempsTotal = $row->getTempsTotal();
             //}
         };
@@ -37,7 +38,7 @@ class GameController extends AbstractController
             'controller_name' => 'GameController',
             'score' => gmdate("H:i:s", $tempsTotal),
             'rang' => $rang,
-            'date' => date_format($date, 'd/m/Y'),
+            'date' => $date,
         ]);
     }
 
