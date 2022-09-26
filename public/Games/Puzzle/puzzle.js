@@ -137,14 +137,14 @@ function isSolved() {
 
 function gameOn() {
 
-    // Le puzzle apparait dans l'ordre puis se mélange au bout de 500ms:
-    setTimeout(() => {
-        // Après 500ms, mélange toutes les 100ms
-        let timerId = setInterval(() => shuffle(), 100);
-
-        // Arrête après 1200ms
-        setTimeout(() => { clearInterval(timerId); shuffle(); }, 1000);
-    }, "500")
+    /*   // Le puzzle apparait dans l'ordre puis se mélange au bout de 500ms:
+      setTimeout(() => {
+          // Après 500ms, mélange toutes les 100ms
+          let timerId = setInterval(() => shuffle(), 100);
+  
+          // Arrête après 1200ms
+          setTimeout(() => { clearInterval(timerId); shuffle(); }, 1000);
+      }, "500") */
 
     // A chaque clic du joueur la fonction clickBloc accompli sa mission :
     document.getElementById('cell11').addEventListener('click', function () { clickBlock(1, 1); });
@@ -160,6 +160,22 @@ function gameOn() {
     /* setTimeout(() => {
         isSolved(); //  A chaque bloc déplacé, check si c'est gagné ou non 
     }, "1000") */
+
+
+
+    /* Fonction à executer pour gagner */
+    function cheatPuzzle() {
+        cell11.className == 'block1';
+        cell12.className == 'block2';
+        cell13.className == 'block3';
+        cell21.className == 'block4';
+        cell22.className == 'block5';
+        cell23.className == 'block6';
+        cell31.className == 'block7';
+        cell32.className == 'block8';
+        cell33.className == 'block9';
+    }
+
 }
 gameOn();
 
@@ -167,15 +183,3 @@ document.getElementById('shuffleBtn').addEventListener('click', function () { sh
 
 
 
-/* Fonction à executer pour gagner */
-function cheatPuzzle() {
-    cell11.className == 'block1';
-    cell12.className == 'block2';
-    cell13.className == 'block3';
-    cell21.className == 'block4';
-    cell22.className == 'block5';
-    cell23.className == 'block6';
-    cell31.className == 'block7';
-    cell32.className == 'block8';
-    cell33.className == 'block9';
-}
